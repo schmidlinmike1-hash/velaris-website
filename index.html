@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velaris: Galactic Strategy — Erobere die Galaxie</title>
+  <meta name="description" content="Velaris: Galactic Strategy — Ein episches Weltraum-Strategiespiel. Baue dein Imperium, erforsche Technologien, befehlige Flotten und erobere die Galaxie.">
+  <meta property="og:title" content="Velaris: Galactic Strategy">
+  <meta property="og:description" content="Erobere die Galaxie in diesem epischen Weltraum-Strategiespiel für Android.">
+  <meta property="og:image" content="icon.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="icon.png">
+  <style>
+    :root {
+      --bg: #0A0E17;
+      --bg2: #0D1220;
+      --surface: #131A2B;
+      --text: #E8ECF4;
+      --muted: #6B7A99;
+      --primary: #00E5FF;
+      --primary-glow: rgba(0, 229, 255, 0.15);
+      --border: #1E2A42;
+      --accent: #FF3366;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Stars background */
+    .stars {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .stars::before, .stars::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: 
+        radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 30% 50%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 90% 30%, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1.5px 1.5px at 15% 80%, rgba(0,229,255,0.4), transparent),
+        radial-gradient(1px 1px at 45% 70%, rgba(255,255,255,0.6), transparent),
+        radial-gradient(1px 1px at 65% 90%, rgba(255,255,255,0.5), transparent),
+        radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,0.7), transparent),
+        radial-gradient(1.5px 1.5px at 25% 40%, rgba(0,229,255,0.3), transparent);
+      animation: twinkle 4s ease-in-out infinite alternate;
+    }
+    .stars::after {
+      animation-delay: 2s;
+      opacity: 0.6;
+      transform: scale(1.1) rotate(15deg);
+    }
+    @keyframes twinkle {
+      0% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Nav */
+    nav {
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+    }
+    .nav-brand span {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+    }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 0 60px;
+    }
+    .hero-icon {
+      width: 120px;
+      height: 120px;
+      border-radius: 28px;
+      margin-bottom: 32px;
+      box-shadow: 0 0 60px rgba(0, 229, 255, 0.3), 0 0 120px rgba(0, 229, 255, 0.1);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, var(--primary), #80F0FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero .tagline {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--bg);
+    }
+    .btn-primary:hover {
+      background: #33ECFF;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 229, 255, 0.3);
+      text-decoration: none;
+      color: var(--bg);
+    }
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    /* Features */
+    .features {
+      padding: 60px 0;
+    }
+    .features h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 48px;
+      color: var(--primary);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      transition: all 0.3s;
+    }
+    .feature-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 229, 255, 0.1);
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    .feature-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .feature-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* Stats */
+    .stats {
+      padding: 40px 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 80px 0;
+    }
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+    .cta p {
+      color: var(--muted);
+      margin-bottom: 32px;
+      font-size: 1.1rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+    footer a {
+      color: var(--muted);
+    }
+    footer a:hover {
+      color: var(--primary);
+    }
+
+    /* Language switch */
+    .lang-toggle {
+      display: inline-flex;
+      gap: 4px;
+      background: var(--surface);
+      border-radius: 8px;
+      padding: 4px;
+      border: 1px solid var(--border);
+    }
+    .lang-toggle button {
+      padding: 6px 14px;
+      border: none;
+      border-radius: 6px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .lang-toggle button.active {
+      background: var(--primary);
+      color: var(--bg);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero .tagline { font-size: 1rem; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <div class="container">
+    <nav>
+      <div class="nav-brand">
+        <img src="icon.png" alt="Velaris Logo">
+        <span>Velaris</span>
+      </div>
+      <div class="nav-links">
+        <a href="#features" id="nav-features">Features</a>
+        <a href="privacy-policy.html" id="nav-privacy">Privacy Policy</a>
+        <div class="lang-toggle">
+          <button class="active" onclick="switchLang('de')">DE</button>
+          <button onclick="switchLang('en')">EN</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <img src="icon.png" alt="Velaris: Galactic Strategy" class="hero-icon">
+      <h1 id="hero-title">Erobere die Galaxie</h1>
+      <p class="tagline" id="hero-tagline">Baue dein Weltraumimperium, erforsche Technologien, befehlige mächtige Flotten und kämpfe um die Vorherrschaft in der Galaxie.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary" id="btn-download">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-1h18v1H3zm8.5-4.5V4h1v12l5.5-5.5.7.7L12 17.9l-6.7-6.7.7-.7 5.5 5.5z"/></svg>
+          <span id="btn-download-text">Jetzt herunterladen</span>
+        </a>
+        <a href="#features" class="btn btn-secondary" id="btn-more">
+          <span id="btn-more-text">Mehr erfahren</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div>
+        <div class="stat-number">30+</div>
+        <div class="stat-label" id="stat1">Gebäude & Technologien</div>
+      </div>
+      <div>
+        <div class="stat-number">6</div>
+        <div class="stat-label" id="stat2">Schiffsklassen</div>
+      </div>
+      <div>
+        <div class="stat-number">20</div>
+        <div class="stat-label" id="stat3">Einzigartige Admirale</div>
+      </div>
+      <div>
+        <div class="stat-number">4</div>
+        <div class="stat-label" id="stat4">Spielbare Fraktionen</div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+      <h2 id="features-title">Spielfeatures</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🏗️</div>
+          <h3 id="f1-title">Imperiumsaufbau</h3>
+          <p id="f1-desc">Errichte Minen, Raffinerien und Solaranlagen. Upgrade deine Gebäude und maximiere die Ressourcenproduktion auf mehreren Kolonien.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔬</div>
+          <h3 id="f2-title">Forschung & Technologie</h3>
+          <p id="f2-desc">Erforsche über 15 Technologien in den Bereichen Wirtschaft, Militär und Exploration. Schalte mächtige Boni und neue Schiffsklassen frei.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🚀</div>
+          <h3 id="f3-title">Flottenkommando</h3>
+          <p id="f3-desc">Baue Jäger, Kreuzer und Dreadnoughts. Weise Admirale und Flaggschiffe zu und sende bis zu 3 Flotten gleichzeitig auf Missionen.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌌</div>
+          <h3 id="f4-title">Galaxie-Erkundung</h3>
+          <p id="f4-desc">Erkunde unbekannte Sternensysteme, entdecke neue Planeten und gründe Kolonien. Jede Erkundung bringt wertvolle Ressourcen und Informationen.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚔️</div>
+          <h3 id="f5-title">Taktische Kämpfe</h3>
+          <p id="f5-desc">Rundenbasierte Weltraumschlachten mit Schadens- und Schildmechaniken. Erbeute Ausrüstung und Ressourcen von besiegten Gegnern.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎖️</div>
+          <h3 id="f6-title">Admirale & Flaggschiffe</h3>
+          <p id="f6-desc">Sammle 20 einzigartige Admirale mit verschiedenen Seltenheitsstufen. Rüste 3 legendäre Flaggschiffe mit Talentbäumen und Ausrüstung aus.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚒️</div>
+          <h3 id="f7-title">Crafting-System</h3>
+          <p id="f7-desc">Zerlege erbeutete Ausrüstung in Fragmente, kombiniere sie zu höherer Seltenheit und würfle Sekundärwerte neu. Pity-System garantiert Legendarys.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h3 id="f8-title">Battle Pass & Achievements</h3>
+          <p id="f8-desc">Verdiene XP durch Spielaktionen und schalte Belohnungen im saisonalen Battle Pass frei. Über 25 Achievements warten auf dich.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3 id="f9-title">Allianzen & Multiplayer</h3>
+          <p id="f9-desc">Gründe oder tritt einer Allianz bei. Chatte mit Verbündeten, tausche Strategien aus und kämpfe gemeinsam um die galaktische Vorherrschaft.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <h2 id="cta-title">Bereit für die Galaxie?</h2>
+      <p id="cta-desc">Lade Velaris: Galactic Strategy jetzt kostenlos herunter und beginne dein Abenteuer.</p>
+      <a href="#" class="btn btn-primary" id="btn-cta">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-1h18v1H3zm8.5-4.5V4h1v12l5.5-5.5.7.7L12 17.9l-6.7-6.7.7-.7 5.5 5.5z"/></svg>
+        <span id="btn-cta-text">Kostenlos im Play Store</span>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-links">
+        <a href="privacy-policy.html" id="footer-privacy">Datenschutzerklärung</a>
+        <a href="mailto:velaris@velarisgalacticstrategy.com" id="footer-contact">Kontakt</a>
+      </div>
+      <p>&copy; 2026 Velaris: Galactic Strategy. <span id="footer-rights">Alle Rechte vorbehalten.</span></p>
+    </footer>
+  </div>
+
+  <script>
+    const translations = {
+      de: {
+        'hero-title': 'Erobere die Galaxie',
+        'hero-tagline': 'Baue dein Weltraumimperium, erforsche Technologien, befehlige mächtige Flotten und kämpfe um die Vorherrschaft in der Galaxie.',
+        'btn-download-text': 'Jetzt herunterladen',
+        'btn-more-text': 'Mehr erfahren',
+        'stat1': 'Gebäude & Technologien',
+        'stat2': 'Schiffsklassen',
+        'stat3': 'Einzigartige Admirale',
+        'stat4': 'Spielbare Fraktionen',
+        'features-title': 'Spielfeatures',
+        'f1-title': 'Imperiumsaufbau', 'f1-desc': 'Errichte Minen, Raffinerien und Solaranlagen. Upgrade deine Gebäude und maximiere die Ressourcenproduktion auf mehreren Kolonien.',
+        'f2-title': 'Forschung & Technologie', 'f2-desc': 'Erforsche über 15 Technologien in den Bereichen Wirtschaft, Militär und Exploration. Schalte mächtige Boni und neue Schiffsklassen frei.',
+        'f3-title': 'Flottenkommando', 'f3-desc': 'Baue Jäger, Kreuzer und Dreadnoughts. Weise Admirale und Flaggschiffe zu und sende bis zu 3 Flotten gleichzeitig auf Missionen.',
+        'f4-title': 'Galaxie-Erkundung', 'f4-desc': 'Erkunde unbekannte Sternensysteme, entdecke neue Planeten und gründe Kolonien. Jede Erkundung bringt wertvolle Ressourcen und Informationen.',
+        'f5-title': 'Taktische Kämpfe', 'f5-desc': 'Rundenbasierte Weltraumschlachten mit Schadens- und Schildmechaniken. Erbeute Ausrüstung und Ressourcen von besiegten Gegnern.',
+        'f6-title': 'Admirale & Flaggschiffe', 'f6-desc': 'Sammle 20 einzigartige Admirale mit verschiedenen Seltenheitsstufen. Rüste 3 legendäre Flaggschiffe mit Talentbäumen und Ausrüstung aus.',
+        'f7-title': 'Crafting-System', 'f7-desc': 'Zerlege erbeutete Ausrüstung in Fragmente, kombiniere sie zu höherer Seltenheit und würfle Sekundärwerte neu. Pity-System garantiert Legendarys.',
+        'f8-title': 'Battle Pass & Achievements', 'f8-desc': 'Verdiene XP durch Spielaktionen und schalte Belohnungen im saisonalen Battle Pass frei. Über 25 Achievements warten auf dich.',
+        'f9-title': 'Allianzen & Multiplayer', 'f9-desc': 'Gründe oder tritt einer Allianz bei. Chatte mit Verbündeten, tausche Strategien aus und kämpfe gemeinsam um die galaktische Vorherrschaft.',
+        'cta-title': 'Bereit für die Galaxie?',
+        'cta-desc': 'Lade Velaris: Galactic Strategy jetzt kostenlos herunter und beginne dein Abenteuer.',
+        'btn-cta-text': 'Kostenlos im Play Store',
+        'footer-privacy': 'Datenschutzerklärung',
+        'footer-contact': 'Kontakt',
+        'footer-rights': 'Alle Rechte vorbehalten.',
+        'nav-features': 'Features',
+        'nav-privacy': 'Datenschutz',
+      },
+      en: {
+        'hero-title': 'Conquer the Galaxy',
+        'hero-tagline': 'Build your space empire, research technologies, command powerful fleets, and fight for galactic supremacy.',
+        'btn-download-text': 'Download now',
+        'btn-more-text': 'Learn more',
+        'stat1': 'Buildings & Technologies',
+        'stat2': 'Ship Classes',
+        'stat3': 'Unique Admirals',
+        'stat4': 'Playable Factions',
+        'features-title': 'Game Features',
+        'f1-title': 'Empire Building', 'f1-desc': 'Build mines, refineries, and solar plants. Upgrade your buildings and maximize resource production across multiple colonies.',
+        'f2-title': 'Research & Technology', 'f2-desc': 'Research over 15 technologies across economy, military, and exploration. Unlock powerful bonuses and new ship classes.',
+        'f3-title': 'Fleet Command', 'f3-desc': 'Build fighters, cruisers, and dreadnoughts. Assign admirals and flagships, and send up to 3 fleets on missions simultaneously.',
+        'f4-title': 'Galaxy Exploration', 'f4-desc': 'Explore unknown star systems, discover new planets, and establish colonies. Every exploration yields valuable resources and intel.',
+        'f5-title': 'Tactical Combat', 'f5-desc': 'Turn-based space battles with damage and shield mechanics. Loot equipment and resources from defeated enemies.',
+        'f6-title': 'Admirals & Flagships', 'f6-desc': 'Collect 20 unique admirals with various rarity tiers. Equip 3 legendary flagships with talent trees and gear.',
+        'f7-title': 'Crafting System', 'f7-desc': 'Salvage looted equipment into fragments, combine them for higher rarity, and re-roll secondary stats. Pity system guarantees legendaries.',
+        'f8-title': 'Battle Pass & Achievements', 'f8-desc': 'Earn XP through gameplay actions and unlock rewards in the seasonal Battle Pass. Over 25 achievements await you.',
+        'f9-title': 'Alliances & Multiplayer', 'f9-desc': 'Create or join an alliance. Chat with allies, share strategies, and fight together for galactic dominance.',
+        'cta-title': 'Ready for the Galaxy?',
+        'cta-desc': 'Download Velaris: Galactic Strategy for free and begin your adventure.',
+        'btn-cta-text': 'Free on Play Store',
+        'footer-privacy': 'Privacy Policy',
+        'footer-contact': 'Contact',
+        'footer-rights': 'All rights reserved.',
+        'nav-features': 'Features',
+        'nav-privacy': 'Privacy Policy',
+      }
+    };
+
+    function switchLang(lang) {
+      const t = translations[lang];
+      for (const [id, text] of Object.entries(t)) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = text;
+      }
+      document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      document.documentElement.lang = lang;
+    }
+  </script>
+</body>
+</html>
