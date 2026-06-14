@@ -45,7 +45,7 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-image: 
+      background-image:
         radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.8), transparent),
         radial-gradient(1px 1px at 30% 50%, rgba(255,255,255,0.6), transparent),
         radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,0.7), transparent),
@@ -69,7 +69,7 @@
     }
 
     .container {
-      max-width: 960px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 0 24px;
       position: relative;
@@ -82,6 +82,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
     }
     .nav-brand {
       display: flex;
@@ -100,7 +102,9 @@
     }
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 24px;
+      flex-wrap: wrap;
     }
     .nav-links a {
       color: var(--muted);
@@ -180,15 +184,24 @@
       text-decoration: none;
     }
 
+    /* Section headings */
+    section h2.section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: var(--primary);
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 40px;
+      font-size: 0.95rem;
+    }
+
     /* Features */
     .features {
       padding: 60px 0;
-    }
-    .features h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 48px;
-      color: var(--primary);
     }
     .features-grid {
       display: grid;
@@ -240,6 +253,299 @@
       color: var(--muted);
       font-size: 0.85rem;
       margin-top: 8px;
+    }
+
+    /* ===================== FACTIONS ===================== */
+    .factions { padding: 60px 0; }
+    .faction-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .faction-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .faction-card img {
+      width: 64px; height: 64px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      object-fit: cover;
+    }
+    .faction-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .faction-card p {
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+    .faction-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--fcolor, var(--primary));
+    }
+    .faction-card.active {
+      border-color: var(--fcolor, var(--primary));
+      box-shadow: 0 0 0 1px var(--fcolor, var(--primary)), 0 12px 40px rgba(0,0,0,0.3);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent), var(--surface);
+    }
+    .faction-card.npc {
+      opacity: 0.85;
+    }
+    .faction-detail {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--fcolor, var(--primary));
+      border-radius: 16px;
+      padding: 28px;
+      transition: border-color 0.3s;
+    }
+    .faction-detail h3 {
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+      color: var(--fcolor, var(--primary));
+    }
+    .faction-detail .faction-subtitle {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+    .faction-detail .faction-lore {
+      color: var(--text);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+      white-space: pre-line;
+    }
+    .faction-bonuses {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .faction-bonus-chip {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      color: var(--text);
+    }
+    .faction-bonus-chip b { color: var(--fcolor, var(--primary)); }
+
+    /* ===================== SHIPS ===================== */
+    .ships { padding: 60px 0; }
+    .ship-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+    .ship-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      text-align: center;
+      transition: all 0.25s;
+    }
+    .ship-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      box-shadow: 0 12px 40px rgba(0, 229, 255, 0.1);
+    }
+    .ship-card img {
+      width: 84px; height: 84px;
+      object-fit: contain;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 4px 12px rgba(0,229,255,0.15));
+    }
+    .ship-card h4 {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+    .ship-card p {
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    /* ===================== ADMIRALS ===================== */
+    .admirals { padding: 60px 0; }
+    .rarity-filters {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+    .rarity-filters button {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .rarity-filters button.active {
+      color: var(--bg);
+      background: var(--primary);
+      border-color: var(--primary);
+    }
+    .admiral-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 16px;
+    }
+    .admiral-card {
+      perspective: 1200px;
+      height: 210px;
+      cursor: pointer;
+    }
+    .admiral-card-inner {
+      position: relative;
+      width: 100%; height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .admiral-card.flipped .admiral-card-inner {
+      transform: rotateY(180deg);
+    }
+    .admiral-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      border: 2px solid var(--rcolor, var(--border));
+      background: var(--surface);
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .admiral-face.front img {
+      width: 76px; height: 76px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 10px;
+      box-shadow: 0 0 20px var(--rglow, rgba(0,229,255,0.25));
+    }
+    .admiral-face.front h4 { font-size: 0.85rem; margin-bottom: 2px; }
+    .admiral-face.front .adm-title { font-size: 0.7rem; color: var(--muted); margin-bottom: 8px; }
+    .admiral-face.front .adm-rarity {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--rcolor, var(--primary));
+      margin-top: auto;
+    }
+    .admiral-face.back {
+      transform: rotateY(180deg);
+      justify-content: center;
+    }
+    .admiral-face.back p {
+      font-size: 0.74rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .admiral-face.back .adm-back-title {
+      font-size: 0.7rem;
+      color: var(--rcolor, var(--primary));
+      font-weight: 700;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===================== FLAGSHIPS ===================== */
+    .flagships { padding: 60px 0; }
+    .flagship-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .flagship-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .flagship-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 229, 255, 0.1);
+    }
+    .flagship-card img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    .flagship-card .flagship-body {
+      padding: 18px 20px;
+    }
+    .flagship-card h3 { font-size: 1.05rem; margin-bottom: 2px; color: var(--primary); }
+    .flagship-card .flagship-title { font-size: 0.78rem; color: var(--muted); margin-bottom: 10px; }
+    .flagship-card p { font-size: 0.85rem; color: var(--text); line-height: 1.6; }
+
+    /* ===================== ROADMAP ===================== */
+    .roadmap { padding: 60px 0; }
+    .roadmap-list {
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      padding-left: 28px;
+      border-left: 2px solid var(--border);
+    }
+    .roadmap-item {
+      position: relative;
+      padding-bottom: 28px;
+    }
+    .roadmap-item:last-child { padding-bottom: 0; }
+    .roadmap-item::before {
+      content: '';
+      position: absolute;
+      left: -34px;
+      top: 4px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--primary);
+    }
+    .roadmap-item.done::before {
+      background: var(--primary);
+    }
+    .roadmap-item h4 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+    .roadmap-item p {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .roadmap-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 2px 10px;
+      margin-left: 8px;
+      vertical-align: middle;
     }
 
     /* CTA */
@@ -309,6 +615,8 @@
       .hero .tagline { font-size: 1rem; }
       .stats { grid-template-columns: repeat(2, 1fr); }
       .nav-links { display: none; }
+      .admiral-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+      .admiral-card { height: 190px; }
     }
   </style>
 </head>
@@ -322,7 +630,11 @@
         <span>Velaris</span>
       </div>
       <div class="nav-links">
+        <a href="#factions" id="nav-factions">Fraktionen</a>
+        <a href="#fleet" id="nav-fleet">Flotte</a>
+        <a href="#admirals" id="nav-admirals">Admirale</a>
         <a href="#features" id="nav-features">Features</a>
+        <a href="#roadmap" id="nav-roadmap">Roadmap</a>
         <a href="privacy-policy.html" id="nav-privacy">Privacy Policy</a>
         <div class="lang-toggle">
           <button class="active" onclick="switchLang('de')">DE</button>
@@ -354,7 +666,7 @@
         <div class="stat-label" id="stat1">Gebäude & Technologien</div>
       </div>
       <div>
-        <div class="stat-number">6</div>
+        <div class="stat-number">9</div>
         <div class="stat-label" id="stat2">Schiffsklassen</div>
       </div>
       <div>
@@ -367,9 +679,24 @@
       </div>
     </section>
 
+    <!-- FACTIONS -->
+    <section class="factions" id="factions">
+      <h2 class="section-title" id="factions-title">Wähle deine Fraktion</h2>
+      <p class="section-sub" id="factions-sub">Jede Fraktion bringt eigene Boni und eine eigene Geschichte mit. Klicke auf eine Fraktion, um mehr zu erfahren.</p>
+      <div class="faction-grid" id="faction-grid"></div>
+      <div class="faction-detail" id="faction-detail"></div>
+    </section>
+
+    <!-- FLEET / SHIPS -->
+    <section class="ships" id="fleet">
+      <h2 class="section-title" id="ships-title">Deine Flotte</h2>
+      <p class="section-sub" id="ships-sub">Von wendigen Spähern bis zu schweren Schlachtschiffen — neun Schiffsklassen für jede Aufgabe.</p>
+      <div class="ship-grid" id="ship-grid"></div>
+    </section>
+
     <!-- FEATURES -->
     <section class="features" id="features">
-      <h2 id="features-title">Spielfeatures</h2>
+      <h2 class="section-title" id="features-title">Spielfeatures</h2>
       <div class="features-grid">
         <div class="feature-card">
           <div class="feature-icon">🏗️</div>
@@ -419,6 +746,33 @@
       </div>
     </section>
 
+    <!-- ADMIRALS -->
+    <section class="admirals" id="admirals">
+      <h2 class="section-title" id="admirals-title">Admirale</h2>
+      <p class="section-sub" id="admirals-sub">20 einzigartige Admirale mit eigenen Fähigkeiten und Geschichten. Klicke auf eine Karte, um ihre Akte zu lesen.</p>
+      <div class="rarity-filters" id="rarity-filters">
+        <button class="active" data-rarity="all" id="rf-all">Alle</button>
+        <button data-rarity="legendary" id="rf-legendary">Legendär</button>
+        <button data-rarity="epic" id="rf-epic">Episch</button>
+        <button data-rarity="rare" id="rf-rare">Selten</button>
+      </div>
+      <div class="admiral-grid" id="admiral-grid"></div>
+    </section>
+
+    <!-- FLAGSHIPS -->
+    <section class="flagships" id="flagships">
+      <h2 class="section-title" id="flagships-title">Flaggschiffe</h2>
+      <p class="section-sub" id="flagships-sub">Drei legendäre Flaggschiffe mit eigenen Talentbäumen und Ausrüstungsslots.</p>
+      <div class="flagship-grid" id="flagship-grid"></div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="roadmap" id="roadmap">
+      <h2 class="section-title" id="roadmap-title">Roadmap</h2>
+      <p class="section-sub" id="roadmap-sub">Velaris wird laufend weiterentwickelt. Das ist als Nächstes geplant:</p>
+      <div class="roadmap-list" id="roadmap-list"></div>
+    </section>
+
     <!-- CTA -->
     <section class="cta">
       <h2 id="cta-title">Bereit für die Galaxie?</h2>
@@ -440,6 +794,260 @@
   </div>
 
   <script>
+    // ============================================================
+    // DATA
+    // ============================================================
+    const FACTIONS = [
+      {
+        id: 'aurelian', img: 'assets/factions/aurelian.webp', color: '#FFD700',
+        name: { de: 'Aurelian Concordance', en: 'Aurelian Concordance' },
+        subtitle: { de: 'Stabilität · Einheit · Struktur', en: 'Stability · Unity · Structure' },
+        lore: {
+          de: 'Entstanden aus einer Koalition interstellarer Generationenschiffe, die nach dem katastrophalen Helios-Ereignis von der Erde flohen. Gestrandet fernab ihres Ursprungs, vereinigten sich die überlebenden Flotten unter einer strengen Koordinationsdoktrin. Ihre moderne Philosophie: Struktur ist Überleben. Ordnung ist Stärke.',
+          en: 'Born from a coalition of interstellar generation ships fleeing the catastrophic Helios Event. Stranded far from their origin, the surviving fleets united under a strict coordination doctrine. Their modern philosophy: structure is survival, order is strength.'
+        },
+        bonuses: [
+          { label: { de: 'Flottenproduktion', en: 'Fleet production' }, value: 0.02 },
+          { label: { de: 'Verteidigungsproduktion', en: 'Defense production' }, value: 0.02 },
+          { label: { de: 'Galaxy Mining', en: 'Galaxy mining' }, value: 0.02 },
+          { label: { de: 'Wrack-Bergung', en: 'Wreck salvage' }, value: 0.02 },
+          { label: { de: 'Forschungsgeschwindigkeit', en: 'Research speed' }, value: 0.02 },
+        ]
+      },
+      {
+        id: 'nythera', img: 'assets/factions/nythera.webp', color: '#00E5FF',
+        name: { de: 'Nythera Collective', en: 'Nythera Collective' },
+        subtitle: { de: 'Effizienz · Analyse · Optimierung', en: 'Efficiency · Analysis · Optimization' },
+        lore: {
+          de: 'Entwickelten sich auf einem Planeten voller elektromagnetischer Stürme und schufen ein neuro-resonantes Netzwerk für nahezu sofortigen Datenaustausch. Für die Nythera ist Territorium irrelevant — Informationsdichte definiert Wert.',
+          en: 'Evolved on a planet dominated by electromagnetic storms and developed a neuro-resonant network for near-instant data exchange. For the Nythera, territory is irrelevant — information density defines value.'
+        },
+        bonuses: [
+          { label: { de: 'Galaxy Mining', en: 'Galaxy mining' }, value: 0.05 },
+          { label: { de: 'Wrack-Bergung', en: 'Wreck salvage' }, value: 0.03 },
+          { label: { de: 'Forschungsgeschwindigkeit', en: 'Research speed' }, value: 0.02 },
+        ]
+      },
+      {
+        id: 'kharvex', img: 'assets/factions/kharvex.webp', color: '#FF3366',
+        name: { de: "Khar'Vex Dominion", en: "Khar'Vex Dominion" },
+        subtitle: { de: 'Stärke · Dominanz · Überlegenheit', en: 'Strength · Dominance · Superiority' },
+        lore: {
+          de: 'Geschmiedet auf einer Hochgravitationswelt, auf der nur extreme physische Widerstandsfähigkeit das Überleben sicherte. Der "Krieg der Sieben Kreise" vereinte ihre Welt unter einem Kriegsherrn. Stärke ist für sie kein Selbstzweck — sie ist der Beweis der Tauglichkeit.',
+          en: 'Forged on a high-gravity world where only extreme physical endurance ensured survival. The "War of Seven Circles" united their world under a single warlord. To them, strength is not cruelty — it is proof of fitness.'
+        },
+        bonuses: [
+          { label: { de: 'Flottenproduktion', en: 'Fleet production' }, value: 0.05 },
+          { label: { de: 'Verteidigungsproduktion', en: 'Defense production' }, value: 0.03 },
+        ]
+      },
+      {
+        id: 'virellian', img: 'assets/factions/virellian.webp', color: '#00FF88',
+        name: { de: 'Virellian Consortia', en: 'Virellian Consortia' },
+        subtitle: { de: 'Handel · Logistik · Einfluss', en: 'Trade · Logistics · Influence' },
+        lore: {
+          de: 'Stammen von einer mineralienarmen Welt, auf der Überleben von Kooperation abhing. Ihre Zivilisation strukturierte sich um Handelsgilden und Ressourcensyndikate. Für sie gilt: Kontrolle über den Fluss ist der Kontrolle über Territorium überlegen.',
+          en: 'Originate from a mineral-poor world where survival depended on cooperation. Their civilization is structured around trade guilds and resource syndicates. For them, controlling the flow is superior to controlling territory.'
+        },
+        bonuses: [
+          { label: { de: 'Ressourcenproduktion', en: 'Resource production' }, value: 0.05 },
+          { label: { de: 'Wrack-Bergung', en: 'Wreck salvage' }, value: 0.03 },
+          { label: { de: 'Handelsschiff-Geschwindigkeit', en: 'Trade ship speed' }, value: 0.03 },
+        ]
+      },
+      {
+        id: 'xalthyrr', img: 'assets/factions/xalthyrr.webp', color: '#9C27B0', npc: true,
+        name: { de: "Xal'Thyrr Schwarm", en: "Xal'Thyrr Swarm" },
+        subtitle: { de: 'Bio-mechanischer Schwarm · NPC-Bedrohung', en: 'Bio-mechanical swarm · NPC threat' },
+        lore: {
+          de: 'Keine Zivilisation, sondern ein adaptives bio-mechanisches Schwarm-Bewusstsein unbekannten Ursprungs. Reagiert aggressiv auf hohe technologische Aktivität — und dient als Druck, der Allianzen erzwingt und Stagnation verhindert.',
+          en: 'Not a civilization, but an adaptive bio-mechanical swarm consciousness of unknown origin. Reacts aggressively to high technological activity — serving as pressure that forces alliances and prevents stagnation.'
+        },
+        bonuses: []
+      },
+    ];
+
+    const SHIPS = [
+      { id: 'fighter', img: 'assets/ships/fighter.webp', name: { de: 'Jäger', en: 'Fighter' }, desc: { de: 'Schnelle, günstige Grundeinheit für frühe Gefechte.', en: 'Fast, cheap basic unit for early combat.' } },
+      { id: 'cruiser', img: 'assets/ships/cruiser.webp', name: { de: 'Kreuzer', en: 'Cruiser' }, desc: { de: 'Ausgewogene Kampfeinheit mit solider Feuerkraft und Panzerung.', en: 'Balanced combat unit with solid firepower and armor.' } },
+      { id: 'battleship', img: 'assets/ships/battleship.webp', name: { de: 'Schlachtschiff', en: 'Battleship' }, desc: { de: 'Schwere Kampfeinheit mit massiver Feuerkraft für entscheidende Schlachten.', en: 'Heavy combat unit with massive firepower for decisive battles.' } },
+      { id: 'scout', img: 'assets/ships/scout.webp', name: { de: 'Spähschiff', en: 'Scout' }, desc: { de: 'Erkundet Sternensysteme und sammelt Informationen über Feinde.', en: 'Explores star systems and gathers intel on enemies.' } },
+      { id: 'spy_probe', img: 'assets/ships/spy_probe.webp', name: { de: 'Spionagesonde', en: 'Spy Probe' }, desc: { de: 'Sammelt verdeckt Daten über feindliche Flotten und Verteidigung.', en: 'Covertly gathers data on enemy fleets and defenses.' } },
+      { id: 'colony_ship', img: 'assets/ships/colony_ship.webp', name: { de: 'Kolonieschiff', en: 'Colony Ship' }, desc: { de: 'Gründet neue Kolonien auf entdeckten Planeten.', en: 'Establishes new colonies on discovered planets.' } },
+      { id: 'cargo_ship', img: 'assets/ships/cargo_ship.webp', name: { de: 'Frachter', en: 'Cargo Ship' }, desc: { de: 'Transportiert große Mengen Ressourcen zwischen Kolonien.', en: 'Transports large amounts of resources between colonies.' } },
+      { id: 'transport_ship', img: 'assets/ships/transport_ship.webp', name: { de: 'Transporter', en: 'Transport Ship' }, desc: { de: 'Bewegt Truppen und Ausrüstung zwischen Systemen.', en: 'Moves troops and equipment between systems.' } },
+      { id: 'mining_vessel', img: 'assets/ships/mining_vessel.webp', name: { de: 'Bergbauschiff', en: 'Mining Vessel' }, desc: { de: 'Fördert Ressourcen aus Asteroiden und Trümmerfeldern.', en: 'Extracts resources from asteroids and debris fields.' } },
+    ];
+
+    const RARITY_COLORS = {
+      legendary: { color: '#FFD54F', glow: 'rgba(255, 213, 79, 0.35)' },
+      epic:      { color: '#BA68C8', glow: 'rgba(186, 104, 200, 0.35)' },
+      rare:      { color: '#4FC3F7', glow: 'rgba(79, 195, 247, 0.35)' },
+    };
+
+    const RARITY_LABEL = {
+      legendary: { de: 'Legendär', en: 'Legendary' },
+      epic: { de: 'Episch', en: 'Epic' },
+      rare: { de: 'Selten', en: 'Rare' },
+    };
+
+    const ADMIRALS = [
+      { id: 'vex_ironclad', rarity: 'legendary', name: 'Vex Ironclad', title: { de: 'Der Eiserne Kommandant', en: 'The Iron Commander' }, lore: { de: 'Ehemaliger Khar\'Vex-Kriegsherr, der sieben Schlachten ohne Verlust führte. Seine Taktiken gelten als Lehrbuch für aggressive Flottenmanöver.', en: 'Former Khar\'Vex warlord who fought seven battles without a single loss. His tactics are textbook examples of aggressive fleet maneuvers.' } },
+      { id: 'lyra_stormbreaker', rarity: 'epic', name: 'Lyra Stormbreaker', title: { de: 'Sturmjägerin', en: 'Storm Hunter' }, lore: { de: 'Aurelianische Flottenkapitänin, bekannt für blitzschnelle Flankenangriffe in Asteroidenfeldern.', en: 'Aurelian fleet captain known for lightning-fast flanking maneuvers in asteroid fields.' } },
+      { id: 'krath_bloodfang', rarity: 'epic', name: 'Krath Bloodfang', title: { de: 'Der Reißzahn', en: 'The Fang' }, lore: { de: 'Berüchtigter Khar\'Vex-Berserker, der seine Flotten in selbstmörderische Angriffe führt — und gewinnt.', en: 'Notorious Khar\'Vex berserker who leads his fleets into suicidal attacks — and wins.' } },
+      { id: 'seren_voidwalker', rarity: 'rare', name: 'Seren Voidwalker', title: { de: 'Schattenklinge', en: 'Shadow Blade' }, lore: { de: 'Nythera-Taktikerin, die feindliche Kommunikation stört, bevor der erste Schuss fällt.', en: 'Nythera tactician who jams enemy communications before the first shot is fired.' } },
+      { id: 'thorn_aegis', rarity: 'legendary', name: 'Thorn Aegis', title: { de: 'Der Unzerbrechliche', en: 'The Unbreakable' }, lore: { de: 'Legendärer Verteidiger, der die Belagerung von Arcturus Prime 47 Tage lang allein hielt.', en: 'Legendary defender who held the siege of Arcturus Prime alone for 47 days.' } },
+      { id: 'nova_quickstrike', rarity: 'rare', name: 'Nova Quickstrike', title: { de: 'Blitzangriff', en: 'Lightning Strike' }, lore: { de: 'Junge Pilotin, bekannt für unkonventionelle Manöver. Schnell, riskant, effektiv.', en: 'Young pilot known for unconventional maneuvers. Fast, risky, effective.' } },
+      { id: 'forge_titan', rarity: 'legendary', name: 'Forge Titan', title: { de: 'Meisterschmied', en: 'Master Smith' }, lore: { de: 'Virellianischer Industriemagnat, der die größten Orbitalwerften der Galaxie erbaute.', en: 'Virellian industrial magnate who built the galaxy\'s largest orbital shipyards.' } },
+      { id: 'mira_steelhand', rarity: 'epic', name: 'Mira Steelhand', title: { de: 'Die Architektin', en: 'The Architect' }, lore: { de: 'Aurelianische Ingenieurin, deren Baupläne die Effizienz planetarer Infrastruktur revolutionierten.', en: 'Aurelian engineer whose blueprints revolutionized planetary infrastructure efficiency.' } },
+      { id: 'grok_hammerfist', rarity: 'rare', name: 'Grok Hammerfist', title: { de: 'Der Vorarbeiter', en: 'The Foreman' }, lore: { de: 'Khar\'Vex-Arbeiterführer, der durch pure Willenskraft Produktionsrekorde bricht.', en: 'Khar\'Vex foreman who breaks production records through sheer willpower.' } },
+      { id: 'zara_blueprint', rarity: 'epic', name: 'Zara Blueprint', title: { de: 'Planerin der Sterne', en: 'Planner of the Stars' }, lore: { de: 'Nythera-Logistikerin, die Bauprozesse durch prädiktive Algorithmen optimiert.', en: 'Nythera logistician who optimizes construction through predictive algorithms.' } },
+      { id: 'rex_foundry', rarity: 'rare', name: 'Rex Foundry', title: { de: 'Schmelzmeister', en: 'Foundry Master' }, lore: { de: 'Virellianischer Metallurg, der neue Legierungen für schnelleren Schiffbau entwickelte.', en: 'Virellian metallurgist who developed new alloys for faster shipbuilding.' } },
+      { id: 'aurelia_goldweave', rarity: 'legendary', name: 'Aurelia Goldweave', title: { de: 'Die Goldweberin', en: 'The Gold Weaver' }, lore: { de: 'Legendäre virellianische Händlerin, deren Handelsrouten drei Sektoren verbinden.', en: 'Legendary Virellian trader whose routes connect three sectors.' } },
+      { id: 'dax_prospector', rarity: 'epic', name: 'Dax Prospector', title: { de: 'Der Schürfer', en: 'The Prospector' }, lore: { de: 'Aurelianischer Geologe, der die reichsten Asteroidenfelder der Galaxie kartierte.', en: 'Aurelian geologist who mapped the galaxy\'s richest asteroid fields.' } },
+      { id: 'crystal_seer', rarity: 'epic', name: 'Crystal Seer', title: { de: 'Kristallseherin', en: 'Crystal Seer' }, lore: { de: 'Nythera-Geologin, die Kristallvorkommen durch Resonanzmuster orten kann.', en: 'Nythera geologist who can locate crystal deposits through resonance patterns.' } },
+      { id: 'flux_trader', rarity: 'rare', name: 'Flux Trader', title: { de: 'Der Händler', en: 'The Trader' }, lore: { de: 'Virellianischer Frachtkapitän, der Handelsrouten schneller als jeder andere fliegt.', en: 'Virellian cargo captain who flies trade routes faster than anyone else.' } },
+      { id: 'helios_salvager', rarity: 'rare', name: 'Helios Salvager', title: { de: 'Wrackjäger', en: 'Wreck Hunter' }, lore: { de: 'Spezialist für die Bergung von Wracks und die Extraktion wertvoller Materialien.', en: 'Specialist in wreck salvage and extraction of valuable materials.' } },
+      { id: 'professor_nexus', rarity: 'legendary', name: 'Professor Nexus', title: { de: 'Der Gelehrte', en: 'The Scholar' }, lore: { de: 'Nythera-Wissenschaftler, dessen Entdeckungen drei technologische Revolutionen auslösten.', en: 'Nythera scientist whose discoveries triggered three technological revolutions.' } },
+      { id: 'dr_quantum', rarity: 'epic', name: 'Dr. Quantum', title: { de: 'Quantenforscherin', en: 'Quantum Researcher' }, lore: { de: 'Aurelianische Physikerin mit Durchbrüchen in der Hyperraum-Theorie.', en: 'Aurelian physicist with breakthroughs in hyperspace theory.' } },
+      { id: 'echo_analyst', rarity: 'rare', name: 'Echo Analyst', title: { de: 'Datenanalystin', en: 'Data Analyst' }, lore: { de: 'Nythera-Datenanalystin, die Forschungsprozesse durch Mustererkennung beschleunigt.', en: 'Nythera data analyst who accelerates research through pattern recognition.' } },
+      { id: 'sage_xenotech', rarity: 'rare', name: 'Sage Xenotech', title: { de: 'Xenotechnologe', en: 'Xenotech Specialist' }, lore: { de: 'Erforscht Xal\'Thyrr-Technologie und adaptiert sie für die Flotte.', en: 'Researches Xal\'Thyrr technology and adapts it for fleet use.' } },
+    ];
+
+    const FLAGSHIPS = [
+      { id: 'fs_aurora', img: 'assets/flagships/fs_aurora.webp', name: 'Aurora Vanguard', title: { de: 'Flaggschiff der Vorhut', en: 'Vanguard Flagship' }, lore: { de: 'Das erste Flaggschiff jedes Kommandanten. Ein vielseitiger Kreuzer für Erkundung und Verteidigung, dessen modulare Bauweise sich jeder Kampfsituation anpasst.', en: 'Every commander\'s first flagship. A versatile cruiser for exploration and defense, with a modular design that adapts to any combat situation.' } },
+      { id: 'fs_nemesis', img: 'assets/flagships/fs_nemesis.webp', name: 'Nemesis Dreadnought', title: { de: 'Schlachtschiff der Vergeltung', en: 'Dreadnought of Retribution' }, lore: { de: 'Ein massives Schlachtschiff, freigeschaltet durch fortgeschrittene Waffenforschung. Ausgelegt auf maximale Feuerkraft, kann es ganze Flottenverbände im Alleingang dezimieren.', en: 'A massive battleship unlocked through advanced weapons research. Built for maximum firepower, it can decimate entire fleets single-handedly.' } },
+      { id: 'fs_ethereal', img: 'assets/flagships/fs_ethereal.webp', name: 'Ethereal Sentinel', title: { de: 'Wächter der Sterne', en: 'Guardian of the Stars' }, lore: { de: 'Das ultimative Flaggschiff, freigeschaltet durch Meisterung der Schildtechnologie. Kombiniert überlegene Verteidigung mit fortschrittlicher Sensortechnik und dient als mobile Kommandozentrale.', en: 'The ultimate flagship, unlocked by mastering shield technology. Combines superior defense with advanced sensors and serves as a mobile command center.' } },
+    ];
+
+    const ROADMAP = [
+      { done: false, title: { de: 'Fraktions-Boni', en: 'Faction bonuses' }, desc: { de: 'Die Fraktionswahl erhält spürbare Auswirkungen auf das Gameplay.', en: 'Faction choice will have a tangible impact on gameplay.' } },
+      { done: false, title: { de: 'Einstellungen-Screen', en: 'Settings screen' }, desc: { de: 'Sprache ändern, Spielstand zurücksetzen, Benachrichtigungen verwalten.', en: 'Change language, reset save data, manage notifications.' } },
+      { done: false, title: { de: 'Lokale Push-Benachrichtigungen', en: 'Local push notifications' }, desc: { de: 'Benachrichtigungen, wenn Gebäude, Forschung oder Flotten fertig sind.', en: 'Get notified when buildings, research, or fleets are complete.' } },
+      { done: false, title: { de: 'Mehr Inhalt', en: 'More content' }, desc: { de: 'Weitere Gebäude, Schiffe und Technologien.', en: 'Additional buildings, ships, and technologies.' } },
+      { done: false, title: { de: 'Online-Features', en: 'Online features' }, desc: { de: 'Backend für Allianzen, Freunde und Chat.', en: 'Backend for alliances, friends, and chat.' } },
+    ];
+
+    // ============================================================
+    // RENDERING
+    // ============================================================
+    let currentLang = 'de';
+    let activeRarity = 'all';
+
+    function renderFactions() {
+      const grid = document.getElementById('faction-grid');
+      grid.innerHTML = '';
+      FACTIONS.forEach((f, idx) => {
+        const card = document.createElement('div');
+        card.className = 'faction-card' + (f.npc ? ' npc' : '') + (idx === 0 ? ' active' : '');
+        card.style.setProperty('--fcolor', f.color);
+        card.innerHTML = `<img src="${f.img}" alt="${f.name[currentLang]}"><h3>${f.name[currentLang]}</h3><p>${f.subtitle[currentLang]}</p>`;
+        card.addEventListener('click', () => selectFaction(f.id));
+        grid.appendChild(card);
+      });
+      selectFaction(FACTIONS[0].id);
+    }
+
+    function selectFaction(id) {
+      const f = FACTIONS.find(x => x.id === id);
+      document.querySelectorAll('#faction-grid .faction-card').forEach((card, idx) => {
+        card.classList.toggle('active', FACTIONS[idx].id === id);
+      });
+      const detail = document.getElementById('faction-detail');
+      detail.style.setProperty('--fcolor', f.color);
+      const noBonus = currentLang === 'de' ? 'Keine spielbare Fraktion — tritt als Bedrohung im Spiel auf.' : 'Not playable — appears as a threat in-game.';
+      const bonusesHtml = f.bonuses.length
+        ? `<div class="faction-bonuses">${f.bonuses.map(b => `<div class="faction-bonus-chip"><b>+${Math.round(b.value*100)}%</b> ${b.label[currentLang]}</div>`).join('')}</div>`
+        : `<div class="faction-bonuses"><div class="faction-bonus-chip">${noBonus}</div></div>`;
+      detail.innerHTML = `
+        <h3>${f.name[currentLang]}</h3>
+        <div class="faction-subtitle">${f.subtitle[currentLang]}</div>
+        <div class="faction-lore">${f.lore[currentLang]}</div>
+        ${bonusesHtml}
+      `;
+    }
+
+    function renderShips() {
+      const grid = document.getElementById('ship-grid');
+      grid.innerHTML = SHIPS.map(s => `
+        <div class="ship-card">
+          <img src="${s.img}" alt="${s.name[currentLang]}">
+          <h4>${s.name[currentLang]}</h4>
+          <p>${s.desc[currentLang]}</p>
+        </div>
+      `).join('');
+    }
+
+    function renderAdmirals() {
+      const grid = document.getElementById('admiral-grid');
+      const list = activeRarity === 'all' ? ADMIRALS : ADMIRALS.filter(a => a.rarity === activeRarity);
+      grid.innerHTML = list.map(a => {
+        const rc = RARITY_COLORS[a.rarity];
+        return `
+        <div class="admiral-card" style="--rcolor:${rc.color}; --rglow:${rc.glow}">
+          <div class="admiral-card-inner">
+            <div class="admiral-face front">
+              <img src="assets/admirals/${a.id}.webp" alt="${a.name}">
+              <h4>${a.name}</h4>
+              <div class="adm-title">${a.title[currentLang]}</div>
+              <div class="adm-rarity">${RARITY_LABEL[a.rarity][currentLang]}</div>
+            </div>
+            <div class="admiral-face back">
+              <div class="adm-back-title">${a.name}</div>
+              <p>${a.lore[currentLang]}</p>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+      grid.querySelectorAll('.admiral-card').forEach(card => {
+        card.addEventListener('click', () => card.classList.toggle('flipped'));
+      });
+    }
+
+    function renderFlagships() {
+      const grid = document.getElementById('flagship-grid');
+      grid.innerHTML = FLAGSHIPS.map(fs => `
+        <div class="flagship-card">
+          <img src="${fs.img}" alt="${fs.name}">
+          <div class="flagship-body">
+            <h3>${fs.name}</h3>
+            <div class="flagship-title">${fs.title[currentLang]}</div>
+            <p>${fs.lore[currentLang]}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderRoadmap() {
+      const list = document.getElementById('roadmap-list');
+      const badgeText = currentLang === 'de' ? 'Geplant' : 'Planned';
+      list.innerHTML = ROADMAP.map(r => `
+        <div class="roadmap-item ${r.done ? 'done' : ''}">
+          <h4>${r.title[currentLang]} <span class="roadmap-badge">${badgeText}</span></h4>
+          <p>${r.desc[currentLang]}</p>
+        </div>
+      `).join('');
+    }
+
+    function renderAll() {
+      renderFactions();
+      renderShips();
+      renderAdmirals();
+      renderFlagships();
+      renderRoadmap();
+    }
+
+    document.getElementById('rarity-filters').addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      activeRarity = btn.dataset.rarity;
+      document.querySelectorAll('#rarity-filters button').forEach(b => b.classList.toggle('active', b === btn));
+      renderAdmirals();
+    });
+
+    // ============================================================
+    // TRANSLATIONS (static UI text)
+    // ============================================================
     const translations = {
       de: {
         'hero-title': 'Erobere die Galaxie',
@@ -450,6 +1058,16 @@
         'stat2': 'Schiffsklassen',
         'stat3': 'Einzigartige Admirale',
         'stat4': 'Spielbare Fraktionen',
+        'nav-factions': 'Fraktionen',
+        'nav-fleet': 'Flotte',
+        'nav-admirals': 'Admirale',
+        'nav-features': 'Features',
+        'nav-roadmap': 'Roadmap',
+        'nav-privacy': 'Datenschutz',
+        'factions-title': 'Wähle deine Fraktion',
+        'factions-sub': 'Jede Fraktion bringt eigene Boni und eine eigene Geschichte mit. Klicke auf eine Fraktion, um mehr zu erfahren.',
+        'ships-title': 'Deine Flotte',
+        'ships-sub': 'Von wendigen Spähern bis zu schweren Schlachtschiffen — neun Schiffsklassen für jede Aufgabe.',
         'features-title': 'Spielfeatures',
         'f1-title': 'Imperiumsaufbau', 'f1-desc': 'Errichte Minen, Raffinerien und Solaranlagen. Upgrade deine Gebäude und maximiere die Ressourcenproduktion auf mehreren Kolonien.',
         'f2-title': 'Forschung & Technologie', 'f2-desc': 'Erforsche über 15 Technologien in den Bereichen Wirtschaft, Militär und Exploration. Schalte mächtige Boni und neue Schiffsklassen frei.',
@@ -460,14 +1078,19 @@
         'f7-title': 'Crafting-System', 'f7-desc': 'Zerlege erbeutete Ausrüstung in Fragmente, kombiniere sie zu höherer Seltenheit und würfle Sekundärwerte neu. Pity-System garantiert Legendarys.',
         'f8-title': 'Battle Pass & Achievements', 'f8-desc': 'Verdiene XP durch Spielaktionen und schalte Belohnungen im saisonalen Battle Pass frei. Über 25 Achievements warten auf dich.',
         'f9-title': 'Allianzen & Multiplayer', 'f9-desc': 'Gründe oder tritt einer Allianz bei. Chatte mit Verbündeten, tausche Strategien aus und kämpfe gemeinsam um die galaktische Vorherrschaft.',
+        'admirals-title': 'Admirale',
+        'admirals-sub': '20 einzigartige Admirale mit eigenen Fähigkeiten und Geschichten. Klicke auf eine Karte, um ihre Akte zu lesen.',
+        'rf-all': 'Alle', 'rf-legendary': 'Legendär', 'rf-epic': 'Episch', 'rf-rare': 'Selten',
+        'flagships-title': 'Flaggschiffe',
+        'flagships-sub': 'Drei legendäre Flaggschiffe mit eigenen Talentbäumen und Ausrüstungsslots.',
+        'roadmap-title': 'Roadmap',
+        'roadmap-sub': 'Velaris wird laufend weiterentwickelt. Das ist als Nächstes geplant:',
         'cta-title': 'Bereit für die Galaxie?',
         'cta-desc': 'Lade Velaris: Galactic Strategy jetzt kostenlos herunter und beginne dein Abenteuer.',
         'btn-cta-text': 'Kostenlos im Play Store',
         'footer-privacy': 'Datenschutzerklärung',
         'footer-contact': 'Kontakt',
         'footer-rights': 'Alle Rechte vorbehalten.',
-        'nav-features': 'Features',
-        'nav-privacy': 'Datenschutz',
       },
       en: {
         'hero-title': 'Conquer the Galaxy',
@@ -478,6 +1101,16 @@
         'stat2': 'Ship Classes',
         'stat3': 'Unique Admirals',
         'stat4': 'Playable Factions',
+        'nav-factions': 'Factions',
+        'nav-fleet': 'Fleet',
+        'nav-admirals': 'Admirals',
+        'nav-features': 'Features',
+        'nav-roadmap': 'Roadmap',
+        'nav-privacy': 'Privacy Policy',
+        'factions-title': 'Choose Your Faction',
+        'factions-sub': 'Each faction brings its own bonuses and backstory. Click a faction to learn more.',
+        'ships-title': 'Your Fleet',
+        'ships-sub': 'From agile scouts to heavy battleships — nine ship classes for every task.',
         'features-title': 'Game Features',
         'f1-title': 'Empire Building', 'f1-desc': 'Build mines, refineries, and solar plants. Upgrade your buildings and maximize resource production across multiple colonies.',
         'f2-title': 'Research & Technology', 'f2-desc': 'Research over 15 technologies across economy, military, and exploration. Unlock powerful bonuses and new ship classes.',
@@ -488,18 +1121,24 @@
         'f7-title': 'Crafting System', 'f7-desc': 'Salvage looted equipment into fragments, combine them for higher rarity, and re-roll secondary stats. Pity system guarantees legendaries.',
         'f8-title': 'Battle Pass & Achievements', 'f8-desc': 'Earn XP through gameplay actions and unlock rewards in the seasonal Battle Pass. Over 25 achievements await you.',
         'f9-title': 'Alliances & Multiplayer', 'f9-desc': 'Create or join an alliance. Chat with allies, share strategies, and fight together for galactic dominance.',
+        'admirals-title': 'Admirals',
+        'admirals-sub': '20 unique admirals with their own abilities and backstories. Click a card to read their file.',
+        'rf-all': 'All', 'rf-legendary': 'Legendary', 'rf-epic': 'Epic', 'rf-rare': 'Rare',
+        'flagships-title': 'Flagships',
+        'flagships-sub': 'Three legendary flagships, each with its own talent tree and equipment slots.',
+        'roadmap-title': 'Roadmap',
+        'roadmap-sub': 'Velaris is under continuous development. Here\'s what\'s coming next:',
         'cta-title': 'Ready for the Galaxy?',
         'cta-desc': 'Download Velaris: Galactic Strategy for free and begin your adventure.',
         'btn-cta-text': 'Free on Play Store',
         'footer-privacy': 'Privacy Policy',
         'footer-contact': 'Contact',
         'footer-rights': 'All rights reserved.',
-        'nav-features': 'Features',
-        'nav-privacy': 'Privacy Policy',
       }
     };
 
     function switchLang(lang) {
+      currentLang = lang;
       const t = translations[lang];
       for (const [id, text] of Object.entries(t)) {
         const el = document.getElementById(id);
@@ -508,7 +1147,14 @@
       document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
       event.target.classList.add('active');
       document.documentElement.lang = lang;
+      renderAll();
+      // restore rarity filter active state
+      document.querySelectorAll('#rarity-filters button').forEach(b => {
+        b.classList.toggle('active', b.dataset.rarity === activeRarity);
+      });
     }
+
+    renderAll();
   </script>
 </body>
 </html>
