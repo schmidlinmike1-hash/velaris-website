@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velaris: Galactic Strategy — Delete Account</title>
+  <style>
+    :root {
+      --bg: #0A0E17;
+      --surface: #131A2B;
+      --text: #E8ECF4;
+      --muted: #6B7A99;
+      --primary: #00E5FF;
+      --border: #1E2A42;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 20px;
+    }
+    .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+    h1 { font-size: 2rem; color: var(--primary); margin-bottom: 8px; }
+    .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 40px; }
+    h2 {
+      font-size: 1.3rem; color: var(--primary);
+      margin-top: 32px; margin-bottom: 12px;
+      padding-bottom: 8px; border-bottom: 1px solid var(--border);
+    }
+    p { margin-bottom: 16px; }
+    ol, ul { margin-bottom: 16px; padding-left: 24px; }
+    li { margin-bottom: 8px; }
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px; margin: 20px 0;
+    }
+    .lang-switch { display: flex; gap: 12px; margin-bottom: 32px; }
+    .lang-btn {
+      padding: 8px 20px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text); cursor: pointer;
+      font-size: 0.9rem; transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: var(--primary); color: var(--bg);
+      border-color: var(--primary); font-weight: 600;
+    }
+    .lang-btn:hover:not(.active) { border-color: var(--primary); }
+    .section { display: none; }
+    .section.active { display: block; }
+    footer {
+      margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border);
+      color: var(--muted); font-size: 0.85rem; text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Velaris: Galactic Strategy</h1>
+    <p class="subtitle">Delete Account &amp; Data / Konto &amp; Daten löschen</p>
+
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="switchLang('en')">English</button>
+      <button class="lang-btn" onclick="switchLang('de')">Deutsch</button>
+    </div>
+
+    <!-- ENGLISH VERSION -->
+    <div id="en" class="section active">
+      <h2>Delete your account in the app (recommended)</h2>
+      <p>You can permanently delete your Velaris account and all associated online data directly in the game:</p>
+      <ol>
+        <li>Open <strong>Velaris: Galactic Strategy</strong>.</li>
+        <li>Go to <strong>Settings → Account → Delete account</strong>.</li>
+        <li>Confirm the deletion.</li>
+      </ol>
+      <p>This is immediate and irreversible.</p>
+
+      <h2>What gets deleted</h2>
+      <p>Deleting your account permanently removes: your login (email), your public profile (commander name, avatar, faction, statistics), your chat and alliance messages, friendships, alliance membership, resource transports, player-vs-player records, and your position in the shared galaxy.</p>
+      <p>Your local single-player progress lives only on your device; remove it by clearing the app's data or uninstalling the game.</p>
+
+      <h2>Request deletion by email</h2>
+      <p>If you can no longer access the game, email us from the address you used to register and we will delete your account and data within 30 days:</p>
+      <div class="card">
+        <p><strong>Email:</strong> velaris@velarisgalacticstrategy.com</p>
+        <p><strong>Subject:</strong> Account deletion request</p>
+      </div>
+
+      <p>See also our <a href="https://velarisgalacticstrategy.com/privacy-policy.html">Privacy Policy</a>.</p>
+    </div>
+
+    <!-- GERMAN VERSION -->
+    <div id="de" class="section">
+      <h2>Konto in der App löschen (empfohlen)</h2>
+      <p>Sie können Ihr Velaris-Konto und alle zugehörigen Online-Daten direkt im Spiel dauerhaft löschen:</p>
+      <ol>
+        <li>Öffnen Sie <strong>Velaris: Galactic Strategy</strong>.</li>
+        <li>Gehen Sie zu <strong>Einstellungen → Konto → Konto löschen</strong>.</li>
+        <li>Bestätigen Sie die Löschung.</li>
+      </ol>
+      <p>Die Löschung erfolgt sofort und ist unwiderruflich.</p>
+
+      <h2>Was gelöscht wird</h2>
+      <p>Beim Löschen Ihres Kontos werden dauerhaft entfernt: Ihr Login (E-Mail), Ihr öffentliches Profil (Kommandantenname, Avatar, Fraktion, Statistiken), Ihre Chat- und Allianz-Nachrichten, Freundschaften, Allianz-Mitgliedschaft, Ressourcen-Transporte, Spieler-gegen-Spieler-Daten sowie Ihre Position in der geteilten Galaxie.</p>
+      <p>Ihr lokaler Einzelspieler-Fortschritt liegt nur auf Ihrem Gerät; entfernen Sie ihn durch Löschen der App-Daten oder Deinstallation.</p>
+
+      <h2>Löschung per E-Mail anfordern</h2>
+      <p>Wenn Sie keinen Zugriff mehr auf das Spiel haben, schreiben Sie uns von der bei der Registrierung verwendeten Adresse; wir löschen Ihr Konto und Ihre Daten innerhalb von 30 Tagen:</p>
+      <div class="card">
+        <p><strong>E-Mail:</strong> velaris@velarisgalacticstrategy.com</p>
+        <p><strong>Betreff:</strong> Antrag auf Kontolöschung</p>
+      </div>
+
+      <p>Siehe auch unsere <a href="https://velarisgalacticstrategy.com/privacy-policy.html">Datenschutzerklärung</a>.</p>
+    </div>
+
+    <footer>
+      &copy; 2026 Velaris: Galactic Strategy. All rights reserved. / Alle Rechte vorbehalten.
+    </footer>
+  </div>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(lang).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>

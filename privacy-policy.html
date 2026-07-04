@@ -97,7 +97,6 @@
 </head>
 <body>
   <div class="container">
-    <p style="margin-bottom: 12px;"><a href="index.html" style="color: var(--muted); font-size: 0.85rem;">&larr; Zurück zur Startseite / Back to Home</a></p>
     <h1>Velaris: Galactic Strategy</h1>
     <p class="subtitle">Privacy Policy / Datenschutzerklärung</p>
 
@@ -108,61 +107,62 @@
 
     <!-- ENGLISH VERSION -->
     <div id="en" class="section active">
-      <p><strong>Effective Date:</strong> February 27, 2026</p>
+      <p><strong>Effective Date:</strong> July 4, 2026</p>
 
       <h2>1. Introduction</h2>
-      <p>Welcome to Velaris: Galactic Strategy ("the Game"). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard information when you use our mobile application.</p>
+      <p>Welcome to Velaris: Galactic Strategy ("the Game"). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains what information we collect, how we use it, and the choices you have. The Game has a single-player part that runs offline on your device, and online multiplayer features (account, shared galaxy, chat, friends, alliances, player-vs-player) that require an account and communicate with our backend.</p>
 
       <h2>2. Information We Collect</h2>
-      <div class="card">
-        <p><strong>Local Data Only:</strong> Velaris: Galactic Strategy is primarily an offline game. All game progress, settings, and preferences are stored locally on your device using standard device storage mechanisms.</p>
-      </div>
-      <p>The Game may collect the following types of information:</p>
-      <ul>
-        <li><strong>Game Progress:</strong> Building levels, fleet compositions, research status, resources, achievements, and other gameplay data — stored locally on your device.</li>
-        <li><strong>Preferences:</strong> Language selection, display settings, and notification preferences — stored locally on your device.</li>
-        <li><strong>Device Information:</strong> Basic device type and operating system version for compatibility purposes.</li>
-      </ul>
+      <p><strong>a) Account data.</strong> To use the online features you create an account with your <strong>email address</strong> and a password. Passwords are handled by our authentication provider (Supabase) and are stored only in hashed form; we never see your plain-text password.</p>
+      <p><strong>b) Public profile.</strong> When you play online we store a profile that other players can see: your chosen <strong>commander name</strong>, avatar, faction, and gameplay statistics (e.g. total power, fleet power, PvP results, rankings) used for leaderboards and matchmaking.</p>
+      <p><strong>c) Multiplayer content and interactions.</strong> If you use the online features we store the data needed to deliver them: <strong>chat messages</strong> you send to other players and to alliances, friend requests and friendships, alliance membership and alliance chat, resource transports, and player-vs-player attacks. Your home position in the shared galaxy is stored so other players can discover it.</p>
+      <p><strong>d) Local game data.</strong> Your single-player progress (buildings, research, fleets, resources, settings, language) is stored locally on your device. A summary may be synced to your account to power the online features above.</p>
+      <p><strong>e) Device / technical data.</strong> Basic device and OS information for compatibility, and — only if you enable them — local push notifications.</p>
 
       <h2>3. How We Use Information</h2>
-      <p>We use the collected information solely for the following purposes:</p>
       <ul>
-        <li>To provide and maintain the Game's functionality</li>
-        <li>To save and restore your game progress</li>
-        <li>To remember your language and display preferences</li>
-        <li>To improve the Game's performance and user experience</li>
+        <li>To create and secure your account and sign you in</li>
+        <li>To provide the online features (shared galaxy, chat, friends, alliances, PvP, transports, leaderboards)</li>
+        <li>To show your public profile and rankings to other players</li>
+        <li>To save and restore your progress and preferences</li>
+        <li>To keep the Game working, safe, and fair (e.g. handling reports and blocks)</li>
       </ul>
+      <p>We do not sell your personal data, and we do not use it for advertising or cross-app tracking.</p>
 
       <h2>4. Data Storage and Security</h2>
-      <p>Your game data is stored locally on your device. We do not transmit your personal gameplay data to external servers unless you explicitly use features that require server communication (such as alliance features or cloud sync, if available). We implement appropriate technical measures to protect your data.</p>
+      <p>Online data is stored in our backend hosted by <strong>Supabase</strong> (a data processor acting on our behalf). Access is protected by row-level security so players can only read the data they are permitted to see. Data is transmitted over encrypted connections (HTTPS/TLS). Single-player data stays on your device.</p>
 
       <h2>5. Third-Party Services</h2>
-      <p>The Game may use the following third-party services:</p>
       <ul>
-        <li><strong>Expo / React Native:</strong> The application framework used to build the Game.</li>
-        <li><strong>Google Play Services:</strong> For app distribution on Android devices.</li>
+        <li><strong>Supabase</strong> — authentication, database, and realtime backend for the online features.</li>
+        <li><strong>Expo / React Native</strong> — the application framework used to build the Game.</li>
+        <li><strong>Google Play</strong> — app distribution on Android.</li>
       </ul>
-      <p>These services may collect certain technical data as described in their respective privacy policies.</p>
+      <p>These services may process certain technical data as described in their respective privacy policies.</p>
 
-      <h2>6. Children's Privacy</h2>
-      <p>The Game is not specifically directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.</p>
+      <h2>6. User-Generated Content, Blocking &amp; Reporting</h2>
+      <p>The online features let players communicate (chat, alliance chat) and choose display names. We do not tolerate harassment or abusive content. Inside the Game you can <strong>block</strong> another player (you will no longer see their messages) and <strong>report</strong> a player for review. Reports are reviewed and may lead to action against the reported account.</p>
 
-      <h2>7. In-App Purchases</h2>
-      <p>The Game may offer in-app purchases. All payment processing is handled by the respective app store (Google Play Store). We do not collect or store any payment information.</p>
+      <h2>7. Children's Privacy</h2>
+      <p>The Game is not directed at children under 13, and we do not knowingly collect personal information from them. If you believe a child has provided us personal information, please contact us and we will delete it.</p>
 
-      <h2>8. Your Rights</h2>
-      <p>You have the right to:</p>
+      <h2>8. In-App Purchases</h2>
+      <p>The Game may offer optional in-app purchases in the future. Any payment processing would be handled entirely by the app store (Google Play). We do not collect or store payment information.</p>
+
+      <h2>9. Your Rights &amp; Account Deletion</h2>
+      <p>You can:</p>
       <ul>
-        <li>Access your game data (stored locally on your device)</li>
-        <li>Delete your game data by uninstalling the Game or clearing app data</li>
-        <li>Change your preferences at any time within the Game's settings</li>
+        <li><strong>Delete your account and all associated online data</strong> at any time inside the Game: open <em>Settings → Account → Delete account</em>. This permanently removes your account, public profile, messages, friendships, alliance membership and other personal online data, and cannot be undone.</li>
+        <li>Request account and data deletion by email if you cannot access the Game — see <a href="https://velarisgalacticstrategy.com/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a>.</li>
+        <li>Delete your local single-player data by clearing the app's data or uninstalling the Game.</li>
+        <li>Access or correct your data, and change your preferences, within the Game.</li>
       </ul>
 
-      <h2>9. Changes to This Policy</h2>
-      <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy within the Game or on this page. Changes are effective immediately upon posting.</p>
+      <h2>10. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. We will post the updated policy on this page; changes are effective upon posting.</p>
 
-      <h2>10. Contact Us</h2>
-      <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+      <h2>11. Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy or your data, please contact us at:</p>
       <div class="card">
         <p><strong>Email:</strong> velaris@velarisgalacticstrategy.com</p>
       </div>
@@ -170,61 +170,62 @@
 
     <!-- GERMAN VERSION -->
     <div id="de" class="section">
-      <p><strong>Gültig ab:</strong> 27. Februar 2026</p>
+      <p><strong>Gültig ab:</strong> 4. Juli 2026</p>
 
       <h2>1. Einleitung</h2>
-      <p>Willkommen bei Velaris: Galactic Strategy ("das Spiel"). Wir respektieren Ihre Privatsphäre und verpflichten uns zum Schutz Ihrer persönlichen Daten. Diese Datenschutzerklärung erläutert, wie wir Informationen erheben, verwenden und schützen, wenn Sie unsere mobile Anwendung nutzen.</p>
+      <p>Willkommen bei Velaris: Galactic Strategy ("das Spiel"). Wir respektieren Ihre Privatsphäre und schützen Ihre personenbezogenen Daten. Diese Datenschutzerklärung erläutert, welche Daten wir erheben, wie wir sie verwenden und welche Wahlmöglichkeiten Sie haben. Das Spiel hat einen Einzelspieler-Teil, der offline auf Ihrem Gerät läuft, und Online-Mehrspieler-Funktionen (Konto, geteilte Galaxie, Chat, Freunde, Allianzen, Spieler-gegen-Spieler), die ein Konto erfordern und mit unserem Backend kommunizieren.</p>
 
       <h2>2. Welche Daten wir erheben</h2>
-      <div class="card">
-        <p><strong>Nur lokale Daten:</strong> Velaris: Galactic Strategy ist primär ein Offline-Spiel. Sämtlicher Spielfortschritt, Einstellungen und Präferenzen werden lokal auf Ihrem Gerät gespeichert.</p>
-      </div>
-      <p>Das Spiel kann folgende Arten von Informationen erheben:</p>
-      <ul>
-        <li><strong>Spielfortschritt:</strong> Gebäudestufen, Flottenzusammensetzungen, Forschungsstatus, Ressourcen, Errungenschaften und andere Spieldaten — lokal auf Ihrem Gerät gespeichert.</li>
-        <li><strong>Einstellungen:</strong> Sprachauswahl, Anzeigeeinstellungen und Benachrichtigungspräferenzen — lokal auf Ihrem Gerät gespeichert.</li>
-        <li><strong>Geräteinformationen:</strong> Grundlegende Gerätetyp- und Betriebssystemversion für Kompatibilitätszwecke.</li>
-      </ul>
+      <p><strong>a) Kontodaten.</strong> Für die Online-Funktionen erstellen Sie ein Konto mit Ihrer <strong>E-Mail-Adresse</strong> und einem Passwort. Passwörter werden von unserem Authentifizierungsdienst (Supabase) verarbeitet und nur in gehashter Form gespeichert; Ihr Klartext-Passwort sehen wir nie.</p>
+      <p><strong>b) Öffentliches Profil.</strong> Beim Online-Spiel speichern wir ein Profil, das andere Spieler sehen können: Ihren gewählten <strong>Kommandantennamen</strong>, Avatar, Ihre Fraktion und Spielstatistiken (z. B. Gesamtmacht, Flottenmacht, PvP-Ergebnisse, Ranglistenplatzierungen) für Bestenlisten und Matchmaking.</p>
+      <p><strong>c) Mehrspieler-Inhalte und -Interaktionen.</strong> Wenn Sie die Online-Funktionen nutzen, speichern wir die dafür nötigen Daten: <strong>Chat-Nachrichten</strong> an andere Spieler und an Allianzen, Freundschaftsanfragen und Freundschaften, Allianz-Mitgliedschaft und Allianz-Chat, Ressourcen-Transporte sowie Spieler-gegen-Spieler-Angriffe. Ihre Heimatposition in der geteilten Galaxie wird gespeichert, damit andere Spieler sie entdecken können.</p>
+      <p><strong>d) Lokale Spieldaten.</strong> Ihr Einzelspieler-Fortschritt (Gebäude, Forschung, Flotten, Ressourcen, Einstellungen, Sprache) wird lokal auf Ihrem Gerät gespeichert. Eine Zusammenfassung kann mit Ihrem Konto synchronisiert werden, um die obigen Online-Funktionen zu ermöglichen.</p>
+      <p><strong>e) Geräte-/technische Daten.</strong> Grundlegende Geräte- und Betriebssysteminformationen zur Kompatibilität sowie — nur wenn Sie sie aktivieren — lokale Push-Benachrichtigungen.</p>
 
       <h2>3. Wie wir Informationen verwenden</h2>
-      <p>Wir verwenden die erhobenen Informationen ausschließlich für folgende Zwecke:</p>
       <ul>
-        <li>Bereitstellung und Aufrechterhaltung der Spielfunktionalität</li>
-        <li>Speicherung und Wiederherstellung Ihres Spielfortschritts</li>
-        <li>Speicherung Ihrer Sprach- und Anzeigeeinstellungen</li>
-        <li>Verbesserung der Spielleistung und Benutzererfahrung</li>
+        <li>Zum Erstellen und Absichern Ihres Kontos und zur Anmeldung</li>
+        <li>Zur Bereitstellung der Online-Funktionen (geteilte Galaxie, Chat, Freunde, Allianzen, PvP, Transporte, Bestenlisten)</li>
+        <li>Zur Anzeige Ihres öffentlichen Profils und Ihrer Platzierungen für andere Spieler</li>
+        <li>Zur Speicherung und Wiederherstellung Ihres Fortschritts und Ihrer Einstellungen</li>
+        <li>Um das Spiel funktionsfähig, sicher und fair zu halten (z. B. Bearbeitung von Meldungen und Blockierungen)</li>
       </ul>
+      <p>Wir verkaufen Ihre personenbezogenen Daten nicht und nutzen sie nicht für Werbung oder App-übergreifendes Tracking.</p>
 
       <h2>4. Datenspeicherung und Sicherheit</h2>
-      <p>Ihre Spieldaten werden lokal auf Ihrem Gerät gespeichert. Wir übertragen Ihre persönlichen Spieldaten nicht an externe Server, es sei denn, Sie nutzen ausdrücklich Funktionen, die eine Serverkommunikation erfordern (wie Allianz-Funktionen oder Cloud-Synchronisation, falls verfügbar). Wir setzen angemessene technische Maßnahmen zum Schutz Ihrer Daten ein.</p>
+      <p>Online-Daten werden in unserem bei <strong>Supabase</strong> gehosteten Backend gespeichert (Auftragsverarbeiter in unserem Auftrag). Der Zugriff ist durch Row-Level-Security geschützt, sodass Spieler nur die für sie zulässigen Daten lesen können. Die Übertragung erfolgt verschlüsselt (HTTPS/TLS). Einzelspieler-Daten verbleiben auf Ihrem Gerät.</p>
 
       <h2>5. Dienste Dritter</h2>
-      <p>Das Spiel kann folgende Dienste Dritter nutzen:</p>
       <ul>
-        <li><strong>Expo / React Native:</strong> Das Anwendungsframework, mit dem das Spiel erstellt wurde.</li>
-        <li><strong>Google Play Services:</strong> Für die App-Verteilung auf Android-Geräten.</li>
+        <li><strong>Supabase</strong> — Authentifizierung, Datenbank und Echtzeit-Backend für die Online-Funktionen.</li>
+        <li><strong>Expo / React Native</strong> — das Anwendungsframework, mit dem das Spiel erstellt wurde.</li>
+        <li><strong>Google Play</strong> — App-Verteilung auf Android.</li>
       </ul>
-      <p>Diese Dienste können bestimmte technische Daten erheben, wie in ihren jeweiligen Datenschutzerklärungen beschrieben.</p>
+      <p>Diese Dienste können bestimmte technische Daten verarbeiten, wie in ihren jeweiligen Datenschutzerklärungen beschrieben.</p>
 
-      <h2>6. Datenschutz für Kinder</h2>
-      <p>Das Spiel richtet sich nicht speziell an Kinder unter 13 Jahren. Wir erheben wissentlich keine persönlichen Daten von Kindern unter 13 Jahren. Wenn Sie ein Elternteil oder Erziehungsberechtigter sind und glauben, dass Ihr Kind uns persönliche Daten zur Verfügung gestellt hat, kontaktieren Sie uns bitte.</p>
+      <h2>6. Nutzergenerierte Inhalte, Blockieren &amp; Melden</h2>
+      <p>Die Online-Funktionen erlauben Kommunikation (Chat, Allianz-Chat) und frei wählbare Anzeigenamen. Belästigung oder missbräuchliche Inhalte dulden wir nicht. Im Spiel können Sie andere Spieler <strong>blockieren</strong> (Sie sehen deren Nachrichten dann nicht mehr) und zur Prüfung <strong>melden</strong>. Meldungen werden geprüft und können zu Maßnahmen gegen das gemeldete Konto führen.</p>
 
-      <h2>7. In-App-Käufe</h2>
-      <p>Das Spiel kann In-App-Käufe anbieten. Die gesamte Zahlungsabwicklung erfolgt über den jeweiligen App Store (Google Play Store). Wir erheben oder speichern keine Zahlungsinformationen.</p>
+      <h2>7. Datenschutz für Kinder</h2>
+      <p>Das Spiel richtet sich nicht an Kinder unter 13 Jahren, und wir erheben wissentlich keine personenbezogenen Daten von ihnen. Wenn Sie glauben, dass ein Kind uns personenbezogene Daten übermittelt hat, kontaktieren Sie uns bitte; wir löschen sie dann.</p>
 
-      <h2>8. Ihre Rechte</h2>
-      <p>Sie haben das Recht:</p>
+      <h2>8. In-App-Käufe</h2>
+      <p>Das Spiel kann künftig optionale In-App-Käufe anbieten. Eine etwaige Zahlungsabwicklung erfolgt vollständig über den App Store (Google Play). Wir erheben oder speichern keine Zahlungsinformationen.</p>
+
+      <h2>9. Ihre Rechte &amp; Kontolöschung</h2>
+      <p>Sie können:</p>
       <ul>
-        <li>Auf Ihre Spieldaten zuzugreifen (lokal auf Ihrem Gerät gespeichert)</li>
-        <li>Ihre Spieldaten durch Deinstallation des Spiels oder Löschen der App-Daten zu entfernen</li>
-        <li>Ihre Einstellungen jederzeit in den Spieleinstellungen zu ändern</li>
+        <li><strong>Ihr Konto und alle zugehörigen Online-Daten jederzeit im Spiel löschen</strong>: <em>Einstellungen → Konto → Konto löschen</em>. Dies entfernt Ihr Konto, öffentliches Profil, Nachrichten, Freundschaften, Allianz-Mitgliedschaft und andere personenbezogene Online-Daten dauerhaft und kann nicht rückgängig gemacht werden.</li>
+        <li>Die Löschung von Konto und Daten per E-Mail anfordern, falls Sie keinen Zugriff auf das Spiel haben — siehe <a href="https://velarisgalacticstrategy.com/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a>.</li>
+        <li>Ihre lokalen Einzelspieler-Daten durch Löschen der App-Daten oder Deinstallation entfernen.</li>
+        <li>Ihre Daten im Spiel einsehen oder korrigieren und Ihre Einstellungen ändern.</li>
       </ul>
 
-      <h2>9. Änderungen dieser Richtlinie</h2>
-      <p>Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Wir werden Sie über Änderungen informieren, indem wir die neue Datenschutzerklärung im Spiel oder auf dieser Seite veröffentlichen. Änderungen treten sofort nach Veröffentlichung in Kraft.</p>
+      <h2>10. Änderungen dieser Richtlinie</h2>
+      <p>Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Die aktualisierte Fassung veröffentlichen wir auf dieser Seite; Änderungen treten mit Veröffentlichung in Kraft.</p>
 
-      <h2>10. Kontakt</h2>
-      <p>Wenn Sie Fragen zu dieser Datenschutzerklärung haben, kontaktieren Sie uns bitte unter:</p>
+      <h2>11. Kontakt</h2>
+      <p>Wenn Sie Fragen zu dieser Datenschutzerklärung oder Ihren Daten haben, kontaktieren Sie uns bitte unter:</p>
       <div class="card">
         <p><strong>E-Mail:</strong> velaris@velarisgalacticstrategy.com</p>
       </div>
