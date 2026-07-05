@@ -649,7 +649,7 @@
       <h1 id="hero-title">Erobere die Galaxie</h1>
       <p class="tagline" id="hero-tagline">Baue dein Weltraumimperium, erforsche Technologien, befehlige mächtige Flotten und kämpfe um die Vorherrschaft in der Galaxie.</p>
       <div class="hero-buttons">
-        <a href="#" class="btn btn-primary" id="btn-download">
+        <a href="https://play.google.com/store/apps/details?id=space.manus.velaris.mobile.t20260219083207" target="_blank" rel="noopener" class="btn btn-primary" id="btn-download">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-1h18v1H3zm8.5-4.5V4h1v12l5.5-5.5.7.7L12 17.9l-6.7-6.7.7-.7 5.5 5.5z"/></svg>
           <span id="btn-download-text">Jetzt herunterladen</span>
         </a>
@@ -777,7 +777,7 @@
     <section class="cta">
       <h2 id="cta-title">Bereit für die Galaxie?</h2>
       <p id="cta-desc">Lade Velaris: Galactic Strategy jetzt kostenlos herunter und beginne dein Abenteuer.</p>
-      <a href="#" class="btn btn-primary" id="btn-cta">
+      <a href="https://play.google.com/store/apps/details?id=space.manus.velaris.mobile.t20260219083207" target="_blank" rel="noopener" class="btn btn-primary" id="btn-cta">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 20.5v-1h18v1H3zm8.5-4.5V4h1v12l5.5-5.5.7.7L12 17.9l-6.7-6.7.7-.7 5.5 5.5z"/></svg>
         <span id="btn-cta-text">Kostenlos im Play Store</span>
       </a>
@@ -922,11 +922,13 @@
     ];
 
     const ROADMAP = [
-      { done: false, title: { de: 'Fraktions-Boni', en: 'Faction bonuses' }, desc: { de: 'Die Fraktionswahl erhält spürbare Auswirkungen auf das Gameplay.', en: 'Faction choice will have a tangible impact on gameplay.' } },
-      { done: false, title: { de: 'Einstellungen-Screen', en: 'Settings screen' }, desc: { de: 'Sprache ändern, Spielstand zurücksetzen, Benachrichtigungen verwalten.', en: 'Change language, reset save data, manage notifications.' } },
-      { done: false, title: { de: 'Lokale Push-Benachrichtigungen', en: 'Local push notifications' }, desc: { de: 'Benachrichtigungen, wenn Gebäude, Forschung oder Flotten fertig sind.', en: 'Get notified when buildings, research, or fleets are complete.' } },
+      { done: true, title: { de: 'Fraktions-Boni', en: 'Faction bonuses' }, desc: { de: 'Die Fraktionswahl hat spürbare Auswirkungen auf das Gameplay.', en: 'Faction choice has a tangible impact on gameplay.' } },
+      { done: true, title: { de: 'Einstellungen-Screen', en: 'Settings screen' }, desc: { de: 'Sprache ändern, Spielstand zurücksetzen, Benachrichtigungen verwalten.', en: 'Change language, reset save data, manage notifications.' } },
+      { done: true, title: { de: 'Lokale Push-Benachrichtigungen', en: 'Local push notifications' }, desc: { de: 'Benachrichtigungen, wenn Gebäude, Forschung oder Flotten fertig sind.', en: 'Get notified when buildings, research, or fleets are complete.' } },
+      { done: true, title: { de: 'Online-Features', en: 'Online features' }, desc: { de: 'Allianzen, Freunde, Chat, PvP-Angriffe und Ressourcen-Transporte sind live.', en: 'Alliances, friends, chat, PvP attacks and resource transports are live.' } },
       { done: false, title: { de: 'Mehr Inhalt', en: 'More content' }, desc: { de: 'Weitere Gebäude, Schiffe und Technologien.', en: 'Additional buildings, ships, and technologies.' } },
-      { done: false, title: { de: 'Online-Features', en: 'Online features' }, desc: { de: 'Backend für Allianzen, Freunde und Chat.', en: 'Backend for alliances, friends, and chat.' } },
+      { done: false, title: { de: 'Google-Login', en: 'Google sign-in' }, desc: { de: 'Anmeldung mit dem Google-Konto zusätzlich zu E-Mail und Passwort.', en: 'Sign in with your Google account in addition to email and password.' } },
+      { done: false, title: { de: 'iOS-Version', en: 'iOS version' }, desc: { de: 'Velaris kommt auch in den Apple App Store.', en: 'Velaris is coming to the Apple App Store too.' } },
     ];
 
     // ============================================================
@@ -1021,10 +1023,11 @@
 
     function renderRoadmap() {
       const list = document.getElementById('roadmap-list');
-      const badgeText = currentLang === 'de' ? 'Geplant' : 'Planned';
+      const doneText = currentLang === 'de' ? 'Fertig' : 'Done';
+      const plannedText = currentLang === 'de' ? 'Geplant' : 'Planned';
       list.innerHTML = ROADMAP.map(r => `
         <div class="roadmap-item ${r.done ? 'done' : ''}">
-          <h4>${r.title[currentLang]} <span class="roadmap-badge">${badgeText}</span></h4>
+          <h4>${r.title[currentLang]} <span class="roadmap-badge">${r.done ? doneText : plannedText}</span></h4>
           <p>${r.desc[currentLang]}</p>
         </div>
       `).join('');
