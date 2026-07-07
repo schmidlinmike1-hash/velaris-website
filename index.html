@@ -367,6 +367,16 @@
       font-size: 0.9rem;
       margin-bottom: 6px;
     }
+    .ship-faction-chip {
+      display: inline-block;
+      font-size: 0.68rem;
+      color: var(--fcolor);
+      border: 1px solid var(--fcolor);
+      border-radius: 999px;
+      padding: 1px 8px;
+      margin-bottom: 6px;
+      opacity: 0.9;
+    }
     .ship-card p {
       color: var(--muted);
       font-size: 0.78rem;
@@ -662,15 +672,15 @@
     <!-- STATS -->
     <section class="stats">
       <div>
-        <div class="stat-number">30+</div>
+        <div class="stat-number">70</div>
         <div class="stat-label" id="stat1">Gebäude & Technologien</div>
       </div>
       <div>
-        <div class="stat-number">9</div>
+        <div class="stat-number">19</div>
         <div class="stat-label" id="stat2">Schiffsklassen</div>
       </div>
       <div>
-        <div class="stat-number">20</div>
+        <div class="stat-number">12</div>
         <div class="stat-label" id="stat3">Einzigartige Admirale</div>
       </div>
       <div>
@@ -690,7 +700,7 @@
     <!-- FLEET / SHIPS -->
     <section class="ships" id="fleet">
       <h2 class="section-title" id="ships-title">Deine Flotte</h2>
-      <p class="section-sub" id="ships-sub">Von wendigen Spähern bis zu schweren Schlachtschiffen — neun Schiffsklassen für jede Aufgabe.</p>
+      <p class="section-sub" id="ships-sub">Von wendigen Spähern bis zu Schlachtkreuzern der Flaggschiffklasse — 19 Schiffsklassen für jede Aufgabe, darunter acht einzigartige Fraktionsschiffe.</p>
       <div class="ship-grid" id="ship-grid"></div>
     </section>
 
@@ -711,7 +721,7 @@
         <div class="feature-card">
           <div class="feature-icon">🚀</div>
           <h3 id="f3-title">Flottenkommando</h3>
-          <p id="f3-desc">Baue Jäger, Kreuzer und Dreadnoughts. Weise Admirale und Flaggschiffe zu und sende bis zu 3 Flotten gleichzeitig auf Missionen.</p>
+          <p id="f3-desc">Baue Jäger, Zerstörer und Schlachtkreuzer. Weise Admirale und Flaggschiffe zu und sende bis zu 3 Flotten gleichzeitig auf Missionen.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🌌</div>
@@ -726,7 +736,7 @@
         <div class="feature-card">
           <div class="feature-icon">🎖️</div>
           <h3 id="f6-title">Admirale & Flaggschiffe</h3>
-          <p id="f6-desc">Sammle 20 einzigartige Admirale mit verschiedenen Seltenheitsstufen. Rüste 3 legendäre Flaggschiffe mit Talentbäumen und Ausrüstung aus.</p>
+          <p id="f6-desc">Sammle 12 einzigartige Fraktions-Admirale mit verschiedenen Seltenheitsstufen. Rüste 3 legendäre Flaggschiffe mit Talentbäumen und Ausrüstung aus.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">⚒️</div>
@@ -749,12 +759,12 @@
     <!-- ADMIRALS -->
     <section class="admirals" id="admirals">
       <h2 class="section-title" id="admirals-title">Admirale</h2>
-      <p class="section-sub" id="admirals-sub">20 einzigartige Admirale mit eigenen Fähigkeiten und Geschichten. Klicke auf eine Karte, um ihre Akte zu lesen.</p>
+      <p class="section-sub" id="admirals-sub">12 einzigartige Fraktions-Admirale — 3 pro Fraktion — mit eigenen Fähigkeiten und Geschichten. Klicke auf eine Karte, um ihre Akte zu lesen.</p>
       <div class="rarity-filters" id="rarity-filters">
         <button class="active" data-rarity="all" id="rf-all">Alle</button>
-        <button data-rarity="legendary" id="rf-legendary">Legendär</button>
         <button data-rarity="epic" id="rf-epic">Episch</button>
-        <button data-rarity="rare" id="rf-rare">Selten</button>
+        <button data-rarity="rare" id="rf-rare">Rar</button>
+        <button data-rarity="uncommon" id="rf-uncommon">Ungewöhnlich</button>
       </div>
       <div class="admiral-grid" id="admiral-grid"></div>
     </section>
@@ -871,48 +881,55 @@
     const SHIPS = [
       { id: 'fighter', img: 'assets/ships/fighter.webp', name: { de: 'Jäger', en: 'Fighter' }, desc: { de: 'Schnelle, günstige Grundeinheit für frühe Gefechte.', en: 'Fast, cheap basic unit for early combat.' } },
       { id: 'cruiser', img: 'assets/ships/cruiser.webp', name: { de: 'Kreuzer', en: 'Cruiser' }, desc: { de: 'Ausgewogene Kampfeinheit mit solider Feuerkraft und Panzerung.', en: 'Balanced combat unit with solid firepower and armor.' } },
+      { id: 'destroyer', img: 'assets/ships/cruiser.webp', name: { de: 'Zerstörer', en: 'Destroyer' }, desc: { de: 'Schnelles Angriffsschiff, spezialisiert auf die Jagd nach Jägern und Kreuzern.', en: 'Fast attack ship specialised in hunting down fighters and cruisers.' } },
       { id: 'battleship', img: 'assets/ships/battleship.webp', name: { de: 'Schlachtschiff', en: 'Battleship' }, desc: { de: 'Schwere Kampfeinheit mit massiver Feuerkraft für entscheidende Schlachten.', en: 'Heavy combat unit with massive firepower for decisive battles.' } },
+      { id: 'battle_cruiser', img: 'assets/ships/battleship.webp', name: { de: 'Schlachtkreuzer', en: 'Battle Cruiser' }, desc: { de: 'Kriegsschiff der Flaggschiffklasse, das jeden Kampf dominiert. Extrem teuer, aber unübertroffen in roher Feuerkraft.', en: 'Flagship-class warship that dominates every engagement. Extremely expensive but unmatched in raw firepower.' } },
       { id: 'scout', img: 'assets/ships/scout.webp', name: { de: 'Spähschiff', en: 'Scout' }, desc: { de: 'Erkundet Sternensysteme und sammelt Informationen über Feinde.', en: 'Explores star systems and gathers intel on enemies.' } },
       { id: 'spy_probe', img: 'assets/ships/spy_probe.webp', name: { de: 'Spionagesonde', en: 'Spy Probe' }, desc: { de: 'Sammelt verdeckt Daten über feindliche Flotten und Verteidigung.', en: 'Covertly gathers data on enemy fleets and defenses.' } },
       { id: 'colony_ship', img: 'assets/ships/colony_ship.webp', name: { de: 'Kolonieschiff', en: 'Colony Ship' }, desc: { de: 'Gründet neue Kolonien auf entdeckten Planeten.', en: 'Establishes new colonies on discovered planets.' } },
       { id: 'cargo_ship', img: 'assets/ships/cargo_ship.webp', name: { de: 'Frachter', en: 'Cargo Ship' }, desc: { de: 'Transportiert große Mengen Ressourcen zwischen Kolonien.', en: 'Transports large amounts of resources between colonies.' } },
       { id: 'transport_ship', img: 'assets/ships/transport_ship.webp', name: { de: 'Transporter', en: 'Transport Ship' }, desc: { de: 'Bewegt Truppen und Ausrüstung zwischen Systemen.', en: 'Moves troops and equipment between systems.' } },
       { id: 'mining_vessel', img: 'assets/ships/mining_vessel.webp', name: { de: 'Bergbauschiff', en: 'Mining Vessel' }, desc: { de: 'Fördert Ressourcen aus Asteroiden und Trümmerfeldern.', en: 'Extracts resources from asteroids and debris fields.' } },
+      // Fraktionsschiffe (2 pro Fraktion)
+      { id: 'convergence_frigate', faction: 'aurelian', img: 'assets/ships/convergence_frigate.webp', name: { de: 'Konvergenz-Fregatte', en: 'Convergence Frigate' }, desc: { de: 'Das Arbeitspferd der Concordance-Flotte. Ausgeglichen in Panzerung, Feuerkraft und Reichweite.', en: 'The workhorse of the Concordance fleet. Balanced armour, firepower and range.' } },
+      { id: 'arc_corvette', faction: 'aurelian', img: 'assets/ships/arc_corvette.webp', name: { de: 'Bogen-Korvette', en: 'Arc Corvette' }, desc: { de: 'Schlankes Frühwarnschiff mit ausgedehnten Sensorarrays und leichter Bewaffnung. Schnell und präzise.', en: 'Slim early-warning ship with extended sensor arrays and light weapons. Fast and precise.' } },
+      { id: 'veil_probe', faction: 'nythera', img: 'assets/ships/veil_probe.webp', name: { de: 'Schleier-Sonde', en: 'Veil Probe' }, desc: { de: 'Lebendiger, organischer Rumpf mit integrierten Sensor- und Labormodulen. Die beste Aufklärung im Spiel.', en: 'Living, organic hull laced with integrated sensor and lab modules. The best reconnaissance in the game.' } },
+      { id: 'echo_cruiser', faction: 'nythera', img: 'assets/ships/echo_cruiser.webp', name: { de: 'Echo-Kreuzer', en: 'Echo Cruiser' }, desc: { de: 'Von Schichtenergieschirmen umhüllter Kreuzer. Verwandelt Schlachten in Informationskriege — stört Sensorik und Zielerfassung.', en: 'A cruiser sheathed in layered energy screens. Turns battles into information wars — jams enemy sensors and targeting.' } },
+      { id: 'dominion_cruiser', faction: 'kharvex', img: 'assets/ships/dominion_cruiser.webp', name: { de: 'Dominion-Kreuzer', en: 'Dominion Cruiser' }, desc: { de: 'Massiv gepanzerter Kompaktrumpf, gebaut wie ein Rammbock. Die Faust der Flotte.', en: 'A massively armoured compact hull built like a battering ram. The fist of the fleet.' } },
+      { id: 'thorn_drone_swarm', faction: 'kharvex', img: 'assets/ships/thorn_drone_swarm.webp', name: { de: 'Dorn-Drohnenschwarm', en: 'Thorn Drone Swarm' }, desc: { de: 'Kleine, aggressive Stachel-Drohnen mit instabilen Energiekernen. Brutaler Schaden, zerbrechliche Hüllen.', en: 'Small, aggressive spike-drones with unstable energy cores. Brutal damage, fragile hulls.' } },
+      { id: 'slag_hauler', faction: 'virellian', img: 'assets/ships/slag_hauler.webp', name: { de: 'Schlacken-Schlepper', en: 'Slag Hauler' }, desc: { de: 'Industrielles Modulschiff mit Schwerarm-Bohrern und Extraktionsanlagen. Die Mining-Wirtschaft der Consortia in Stahl.', en: 'Industrial modular ship with heavy-arm drills and extraction rigs. The mining economy of the Consortia in steel.' } },
+      { id: 'modular_freighter', faction: 'virellian', img: 'assets/ships/modular_freighter.webp', name: { de: 'Modular-Frachter', en: 'Modular Freighter' }, desc: { de: 'Enormes Frachtschiff mit stapelbaren Laderaummodulen. Das Rückgrat der Consortia-Wirtschaft.', en: 'Enormous freighter with stackable cargo modules. The backbone of the Consortia economy.' } },
     ];
 
     const RARITY_COLORS = {
-      legendary: { color: '#FFD54F', glow: 'rgba(255, 213, 79, 0.35)' },
-      epic:      { color: '#BA68C8', glow: 'rgba(186, 104, 200, 0.35)' },
-      rare:      { color: '#4FC3F7', glow: 'rgba(79, 195, 247, 0.35)' },
+      epic:     { color: '#CE93D8', glow: 'rgba(206, 147, 216, 0.35)' },
+      rare:     { color: '#4FC3F7', glow: 'rgba(79, 195, 247, 0.35)' },
+      uncommon: { color: '#4CAF50', glow: 'rgba(76, 175, 80, 0.35)' },
     };
 
     const RARITY_LABEL = {
-      legendary: { de: 'Legendär', en: 'Legendary' },
       epic: { de: 'Episch', en: 'Epic' },
-      rare: { de: 'Selten', en: 'Rare' },
+      rare: { de: 'Rar', en: 'Rare' },
+      uncommon: { de: 'Ungewöhnlich', en: 'Uncommon' },
     };
 
     const ADMIRALS = [
-      { id: 'vex_ironclad', rarity: 'legendary', name: 'Vex Ironclad', title: { de: 'Der Eiserne Kommandant', en: 'The Iron Commander' }, lore: { de: 'Ehemaliger Khar\'Vex-Kriegsherr, der sieben Schlachten ohne Verlust führte. Seine Taktiken gelten als Lehrbuch für aggressive Flottenmanöver.', en: 'Former Khar\'Vex warlord who fought seven battles without a single loss. His tactics are textbook examples of aggressive fleet maneuvers.' } },
-      { id: 'lyra_stormbreaker', rarity: 'epic', name: 'Lyra Stormbreaker', title: { de: 'Sturmjägerin', en: 'Storm Hunter' }, lore: { de: 'Aurelianische Flottenkapitänin, bekannt für blitzschnelle Flankenangriffe in Asteroidenfeldern.', en: 'Aurelian fleet captain known for lightning-fast flanking maneuvers in asteroid fields.' } },
-      { id: 'krath_bloodfang', rarity: 'epic', name: 'Krath Bloodfang', title: { de: 'Der Reißzahn', en: 'The Fang' }, lore: { de: 'Berüchtigter Khar\'Vex-Berserker, der seine Flotten in selbstmörderische Angriffe führt — und gewinnt.', en: 'Notorious Khar\'Vex berserker who leads his fleets into suicidal attacks — and wins.' } },
-      { id: 'seren_voidwalker', rarity: 'rare', name: 'Seren Voidwalker', title: { de: 'Schattenklinge', en: 'Shadow Blade' }, lore: { de: 'Nythera-Taktikerin, die feindliche Kommunikation stört, bevor der erste Schuss fällt.', en: 'Nythera tactician who jams enemy communications before the first shot is fired.' } },
-      { id: 'thorn_aegis', rarity: 'legendary', name: 'Thorn Aegis', title: { de: 'Der Unzerbrechliche', en: 'The Unbreakable' }, lore: { de: 'Legendärer Verteidiger, der die Belagerung von Arcturus Prime 47 Tage lang allein hielt.', en: 'Legendary defender who held the siege of Arcturus Prime alone for 47 days.' } },
-      { id: 'nova_quickstrike', rarity: 'rare', name: 'Nova Quickstrike', title: { de: 'Blitzangriff', en: 'Lightning Strike' }, lore: { de: 'Junge Pilotin, bekannt für unkonventionelle Manöver. Schnell, riskant, effektiv.', en: 'Young pilot known for unconventional maneuvers. Fast, risky, effective.' } },
-      { id: 'forge_titan', rarity: 'legendary', name: 'Forge Titan', title: { de: 'Meisterschmied', en: 'Master Smith' }, lore: { de: 'Virellianischer Industriemagnat, der die größten Orbitalwerften der Galaxie erbaute.', en: 'Virellian industrial magnate who built the galaxy\'s largest orbital shipyards.' } },
-      { id: 'mira_steelhand', rarity: 'epic', name: 'Mira Steelhand', title: { de: 'Die Architektin', en: 'The Architect' }, lore: { de: 'Aurelianische Ingenieurin, deren Baupläne die Effizienz planetarer Infrastruktur revolutionierten.', en: 'Aurelian engineer whose blueprints revolutionized planetary infrastructure efficiency.' } },
-      { id: 'grok_hammerfist', rarity: 'rare', name: 'Grok Hammerfist', title: { de: 'Der Vorarbeiter', en: 'The Foreman' }, lore: { de: 'Khar\'Vex-Arbeiterführer, der durch pure Willenskraft Produktionsrekorde bricht.', en: 'Khar\'Vex foreman who breaks production records through sheer willpower.' } },
-      { id: 'zara_blueprint', rarity: 'epic', name: 'Zara Blueprint', title: { de: 'Planerin der Sterne', en: 'Planner of the Stars' }, lore: { de: 'Nythera-Logistikerin, die Bauprozesse durch prädiktive Algorithmen optimiert.', en: 'Nythera logistician who optimizes construction through predictive algorithms.' } },
-      { id: 'rex_foundry', rarity: 'rare', name: 'Rex Foundry', title: { de: 'Schmelzmeister', en: 'Foundry Master' }, lore: { de: 'Virellianischer Metallurg, der neue Legierungen für schnelleren Schiffbau entwickelte.', en: 'Virellian metallurgist who developed new alloys for faster shipbuilding.' } },
-      { id: 'aurelia_goldweave', rarity: 'legendary', name: 'Aurelia Goldweave', title: { de: 'Die Goldweberin', en: 'The Gold Weaver' }, lore: { de: 'Legendäre virellianische Händlerin, deren Handelsrouten drei Sektoren verbinden.', en: 'Legendary Virellian trader whose routes connect three sectors.' } },
-      { id: 'dax_prospector', rarity: 'epic', name: 'Dax Prospector', title: { de: 'Der Schürfer', en: 'The Prospector' }, lore: { de: 'Aurelianischer Geologe, der die reichsten Asteroidenfelder der Galaxie kartierte.', en: 'Aurelian geologist who mapped the galaxy\'s richest asteroid fields.' } },
-      { id: 'crystal_seer', rarity: 'epic', name: 'Crystal Seer', title: { de: 'Kristallseherin', en: 'Crystal Seer' }, lore: { de: 'Nythera-Geologin, die Kristallvorkommen durch Resonanzmuster orten kann.', en: 'Nythera geologist who can locate crystal deposits through resonance patterns.' } },
-      { id: 'flux_trader', rarity: 'rare', name: 'Flux Trader', title: { de: 'Der Händler', en: 'The Trader' }, lore: { de: 'Virellianischer Frachtkapitän, der Handelsrouten schneller als jeder andere fliegt.', en: 'Virellian cargo captain who flies trade routes faster than anyone else.' } },
-      { id: 'helios_salvager', rarity: 'rare', name: 'Helios Salvager', title: { de: 'Wrackjäger', en: 'Wreck Hunter' }, lore: { de: 'Spezialist für die Bergung von Wracks und die Extraktion wertvoller Materialien.', en: 'Specialist in wreck salvage and extraction of valuable materials.' } },
-      { id: 'professor_nexus', rarity: 'legendary', name: 'Professor Nexus', title: { de: 'Der Gelehrte', en: 'The Scholar' }, lore: { de: 'Nythera-Wissenschaftler, dessen Entdeckungen drei technologische Revolutionen auslösten.', en: 'Nythera scientist whose discoveries triggered three technological revolutions.' } },
-      { id: 'dr_quantum', rarity: 'epic', name: 'Dr. Quantum', title: { de: 'Quantenforscherin', en: 'Quantum Researcher' }, lore: { de: 'Aurelianische Physikerin mit Durchbrüchen in der Hyperraum-Theorie.', en: 'Aurelian physicist with breakthroughs in hyperspace theory.' } },
-      { id: 'echo_analyst', rarity: 'rare', name: 'Echo Analyst', title: { de: 'Datenanalystin', en: 'Data Analyst' }, lore: { de: 'Nythera-Datenanalystin, die Forschungsprozesse durch Mustererkennung beschleunigt.', en: 'Nythera data analyst who accelerates research through pattern recognition.' } },
-      { id: 'sage_xenotech', rarity: 'rare', name: 'Sage Xenotech', title: { de: 'Xenotechnologe', en: 'Xenotech Specialist' }, lore: { de: 'Erforscht Xal\'Thyrr-Technologie und adaptiert sie für die Flotte.', en: 'Researches Xal\'Thyrr technology and adapts it for fleet use.' } },
+      // ---- Aurelian Concordance ----
+      { id: 'thorn_aegis', faction: 'aurelian', rarity: 'epic', name: 'Thorn Aegis', title: { de: 'Der Unzerbrechliche', en: 'The Unbreakable' }, lore: { de: 'Veteran der stillen Kriege und einer der letzten Lebenden, die die Fragmentierungskrise aus erster Hand erlebt haben. Seine Narben — zeremonielle und kämpferische — machen ihn zur wandelnden Geschichte der Concordance. Lehrt heute Taktik. Wird nicht widersprochen.', en: 'A veteran of the silent wars and one of the last living souls who experienced the Fragmentation Crisis first-hand. His scars — ceremonial and combat alike — make him a walking history of the Concordance. Teaches tactics these days. Is not contradicted.' } },
+      { id: 'lyra_voss', faction: 'aurelian', rarity: 'rare', name: 'Lyra Voss', title: { de: 'Kommandeuse der Konvergenz', en: 'Commander of the Convergence' }, lore: { de: 'Aufgewachsen auf dem Flaggschiff der Konvergenz-Flotte. Mit 19 der Flotte zugeteilt, mit 34 Kommandeuse eines eigenen Kreuzers. Bekannt als die kälteste Person im Raum in Krisenmomenten — nicht aus Gefühllosigkeit, sondern aus absoluter Disziplin.', en: 'Raised aboard the flagship of the Convergence fleet. Assigned to the fleet at 19, commanding her own cruiser by 34. Known as the coldest person in the room in moments of crisis — not out of callousness, but out of absolute discipline.' } },
+      { id: 'kael_dorn', faction: 'aurelian', rarity: 'uncommon', name: 'Kael Dorn', title: { de: 'Der Vorausschauende', en: 'The Foresighted' }, lore: { de: 'Begann im Archiv-Zweig, wechselte mit 25 zur Flotte — der Statusverlust spornte ihn an statt zu bremsen. Sein Ruf: plant jeden Zug drei Schritte weiter als nötig.', en: 'Started in the archive branch and transferred to the fleet at 25 — the loss of status spurred him on instead of slowing him down. His reputation: plans every move three steps further than necessary.' } },
+      // ---- Nythera Collective ----
+      { id: 'synara_wise', faction: 'nythera', rarity: 'epic', name: 'Weise Syn\'Ara', title: { de: 'Hüterin des Gedächtnisses', en: 'Keeper of Memory' }, lore: { de: 'Ihre Biolumineszenz leuchtet konstant, auch ohne neuronale Aktivität — ein Phänomen, das die Nythera-Wissenschaft nicht erklären kann. Sie kommentiert es nie. Gilt als Brücke zwischen altem Kollektiv-Gedächtnis und der neuen Generation.', en: 'Her bioluminescence glows constantly, even without neural activity — a phenomenon Nythera science cannot explain. She never comments on it. Regarded as the bridge between the old collective memory and the new generation.' } },
+      { id: 'veloran_archivist', faction: 'nythera', rarity: 'rare', name: 'Archivist Vel\'Oran', title: { de: 'Stimme der Heimatwelt', en: 'Voice of the Homeworld' }, lore: { de: 'Hat das Helios-Ereignis als Junges selbst erlebt und ist die einzige lebende Verbindung zum vollständigen Datenabdruck der Heimatwelt. Spricht selten — wenn er es tut, hört das gesamte Kollektiv zu.', en: 'Experienced the Helios Event as a youngling and is the only living link to the complete data imprint of the homeworld. Rarely speaks — when he does, the entire Collective listens.' } },
+      { id: 'seyr_analyst', faction: 'nythera', rarity: 'uncommon', name: 'Analyst Seyr', title: { de: 'Der Beobachter', en: 'The Observer' }, lore: { de: 'Frisch nach der Anbindung, aber mit einem der dichtesten Datenbeiträge junger Nythera seit Generationen. Beobachtet alles, sagt wenig.', en: 'Freshly linked, yet with one of the densest data contributions of any young Nythera in generations. Observes everything, says little.' } },
+      // ---- Khar'Vex Dominion ----
+      { id: 'grvath_commander', faction: 'kharvex', rarity: 'epic', name: 'Kommandantin Gr\'Vath', title: { de: 'Turniersiegerin', en: 'Tournament Champion' }, lore: { de: 'Einzige Khar\'Vex, die in allen vier Clan-Turnieren der letzten Dekade angetreten ist — und dreimal gewonnen hat. Respektiert, gefürchtet, von den Nythera insgeheim faszinierend gefunden.', en: 'The only Khar\'Vex to compete in all four clan tournaments of the past decade — and win three of them. Respected, feared, and secretly found fascinating by the Nythera.' } },
+      { id: 'kexdaran_warlord', faction: 'kharvex', rarity: 'rare', name: 'Warlord Kex\'Daran', title: { de: 'Anführer des ältesten Clans', en: 'Leader of the Oldest Clan' }, lore: { de: 'Anführer des ältesten der sieben Clans. Hat mehr Cross-Clan-Duelle gewonnen als irgendjemand in zwei Generationen — und mehr verloren. "Wer nicht verlieren kann, hat noch nie wirklich gekämpft."', en: 'Leader of the oldest of the seven clans. Has won more cross-clan duels than anyone in two generations — and lost more. "Those who cannot lose have never truly fought."' } },
+      { id: 'dohkaras_warrior', faction: 'kharvex', rarity: 'uncommon', name: 'Krieger Doh\'Karas', title: { de: 'Der Ungeduldige', en: 'The Impatient' }, lore: { de: 'Junger Khar\'Vex kurz nach seiner Bewährungsprobe. Noch wenige Stifte, aber ein Name, den man sich merkt. Ungeduldig, direkt, loyal bis auf die Knochen.', en: 'A young Khar\'Vex fresh from his trial of proving. Few pins yet, but a name you remember. Impatient, direct, loyal to the bone.' } },
+      // ---- Virellian Consortia ----
+      { id: 'ysa_guildmaster', faction: 'virellian', rarity: 'epic', name: 'Gildemeisterin Ysa', title: { de: 'Herrin der Routen', en: 'Mistress of the Routes' }, lore: { de: 'Die meisten Handelsrouten im Velaris-Sektor laufen durch mindestens einen Vertrag, den sie irgendwann unterzeichnet hat. Niemand weiss, wie alt sie ist.', en: 'Most trade routes in the Velaris sector pass through at least one contract she signed at some point. Nobody knows how old she is.' } },
+      { id: 'oryn_trader', faction: 'virellian', rarity: 'rare', name: 'Händlerin Oryn', title: { de: 'Schiedsrichterin des Routenrechts', en: 'Arbiter of Route Law' }, lore: { de: 'Spezialistin für das Routenrecht — kennt jede Klausel, jeden Präzedenzfall. Andere Fraktionen holen sie als neutrale Schiedsrichterin bei Handelsstreitigkeiten.', en: 'A specialist in route law — knows every clause, every precedent. Other factions bring her in as a neutral arbiter in trade disputes.' } },
+      { id: 'tavi_broker', faction: 'virellian', rarity: 'uncommon', name: 'Makler Tavi', title: { de: 'Der Vermittler', en: 'The Broker' }, lore: { de: 'Hat mit 22 seine erste Route zwischen Aurelianern und Khar\'Vex ausgehandelt. Er hat beiden das Gefühl gegeben, gewonnen zu haben. Heute hat er Kontakte in allen vier Fraktionen.', en: 'Negotiated his first route between Aurelians and Khar\'Vex at 22 — and made both sides feel like they had won. Today he has contacts in all four factions.' } },
     ];
 
     const FLAGSHIPS = [
@@ -972,13 +989,17 @@
 
     function renderShips() {
       const grid = document.getElementById('ship-grid');
-      grid.innerHTML = SHIPS.map(s => `
+      grid.innerHTML = SHIPS.map(s => {
+        const f = s.faction ? FACTIONS.find(x => x.id === s.faction) : null;
+        const chip = f ? `<div class="ship-faction-chip" style="--fcolor:${f.color}">${f.name[currentLang]}</div>` : '';
+        return `
         <div class="ship-card">
           <img src="${s.img}" alt="${s.name[currentLang]}">
           <h4>${s.name[currentLang]}</h4>
+          ${chip}
           <p>${s.desc[currentLang]}</p>
-        </div>
-      `).join('');
+        </div>`;
+      }).join('');
     }
 
     function renderAdmirals() {
@@ -1071,20 +1092,20 @@
         'factions-title': 'Wähle deine Fraktion',
         'factions-sub': 'Jede Fraktion bringt eigene Boni und eine eigene Geschichte mit. Klicke auf eine Fraktion, um mehr zu erfahren.',
         'ships-title': 'Deine Flotte',
-        'ships-sub': 'Von wendigen Spähern bis zu schweren Schlachtschiffen — neun Schiffsklassen für jede Aufgabe.',
+        'ships-sub': 'Von wendigen Spähern bis zu Schlachtkreuzern der Flaggschiffklasse — 19 Schiffsklassen für jede Aufgabe, darunter acht einzigartige Fraktionsschiffe.',
         'features-title': 'Spielfeatures',
         'f1-title': 'Imperiumsaufbau', 'f1-desc': 'Errichte Minen, Raffinerien und Solaranlagen. Upgrade deine Gebäude und maximiere die Ressourcenproduktion auf mehreren Kolonien.',
         'f2-title': 'Forschung & Technologie', 'f2-desc': 'Erforsche über 15 Technologien in den Bereichen Wirtschaft, Militär und Exploration. Schalte mächtige Boni und neue Schiffsklassen frei.',
-        'f3-title': 'Flottenkommando', 'f3-desc': 'Baue Jäger, Kreuzer und Dreadnoughts. Weise Admirale und Flaggschiffe zu und sende bis zu 3 Flotten gleichzeitig auf Missionen.',
+        'f3-title': 'Flottenkommando', 'f3-desc': 'Baue Jäger, Zerstörer und Schlachtkreuzer. Weise Admirale und Flaggschiffe zu und sende bis zu 3 Flotten gleichzeitig auf Missionen.',
         'f4-title': 'Galaxie-Erkundung', 'f4-desc': 'Erkunde unbekannte Sternensysteme, entdecke neue Planeten und gründe Kolonien. Jede Erkundung bringt wertvolle Ressourcen und Informationen.',
         'f5-title': 'Taktische Kämpfe', 'f5-desc': 'Rundenbasierte Weltraumschlachten mit Schadens- und Schildmechaniken. Erbeute Ausrüstung und Ressourcen von besiegten Gegnern.',
-        'f6-title': 'Admirale & Flaggschiffe', 'f6-desc': 'Sammle 20 einzigartige Admirale mit verschiedenen Seltenheitsstufen. Rüste 3 legendäre Flaggschiffe mit Talentbäumen und Ausrüstung aus.',
+        'f6-title': 'Admirale & Flaggschiffe', 'f6-desc': 'Sammle 12 einzigartige Fraktions-Admirale mit verschiedenen Seltenheitsstufen. Rüste 3 legendäre Flaggschiffe mit Talentbäumen und Ausrüstung aus.',
         'f7-title': 'Crafting-System', 'f7-desc': 'Zerlege erbeutete Ausrüstung in Fragmente, kombiniere sie zu höherer Seltenheit und würfle Sekundärwerte neu. Pity-System garantiert Legendarys.',
         'f8-title': 'Battle Pass & Achievements', 'f8-desc': 'Verdiene XP durch Spielaktionen und schalte Belohnungen im saisonalen Battle Pass frei. Über 25 Achievements warten auf dich.',
         'f9-title': 'Allianzen & Multiplayer', 'f9-desc': 'Gründe oder tritt einer Allianz bei. Chatte mit Verbündeten, tausche Strategien aus und kämpfe gemeinsam um die galaktische Vorherrschaft.',
         'admirals-title': 'Admirale',
-        'admirals-sub': '20 einzigartige Admirale mit eigenen Fähigkeiten und Geschichten. Klicke auf eine Karte, um ihre Akte zu lesen.',
-        'rf-all': 'Alle', 'rf-legendary': 'Legendär', 'rf-epic': 'Episch', 'rf-rare': 'Selten',
+        'admirals-sub': '12 einzigartige Fraktions-Admirale — 3 pro Fraktion — mit eigenen Fähigkeiten und Geschichten. Klicke auf eine Karte, um ihre Akte zu lesen.',
+        'rf-all': 'Alle', 'rf-epic': 'Episch', 'rf-rare': 'Rar', 'rf-uncommon': 'Ungewöhnlich',
         'flagships-title': 'Flaggschiffe',
         'flagships-sub': 'Drei legendäre Flaggschiffe mit eigenen Talentbäumen und Ausrüstungsslots.',
         'roadmap-title': 'Roadmap',
@@ -1115,20 +1136,20 @@
         'factions-title': 'Choose Your Faction',
         'factions-sub': 'Each faction brings its own bonuses and backstory. Click a faction to learn more.',
         'ships-title': 'Your Fleet',
-        'ships-sub': 'From agile scouts to heavy battleships — nine ship classes for every task.',
+        'ships-sub': 'From agile scouts to flagship-class battle cruisers — 19 ship classes for every task, including eight unique faction ships.',
         'features-title': 'Game Features',
         'f1-title': 'Empire Building', 'f1-desc': 'Build mines, refineries, and solar plants. Upgrade your buildings and maximize resource production across multiple colonies.',
         'f2-title': 'Research & Technology', 'f2-desc': 'Research over 15 technologies across economy, military, and exploration. Unlock powerful bonuses and new ship classes.',
-        'f3-title': 'Fleet Command', 'f3-desc': 'Build fighters, cruisers, and dreadnoughts. Assign admirals and flagships, and send up to 3 fleets on missions simultaneously.',
+        'f3-title': 'Fleet Command', 'f3-desc': 'Build fighters, destroyers, and battle cruisers. Assign admirals and flagships, and send up to 3 fleets on missions simultaneously.',
         'f4-title': 'Galaxy Exploration', 'f4-desc': 'Explore unknown star systems, discover new planets, and establish colonies. Every exploration yields valuable resources and intel.',
         'f5-title': 'Tactical Combat', 'f5-desc': 'Turn-based space battles with damage and shield mechanics. Loot equipment and resources from defeated enemies.',
-        'f6-title': 'Admirals & Flagships', 'f6-desc': 'Collect 20 unique admirals with various rarity tiers. Equip 3 legendary flagships with talent trees and gear.',
+        'f6-title': 'Admirals & Flagships', 'f6-desc': 'Collect 12 unique faction admirals with various rarity tiers. Equip 3 legendary flagships with talent trees and gear.',
         'f7-title': 'Crafting System', 'f7-desc': 'Salvage looted equipment into fragments, combine them for higher rarity, and re-roll secondary stats. Pity system guarantees legendaries.',
         'f8-title': 'Battle Pass & Achievements', 'f8-desc': 'Earn XP through gameplay actions and unlock rewards in the seasonal Battle Pass. Over 25 achievements await you.',
         'f9-title': 'Alliances & Multiplayer', 'f9-desc': 'Create or join an alliance. Chat with allies, share strategies, and fight together for galactic dominance.',
         'admirals-title': 'Admirals',
-        'admirals-sub': '20 unique admirals with their own abilities and backstories. Click a card to read their file.',
-        'rf-all': 'All', 'rf-legendary': 'Legendary', 'rf-epic': 'Epic', 'rf-rare': 'Rare',
+        'admirals-sub': '12 unique faction admirals — 3 per faction — with their own abilities and backstories. Click a card to read their file.',
+        'rf-all': 'All', 'rf-epic': 'Epic', 'rf-rare': 'Rare', 'rf-uncommon': 'Uncommon',
         'flagships-title': 'Flagships',
         'flagships-sub': 'Three legendary flagships, each with its own talent tree and equipment slots.',
         'roadmap-title': 'Roadmap',
@@ -1161,6 +1182,7 @@
     }
 
     renderAll();
+    // sync: 2026-07-07
   </script>
 </body>
 </html>
