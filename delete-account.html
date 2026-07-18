@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Velaris: Galactic Strategy — Delete Account</title>
-  <meta name="description" content="How to delete your Velaris: Galactic Strategy account and all associated data — step-by-step instructions.">
+  <meta name="description" content="How to delete your Velaris: Galactic Strategy account and all associated data — step-by-step instructions in 12 languages.">
   <link rel="canonical" href="https://velarisgalacticstrategy.com/delete-account.html">
   <link rel="icon" type="image/png" href="/icon.png">
   <style>
@@ -26,7 +26,7 @@
     }
     .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
     h1 { font-size: 2rem; color: var(--primary); margin-bottom: 8px; }
-    .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 40px; }
+    .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 32px; }
     h2 {
       font-size: 1.3rem; color: var(--primary);
       margin-top: 32px; margin-bottom: 12px;
@@ -37,15 +37,16 @@
     li { margin-bottom: 8px; }
     a { color: var(--primary); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
     .card {
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 12px; padding: 20px; margin: 20px 0;
     }
-    .lang-switch { display: flex; gap: 12px; margin-bottom: 32px; }
+    .lang-switch { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
     .lang-btn {
-      padding: 8px 20px; border-radius: 8px; border: 1px solid var(--border);
+      padding: 7px 14px; border-radius: 8px; border: 1px solid var(--border);
       background: var(--surface); color: var(--text); cursor: pointer;
-      font-size: 0.9rem; transition: all 0.2s;
+      font-size: 0.85rem; transition: all 0.2s;
     }
     .lang-btn.active {
       background: var(--primary); color: var(--bg);
@@ -63,15 +64,25 @@
 <body>
   <div class="container">
     <h1>Velaris: Galactic Strategy</h1>
-    <p class="subtitle">Delete Account &amp; Data / Konto &amp; Daten löschen</p>
+    <p class="subtitle">Delete Account &amp; Data</p>
 
-    <div class="lang-switch">
-      <button class="lang-btn active" onclick="switchLang('en')">English</button>
-      <button class="lang-btn" onclick="switchLang('de')">Deutsch</button>
+    <div class="lang-switch" role="group" aria-label="Language selection">
+      <button class="lang-btn active" onclick="switchLang('en', this)" lang="en">English</button>
+      <button class="lang-btn" onclick="switchLang('de', this)" lang="de">Deutsch</button>
+      <button class="lang-btn" onclick="switchLang('fr', this)" lang="fr">Français</button>
+      <button class="lang-btn" onclick="switchLang('es', this)" lang="es">Español</button>
+      <button class="lang-btn" onclick="switchLang('it', this)" lang="it">Italiano</button>
+      <button class="lang-btn" onclick="switchLang('pt', this)" lang="pt-BR">Português (BR)</button>
+      <button class="lang-btn" onclick="switchLang('pl', this)" lang="pl">Polski</button>
+      <button class="lang-btn" onclick="switchLang('ru', this)" lang="ru">Русский</button>
+      <button class="lang-btn" onclick="switchLang('tr', this)" lang="tr">Türkçe</button>
+      <button class="lang-btn" onclick="switchLang('ja', this)" lang="ja">日本語</button>
+      <button class="lang-btn" onclick="switchLang('ko', this)" lang="ko">한국어</button>
+      <button class="lang-btn" onclick="switchLang('zh', this)" lang="zh-Hans">简体中文</button>
     </div>
 
-    <!-- ENGLISH VERSION -->
-    <div id="en" class="section active">
+    <!-- ENGLISH -->
+    <div id="en" class="section active" lang="en">
       <h2>Delete your account in the app (recommended)</h2>
       <p>You can permanently delete your Velaris account and all associated online data directly in the game:</p>
       <ol>
@@ -80,23 +91,20 @@
         <li>Confirm the deletion.</li>
       </ol>
       <p>This is immediate and irreversible.</p>
-
       <h2>What gets deleted</h2>
       <p>Deleting your account permanently removes: your login (email), your public profile (commander name, avatar, faction, statistics), your chat and alliance messages, friendships, alliance membership, resource transports, player-vs-player records, and your position in the shared galaxy.</p>
       <p>Your local single-player progress lives only on your device; remove it by clearing the app's data or uninstalling the game.</p>
-
       <h2>Request deletion by email</h2>
       <p>If you can no longer access the game, email us from the address you used to register and we will delete your account and data within 30 days:</p>
       <div class="card">
         <p><strong>Email:</strong> velaris@velarisgalacticstrategy.com</p>
         <p><strong>Subject:</strong> Account deletion request</p>
       </div>
-
-      <p>See also our <a href="https://velarisgalacticstrategy.com/privacy-policy.html">Privacy Policy</a>.</p>
+      <p>See also our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
     </div>
 
-    <!-- GERMAN VERSION -->
-    <div id="de" class="section">
+    <!-- GERMAN -->
+    <div id="de" class="section" lang="de">
       <h2>Konto in der App löschen (empfohlen)</h2>
       <p>Sie können Ihr Velaris-Konto und alle zugehörigen Online-Daten direkt im Spiel dauerhaft löschen:</p>
       <ol>
@@ -105,32 +113,249 @@
         <li>Bestätigen Sie die Löschung.</li>
       </ol>
       <p>Die Löschung erfolgt sofort und ist unwiderruflich.</p>
-
       <h2>Was gelöscht wird</h2>
       <p>Beim Löschen Ihres Kontos werden dauerhaft entfernt: Ihr Login (E-Mail), Ihr öffentliches Profil (Kommandantenname, Avatar, Fraktion, Statistiken), Ihre Chat- und Allianz-Nachrichten, Freundschaften, Allianz-Mitgliedschaft, Ressourcen-Transporte, Spieler-gegen-Spieler-Daten sowie Ihre Position in der geteilten Galaxie.</p>
       <p>Ihr lokaler Einzelspieler-Fortschritt liegt nur auf Ihrem Gerät; entfernen Sie ihn durch Löschen der App-Daten oder Deinstallation.</p>
-
       <h2>Löschung per E-Mail anfordern</h2>
       <p>Wenn Sie keinen Zugriff mehr auf das Spiel haben, schreiben Sie uns von der bei der Registrierung verwendeten Adresse; wir löschen Ihr Konto und Ihre Daten innerhalb von 30 Tagen:</p>
       <div class="card">
         <p><strong>E-Mail:</strong> velaris@velarisgalacticstrategy.com</p>
         <p><strong>Betreff:</strong> Antrag auf Kontolöschung</p>
       </div>
+      <p>Siehe auch unsere <a href="/privacy-policy.html">Datenschutzerklärung</a>.</p>
+    </div>
 
-      <p>Siehe auch unsere <a href="https://velarisgalacticstrategy.com/privacy-policy.html">Datenschutzerklärung</a>.</p>
+    <!-- FRENCH -->
+    <div id="fr" class="section" lang="fr">
+      <h2>Supprimer votre compte dans l'application (recommandé)</h2>
+      <p>Vous pouvez supprimer définitivement votre compte Velaris et toutes les données en ligne associées directement dans le jeu :</p>
+      <ol>
+        <li>Ouvrez <strong>Velaris: Galactic Strategy</strong>.</li>
+        <li>Allez dans <strong>Paramètres → Compte → Supprimer le compte</strong>.</li>
+        <li>Confirmez la suppression.</li>
+      </ol>
+      <p>La suppression est immédiate et irréversible.</p>
+      <h2>Ce qui est supprimé</h2>
+      <p>La suppression de votre compte retire définitivement : votre identifiant (e-mail), votre profil public (nom de commandant, avatar, faction, statistiques), vos messages de chat et d'alliance, vos amitiés, votre appartenance à une alliance, les transports de ressources, les données joueur contre joueur ainsi que votre position dans la galaxie partagée.</p>
+      <p>Votre progression solo n'existe que sur votre appareil ; supprimez-la en effaçant les données de l'application ou en désinstallant le jeu.</p>
+      <h2>Demander la suppression par e-mail</h2>
+      <p>Si vous n'avez plus accès au jeu, écrivez-nous depuis l'adresse utilisée lors de l'inscription ; nous supprimerons votre compte et vos données sous 30 jours :</p>
+      <div class="card">
+        <p><strong>E-mail :</strong> velaris@velarisgalacticstrategy.com</p>
+        <p><strong>Objet :</strong> Demande de suppression de compte</p>
+      </div>
+      <p>Consultez aussi notre <a href="/privacy-policy.html">Politique de confidentialité</a>.</p>
+    </div>
+
+    <!-- SPANISH -->
+    <div id="es" class="section" lang="es">
+      <h2>Eliminar tu cuenta en la aplicación (recomendado)</h2>
+      <p>Puedes eliminar de forma permanente tu cuenta de Velaris y todos los datos en línea asociados directamente en el juego:</p>
+      <ol>
+        <li>Abre <strong>Velaris: Galactic Strategy</strong>.</li>
+        <li>Ve a <strong>Ajustes → Cuenta → Eliminar cuenta</strong>.</li>
+        <li>Confirma la eliminación.</li>
+      </ol>
+      <p>La eliminación es inmediata e irreversible.</p>
+      <h2>Qué se elimina</h2>
+      <p>Al eliminar tu cuenta se borran de forma permanente: tu inicio de sesión (correo electrónico), tu perfil público (nombre de comandante, avatar, facción, estadísticas), tus mensajes de chat y de alianza, amistades, pertenencia a alianzas, transportes de recursos, datos de jugador contra jugador y tu posición en la galaxia compartida.</p>
+      <p>Tu progreso individual solo existe en tu dispositivo; elimínalo borrando los datos de la aplicación o desinstalando el juego.</p>
+      <h2>Solicitar la eliminación por correo electrónico</h2>
+      <p>Si ya no tienes acceso al juego, escríbenos desde la dirección con la que te registraste; eliminaremos tu cuenta y tus datos en un plazo de 30 días:</p>
+      <div class="card">
+        <p><strong>Correo electrónico:</strong> velaris@velarisgalacticstrategy.com</p>
+        <p><strong>Asunto:</strong> Solicitud de eliminación de cuenta</p>
+      </div>
+      <p>Consulta también nuestra <a href="/privacy-policy.html">Política de privacidad</a>.</p>
+    </div>
+
+    <!-- ITALIAN -->
+    <div id="it" class="section" lang="it">
+      <h2>Eliminare l'account nell'app (consigliato)</h2>
+      <p>Puoi eliminare definitivamente il tuo account Velaris e tutti i dati online associati direttamente nel gioco:</p>
+      <ol>
+        <li>Apri <strong>Velaris: Galactic Strategy</strong>.</li>
+        <li>Vai su <strong>Impostazioni → Account → Elimina account</strong>.</li>
+        <li>Conferma l'eliminazione.</li>
+      </ol>
+      <p>L'eliminazione è immediata e irreversibile.</p>
+      <h2>Cosa viene eliminato</h2>
+      <p>L'eliminazione dell'account rimuove definitivamente: le credenziali di accesso (e-mail), il profilo pubblico (nome del comandante, avatar, fazione, statistiche), i messaggi di chat e di alleanza, le amicizie, l'appartenenza alle alleanze, i trasporti di risorse, i dati giocatore contro giocatore e la tua posizione nella galassia condivisa.</p>
+      <p>I progressi in modalità giocatore singolo esistono solo sul tuo dispositivo; rimuovili cancellando i dati dell'app o disinstallando il gioco.</p>
+      <h2>Richiedere l'eliminazione via e-mail</h2>
+      <p>Se non hai più accesso al gioco, scrivici dall'indirizzo usato per la registrazione; elimineremo il tuo account e i tuoi dati entro 30 giorni:</p>
+      <div class="card">
+        <p><strong>E-mail:</strong> velaris@velarisgalacticstrategy.com</p>
+        <p><strong>Oggetto:</strong> Richiesta di eliminazione dell'account</p>
+      </div>
+      <p>Consulta anche la nostra <a href="/privacy-policy.html">Informativa sulla privacy</a>.</p>
+    </div>
+
+    <!-- PORTUGUESE (BR) -->
+    <div id="pt" class="section" lang="pt-BR">
+      <h2>Excluir sua conta no aplicativo (recomendado)</h2>
+      <p>Você pode excluir permanentemente sua conta Velaris e todos os dados on-line associados diretamente no jogo:</p>
+      <ol>
+        <li>Abra <strong>Velaris: Galactic Strategy</strong>.</li>
+        <li>Acesse <strong>Configurações → Conta → Excluir conta</strong>.</li>
+        <li>Confirme a exclusão.</li>
+      </ol>
+      <p>A exclusão é imediata e irreversível.</p>
+      <h2>O que é excluído</h2>
+      <p>Ao excluir sua conta, são removidos permanentemente: seu login (e-mail), seu perfil público (nome de comandante, avatar, facção, estatísticas), suas mensagens de chat e de aliança, amizades, participação em alianças, transportes de recursos, dados de jogador contra jogador e sua posição na galáxia compartilhada.</p>
+      <p>Seu progresso no modo um jogador existe apenas no seu dispositivo; remova-o limpando os dados do aplicativo ou desinstalando o jogo.</p>
+      <h2>Solicitar a exclusão por e-mail</h2>
+      <p>Se você não tiver mais acesso ao jogo, escreva-nos a partir do endereço usado no cadastro; excluiremos sua conta e seus dados em até 30 dias:</p>
+      <div class="card">
+        <p><strong>E-mail:</strong> velaris@velarisgalacticstrategy.com</p>
+        <p><strong>Assunto:</strong> Solicitação de exclusão de conta</p>
+      </div>
+      <p>Consulte também nossa <a href="/privacy-policy.html">Política de Privacidade</a>.</p>
+    </div>
+
+    <!-- POLISH -->
+    <div id="pl" class="section" lang="pl">
+      <h2>Usuń konto w aplikacji (zalecane)</h2>
+      <p>Możesz trwale usunąć swoje konto Velaris i wszystkie powiązane dane online bezpośrednio w grze:</p>
+      <ol>
+        <li>Otwórz <strong>Velaris: Galactic Strategy</strong>.</li>
+        <li>Przejdź do <strong>Ustawienia → Konto → Usuń konto</strong>.</li>
+        <li>Potwierdź usunięcie.</li>
+      </ol>
+      <p>Usunięcie jest natychmiastowe i nieodwracalne.</p>
+      <h2>Co zostaje usunięte</h2>
+      <p>Usunięcie konta trwale usuwa: dane logowania (e-mail), profil publiczny (nazwę dowódcy, awatar, frakcję, statystyki), wiadomości czatu i sojuszu, znajomości, członkostwo w sojuszu, transporty surowców, dane rozgrywek gracz kontra gracz oraz twoją pozycję we wspólnej galaktyce.</p>
+      <p>Postęp w trybie jednoosobowym istnieje tylko na twoim urządzeniu; usuń go, czyszcząc dane aplikacji lub odinstalowując grę.</p>
+      <h2>Poproś o usunięcie przez e-mail</h2>
+      <p>Jeśli nie masz już dostępu do gry, napisz do nas z adresu użytego przy rejestracji; usuniemy twoje konto i dane w ciągu 30 dni:</p>
+      <div class="card">
+        <p><strong>E-mail:</strong> velaris@velarisgalacticstrategy.com</p>
+        <p><strong>Temat:</strong> Wniosek o usunięcie konta</p>
+      </div>
+      <p>Zobacz też naszą <a href="/privacy-policy.html">Politykę prywatności</a>.</p>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="ru" class="section" lang="ru">
+      <h2>Удаление аккаунта в приложении (рекомендуется)</h2>
+      <p>Вы можете навсегда удалить свой аккаунт Velaris и все связанные онлайн-данные прямо в игре:</p>
+      <ol>
+        <li>Откройте <strong>Velaris: Galactic Strategy</strong>.</li>
+        <li>Перейдите в <strong>Настройки → Аккаунт → Удалить аккаунт</strong>.</li>
+        <li>Подтвердите удаление.</li>
+      </ol>
+      <p>Удаление происходит немедленно и необратимо.</p>
+      <h2>Что удаляется</h2>
+      <p>При удалении аккаунта навсегда удаляются: ваш логин (адрес электронной почты), публичный профиль (имя командующего, аватар, фракция, статистика), сообщения чата и альянса, дружеские связи, членство в альянсе, транспортировки ресурсов, данные сражений «игрок против игрока», а также ваша позиция в общей галактике.</p>
+      <p>Прогресс одиночной игры хранится только на вашем устройстве; удалите его, очистив данные приложения или удалив игру.</p>
+      <h2>Запрос на удаление по электронной почте</h2>
+      <p>Если у вас больше нет доступа к игре, напишите нам с адреса, использованного при регистрации; мы удалим ваш аккаунт и данные в течение 30 дней:</p>
+      <div class="card">
+        <p><strong>E-mail:</strong> velaris@velarisgalacticstrategy.com</p>
+        <p><strong>Тема:</strong> Запрос на удаление аккаунта</p>
+      </div>
+      <p>См. также нашу <a href="/privacy-policy.html">Политику конфиденциальности</a>.</p>
+    </div>
+
+    <!-- TURKISH -->
+    <div id="tr" class="section" lang="tr">
+      <h2>Hesabınızı uygulamada silin (önerilen)</h2>
+      <p>Velaris hesabınızı ve ilişkili tüm çevrim içi verileri doğrudan oyun içinden kalıcı olarak silebilirsiniz:</p>
+      <ol>
+        <li><strong>Velaris: Galactic Strategy</strong>'yi açın.</li>
+        <li><strong>Ayarlar → Hesap → Hesabı sil</strong> yolunu izleyin.</li>
+        <li>Silme işlemini onaylayın.</li>
+      </ol>
+      <p>Silme işlemi anında gerçekleşir ve geri alınamaz.</p>
+      <h2>Neler silinir</h2>
+      <p>Hesabınızı sildiğinizde şunlar kalıcı olarak kaldırılır: giriş bilgileriniz (e-posta), herkese açık profiliniz (komutan adı, avatar, fraksiyon, istatistikler), sohbet ve ittifak mesajlarınız, arkadaşlıklarınız, ittifak üyeliğiniz, kaynak taşımaları, oyuncuya karşı oyuncu kayıtları ve paylaşılan galaksideki konumunuz.</p>
+      <p>Tek oyunculu ilerlemeniz yalnızca cihazınızda bulunur; uygulama verilerini temizleyerek veya oyunu kaldırarak silebilirsiniz.</p>
+      <h2>E-posta ile silme talebi</h2>
+      <p>Oyuna artık erişemiyorsanız, kayıt sırasında kullandığınız adresten bize yazın; hesabınızı ve verilerinizi 30 gün içinde sileriz:</p>
+      <div class="card">
+        <p><strong>E-posta:</strong> velaris@velarisgalacticstrategy.com</p>
+        <p><strong>Konu:</strong> Hesap silme talebi</p>
+      </div>
+      <p>Ayrıca <a href="/privacy-policy.html">Gizlilik Politikamıza</a> bakın.</p>
+    </div>
+
+    <!-- JAPANESE -->
+    <div id="ja" class="section" lang="ja">
+      <h2>アプリ内でアカウントを削除する（推奨）</h2>
+      <p>Velarisアカウントと関連するすべてのオンラインデータは、ゲーム内で直接、完全に削除できます。</p>
+      <ol>
+        <li><strong>Velaris: Galactic Strategy</strong>を開きます。</li>
+        <li><strong>設定 → アカウント → アカウント削除</strong>に進みます。</li>
+        <li>削除を確認します。</li>
+      </ol>
+      <p>削除は即時に実行され、取り消すことはできません。</p>
+      <h2>削除される内容</h2>
+      <p>アカウントを削除すると、次の情報が完全に削除されます：ログイン情報（メールアドレス）、公開プロフィール（指揮官名、アバター、勢力、統計）、チャットおよび同盟のメッセージ、フレンド関係、同盟への所属、資源輸送、プレイヤー対プレイヤーの記録、共有ギャラクシー内のあなたの位置。</p>
+      <p>シングルプレイの進行状況は端末内にのみ保存されています。アプリのデータを消去するか、ゲームをアンインストールすることで削除できます。</p>
+      <h2>メールで削除を依頼する</h2>
+      <p>ゲームにアクセスできなくなった場合は、登録時のメールアドレスからご連絡ください。30日以内にアカウントとデータを削除します。</p>
+      <div class="card">
+        <p><strong>メール:</strong> velaris@velarisgalacticstrategy.com</p>
+        <p><strong>件名:</strong> アカウント削除のリクエスト</p>
+      </div>
+      <p><a href="/privacy-policy.html">プライバシーポリシー</a>もご覧ください。</p>
+    </div>
+
+    <!-- KOREAN -->
+    <div id="ko" class="section" lang="ko">
+      <h2>앱에서 계정 삭제하기(권장)</h2>
+      <p>Velaris 계정과 연결된 모든 온라인 데이터를 게임 내에서 직접 영구적으로 삭제할 수 있습니다:</p>
+      <ol>
+        <li><strong>Velaris: Galactic Strategy</strong>를 실행합니다.</li>
+        <li><strong>설정 → 계정 → 계정 삭제</strong>로 이동합니다.</li>
+        <li>삭제를 확인합니다.</li>
+      </ol>
+      <p>삭제는 즉시 이루어지며 되돌릴 수 없습니다.</p>
+      <h2>삭제되는 항목</h2>
+      <p>계정을 삭제하면 다음 항목이 영구적으로 제거됩니다: 로그인 정보(이메일), 공개 프로필(지휘관 이름, 아바타, 진영, 통계), 채팅 및 동맹 메시지, 친구 관계, 동맹 가입 정보, 자원 수송, 플레이어 간 대전 기록, 공유 은하에서의 위치.</p>
+      <p>싱글 플레이 진행 상황은 기기에만 저장됩니다. 앱 데이터를 삭제하거나 게임을 제거하면 지워집니다.</p>
+      <h2>이메일로 삭제 요청하기</h2>
+      <p>게임에 더 이상 접속할 수 없는 경우, 가입 시 사용한 이메일 주소로 연락해 주세요. 30일 이내에 계정과 데이터를 삭제해 드립니다:</p>
+      <div class="card">
+        <p><strong>이메일:</strong> velaris@velarisgalacticstrategy.com</p>
+        <p><strong>제목:</strong> 계정 삭제 요청</p>
+      </div>
+      <p><a href="/privacy-policy.html">개인정보 처리방침</a>도 함께 확인해 주세요.</p>
+    </div>
+
+    <!-- CHINESE (SIMPLIFIED) -->
+    <div id="zh" class="section" lang="zh-Hans">
+      <h2>在应用内删除账号（推荐）</h2>
+      <p>您可以直接在游戏中永久删除您的 Velaris 账号及所有关联的在线数据：</p>
+      <ol>
+        <li>打开 <strong>Velaris: Galactic Strategy</strong>。</li>
+        <li>进入 <strong>设置 → 账号 → 删除账号</strong>。</li>
+        <li>确认删除。</li>
+      </ol>
+      <p>删除立即生效且不可撤销。</p>
+      <h2>会删除哪些内容</h2>
+      <p>删除账号将永久移除：您的登录信息（电子邮箱）、公开资料（指挥官名称、头像、派系、统计数据）、聊天与联盟消息、好友关系、联盟成员身份、资源运输、玩家对战记录，以及您在共享星系中的位置。</p>
+      <p>单人游戏进度仅保存在您的设备上；清除应用数据或卸载游戏即可删除。</p>
+      <h2>通过电子邮件申请删除</h2>
+      <p>如果您无法再访问游戏，请使用注册时的邮箱地址联系我们，我们将在 30 天内删除您的账号和数据：</p>
+      <div class="card">
+        <p><strong>电子邮箱：</strong> velaris@velarisgalacticstrategy.com</p>
+        <p><strong>主题：</strong> 账号删除申请</p>
+      </div>
+      <p>另请参阅我们的<a href="/privacy-policy.html">隐私政策</a>。</p>
     </div>
 
     <footer>
-      &copy; 2026 Velaris: Galactic Strategy. All rights reserved. / Alle Rechte vorbehalten.
+      &copy; 2026 Velorian Studios — Velaris: Galactic Strategy. All rights reserved.
     </footer>
   </div>
 
   <script>
-    function switchLang(lang) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById(lang).classList.add('active');
-      event.target.classList.add('active');
+    function switchLang(lang, btn) {
+      document.querySelectorAll('.section').forEach(function (s) { s.classList.toggle('active', s.id === lang); });
+      document.querySelectorAll('.lang-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.documentElement.lang = btn.getAttribute('lang');
     }
   </script>
 </body>

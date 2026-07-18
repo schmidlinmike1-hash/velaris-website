@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Velaris: Galactic Strategy — Privacy Policy</title>
-  <meta name="description" content="Privacy policy for Velaris: Galactic Strategy — what data the game collects, how it is used, and your rights as a player.">
+  <meta name="description" content="Privacy policy for Velaris: Galactic Strategy — what data the game and website collect, how it is used, and your rights as a player. Available in 12 languages.">
   <link rel="canonical" href="https://velarisgalacticstrategy.com/privacy-policy.html">
   <link rel="icon" type="image/png" href="/icon.png">
   <style>
@@ -24,96 +24,69 @@
       line-height: 1.7;
       padding: 20px;
     }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    h1 {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 8px;
-    }
-    .subtitle {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 40px;
-    }
+    .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+    h1 { font-size: 2rem; color: var(--primary); margin-bottom: 8px; }
+    .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 32px; }
     h2 {
-      font-size: 1.3rem;
-      color: var(--primary);
-      margin-top: 32px;
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border);
+      font-size: 1.3rem; color: var(--primary);
+      margin-top: 32px; margin-bottom: 12px;
+      padding-bottom: 8px; border-bottom: 1px solid var(--border);
     }
     p { margin-bottom: 16px; }
-    ul {
-      margin-bottom: 16px;
-      padding-left: 24px;
-    }
+    ul, ol { margin-bottom: 16px; padding-left: 24px; }
     li { margin-bottom: 8px; }
     a { color: var(--primary); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
     .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px; margin: 20px 0;
     }
-    .lang-switch {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 32px;
-    }
+    .lang-switch { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
     .lang-btn {
-      padding: 8px 20px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      cursor: pointer;
-      font-size: 0.9rem;
-      transition: all 0.2s;
+      padding: 7px 14px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text); cursor: pointer;
+      font-size: 0.85rem; transition: all 0.2s;
     }
     .lang-btn.active {
-      background: var(--primary);
-      color: var(--bg);
-      border-color: var(--primary);
-      font-weight: 600;
+      background: var(--primary); color: var(--bg);
+      border-color: var(--primary); font-weight: 600;
     }
-    .lang-btn:hover:not(.active) {
-      border-color: var(--primary);
-    }
+    .lang-btn:hover:not(.active) { border-color: var(--primary); }
     .section { display: none; }
     .section.active { display: block; }
     footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.85rem;
-      text-align: center;
+      margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border);
+      color: var(--muted); font-size: 0.85rem; text-align: center;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Velaris: Galactic Strategy</h1>
-    <p class="subtitle">Privacy Policy / Datenschutzerklärung</p>
+    <p class="subtitle">Privacy Policy</p>
 
-    <div class="lang-switch">
-      <button class="lang-btn active" onclick="switchLang('en')">English</button>
-      <button class="lang-btn" onclick="switchLang('de')">Deutsch</button>
+    <div class="lang-switch" role="group" aria-label="Language selection">
+      <button class="lang-btn active" onclick="switchLang('en', this)" lang="en">English</button>
+      <button class="lang-btn" onclick="switchLang('de', this)" lang="de">Deutsch</button>
+      <button class="lang-btn" onclick="switchLang('fr', this)" lang="fr">Français</button>
+      <button class="lang-btn" onclick="switchLang('es', this)" lang="es">Español</button>
+      <button class="lang-btn" onclick="switchLang('it', this)" lang="it">Italiano</button>
+      <button class="lang-btn" onclick="switchLang('pt', this)" lang="pt-BR">Português (BR)</button>
+      <button class="lang-btn" onclick="switchLang('pl', this)" lang="pl">Polski</button>
+      <button class="lang-btn" onclick="switchLang('ru', this)" lang="ru">Русский</button>
+      <button class="lang-btn" onclick="switchLang('tr', this)" lang="tr">Türkçe</button>
+      <button class="lang-btn" onclick="switchLang('ja', this)" lang="ja">日本語</button>
+      <button class="lang-btn" onclick="switchLang('ko', this)" lang="ko">한국어</button>
+      <button class="lang-btn" onclick="switchLang('zh', this)" lang="zh-Hans">简体中文</button>
     </div>
 
-    <!-- ENGLISH VERSION -->
-    <div id="en" class="section active">
-      <p><strong>Effective Date:</strong> July 4, 2026</p>
+    <!-- ENGLISH -->
+    <div id="en" class="section active" lang="en">
+      <p><strong>Effective date:</strong> July 4, 2026 · <strong>Last updated:</strong> July 18, 2026</p>
 
       <h2>1. Introduction</h2>
-      <p>Welcome to Velaris: Galactic Strategy ("the Game"). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains what information we collect, how we use it, and the choices you have. The Game has a single-player part that runs offline on your device, and online multiplayer features (account, shared galaxy, chat, friends, alliances, player-vs-player) that require an account and communicate with our backend.</p>
+      <p>Welcome to Velaris: Galactic Strategy ("the Game"). The Game is developed and published by Velorian Studios ("we", "us"). We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains what information we collect, how we use it, and the choices you have. The Game has a single-player part that runs offline on your device, and online multiplayer features (account, shared galaxy, chat, friends, alliances, player-vs-player) that require an account and communicate with our backend.</p>
 
       <h2>2. Information We Collect</h2>
       <p><strong>a) Account data.</strong> To use the online features you create an account with your <strong>email address</strong> and a password. Passwords are handled by our authentication provider (Supabase) and are stored only in hashed form; we never see your plain-text password.</p>
@@ -156,27 +129,31 @@
       <p>You can:</p>
       <ul>
         <li><strong>Delete your account and all associated online data</strong> at any time inside the Game: open <em>Settings → Account → Delete account</em>. This permanently removes your account, public profile, messages, friendships, alliance membership and other personal online data, and cannot be undone.</li>
-        <li>Request account and data deletion by email if you cannot access the Game — see <a href="https://velarisgalacticstrategy.com/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a>.</li>
+        <li>Request account and data deletion by email if you cannot access the Game — see <a href="/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a>.</li>
         <li>Delete your local single-player data by clearing the app's data or uninstalling the Game.</li>
         <li>Access or correct your data, and change your preferences, within the Game.</li>
       </ul>
 
-      <h2>10. Changes to This Policy</h2>
+      <h2>10. This Website</h2>
+      <p>This website (velarisgalacticstrategy.com) is a static site hosted on <strong>GitHub Pages</strong> (GitHub, Inc.). The website itself sets no cookies, uses no analytics or tracking services, and loads no third-party fonts or scripts. As the hosting provider, GitHub may process technical access data (such as IP addresses) in server logs in order to deliver the site; see GitHub's privacy statement for details.</p>
+
+      <h2>11. Changes to This Policy</h2>
       <p>We may update this Privacy Policy from time to time. We will post the updated policy on this page; changes are effective upon posting.</p>
 
-      <h2>11. Contact Us</h2>
+      <h2>12. Contact Us</h2>
       <p>If you have any questions about this Privacy Policy or your data, please contact us at:</p>
       <div class="card">
+        <p><strong>Velorian Studios</strong></p>
         <p><strong>Email:</strong> velaris@velarisgalacticstrategy.com</p>
       </div>
     </div>
 
-    <!-- GERMAN VERSION -->
-    <div id="de" class="section">
-      <p><strong>Gültig ab:</strong> 4. Juli 2026</p>
+    <!-- GERMAN -->
+    <div id="de" class="section" lang="de">
+      <p><strong>Gültig ab:</strong> 4. Juli 2026 · <strong>Zuletzt aktualisiert:</strong> 18. Juli 2026</p>
 
       <h2>1. Einleitung</h2>
-      <p>Willkommen bei Velaris: Galactic Strategy ("das Spiel"). Wir respektieren Ihre Privatsphäre und schützen Ihre personenbezogenen Daten. Diese Datenschutzerklärung erläutert, welche Daten wir erheben, wie wir sie verwenden und welche Wahlmöglichkeiten Sie haben. Das Spiel hat einen Einzelspieler-Teil, der offline auf Ihrem Gerät läuft, und Online-Mehrspieler-Funktionen (Konto, geteilte Galaxie, Chat, Freunde, Allianzen, Spieler-gegen-Spieler), die ein Konto erfordern und mit unserem Backend kommunizieren.</p>
+      <p>Willkommen bei Velaris: Galactic Strategy („das Spiel"). Das Spiel wird von Velorian Studios („wir", „uns") entwickelt und herausgegeben. Wir respektieren Ihre Privatsphäre und schützen Ihre personenbezogenen Daten. Diese Datenschutzerklärung erläutert, welche Daten wir erheben, wie wir sie verwenden und welche Wahlmöglichkeiten Sie haben. Das Spiel hat einen Einzelspieler-Teil, der offline auf Ihrem Gerät läuft, und Online-Mehrspieler-Funktionen (Konto, geteilte Galaxie, Chat, Freunde, Allianzen, Spieler-gegen-Spieler), die ein Konto erfordern und mit unserem Backend kommunizieren.</p>
 
       <h2>2. Welche Daten wir erheben</h2>
       <p><strong>a) Kontodaten.</strong> Für die Online-Funktionen erstellen Sie ein Konto mit Ihrer <strong>E-Mail-Adresse</strong> und einem Passwort. Passwörter werden von unserem Authentifizierungsdienst (Supabase) verarbeitet und nur in gehashter Form gespeichert; Ihr Klartext-Passwort sehen wir nie.</p>
@@ -219,32 +196,706 @@
       <p>Sie können:</p>
       <ul>
         <li><strong>Ihr Konto und alle zugehörigen Online-Daten jederzeit im Spiel löschen</strong>: <em>Einstellungen → Konto → Konto löschen</em>. Dies entfernt Ihr Konto, öffentliches Profil, Nachrichten, Freundschaften, Allianz-Mitgliedschaft und andere personenbezogene Online-Daten dauerhaft und kann nicht rückgängig gemacht werden.</li>
-        <li>Die Löschung von Konto und Daten per E-Mail anfordern, falls Sie keinen Zugriff auf das Spiel haben — siehe <a href="https://velarisgalacticstrategy.com/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a>.</li>
+        <li>Die Löschung von Konto und Daten per E-Mail anfordern, falls Sie keinen Zugriff auf das Spiel haben — siehe <a href="/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a>.</li>
         <li>Ihre lokalen Einzelspieler-Daten durch Löschen der App-Daten oder Deinstallation entfernen.</li>
         <li>Ihre Daten im Spiel einsehen oder korrigieren und Ihre Einstellungen ändern.</li>
       </ul>
 
-      <h2>10. Änderungen dieser Richtlinie</h2>
+      <h2>10. Diese Website</h2>
+      <p>Diese Website (velarisgalacticstrategy.com) ist eine statische Website und wird auf <strong>GitHub Pages</strong> (GitHub, Inc.) gehostet. Die Website selbst setzt keine Cookies, verwendet keine Analyse- oder Tracking-Dienste und lädt keine Schriftarten oder Skripte von Drittanbietern. Als Hosting-Anbieter kann GitHub technische Zugriffsdaten (z. B. IP-Adressen) in Server-Logs verarbeiten, um die Website auszuliefern; Einzelheiten finden Sie in der Datenschutzerklärung von GitHub.</p>
+
+      <h2>11. Änderungen dieser Richtlinie</h2>
       <p>Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Die aktualisierte Fassung veröffentlichen wir auf dieser Seite; Änderungen treten mit Veröffentlichung in Kraft.</p>
 
-      <h2>11. Kontakt</h2>
+      <h2>12. Kontakt</h2>
       <p>Wenn Sie Fragen zu dieser Datenschutzerklärung oder Ihren Daten haben, kontaktieren Sie uns bitte unter:</p>
       <div class="card">
+        <p><strong>Velorian Studios</strong></p>
         <p><strong>E-Mail:</strong> velaris@velarisgalacticstrategy.com</p>
       </div>
     </div>
 
+    <!-- FRENCH -->
+    <div id="fr" class="section" lang="fr">
+      <p><strong>Date d'entrée en vigueur :</strong> 4 juillet 2026 · <strong>Dernière mise à jour :</strong> 18 juillet 2026</p>
+
+      <h2>1. Introduction</h2>
+      <p>Bienvenue dans Velaris: Galactic Strategy (« le Jeu »). Le Jeu est développé et édité par Velorian Studios (« nous »). Nous respectons votre vie privée et nous engageons à protéger vos données personnelles. La présente politique de confidentialité explique quelles informations nous collectons, comment nous les utilisons et quels sont vos choix. Le Jeu comporte une partie solo qui fonctionne hors ligne sur votre appareil, ainsi que des fonctionnalités multijoueur en ligne (compte, galaxie partagée, chat, amis, alliances, joueur contre joueur) qui nécessitent un compte et communiquent avec notre backend.</p>
+
+      <h2>2. Les informations que nous collectons</h2>
+      <p><strong>a) Données de compte.</strong> Pour utiliser les fonctionnalités en ligne, vous créez un compte avec votre <strong>adresse e-mail</strong> et un mot de passe. Les mots de passe sont gérés par notre fournisseur d'authentification (Supabase) et ne sont stockés que sous forme hachée ; nous ne voyons jamais votre mot de passe en clair.</p>
+      <p><strong>b) Profil public.</strong> Lorsque vous jouez en ligne, nous stockons un profil visible par les autres joueurs : votre <strong>nom de commandant</strong>, votre avatar, votre faction et vos statistiques de jeu (p. ex. puissance totale, puissance de flotte, résultats PvP, classements) utilisés pour les classements et le matchmaking.</p>
+      <p><strong>c) Contenus et interactions multijoueur.</strong> Si vous utilisez les fonctionnalités en ligne, nous stockons les données nécessaires à leur fonctionnement : les <strong>messages de chat</strong> envoyés aux autres joueurs et aux alliances, les demandes d'ami et amitiés, l'appartenance à une alliance et le chat d'alliance, les transports de ressources et les attaques joueur contre joueur. Votre position d'origine dans la galaxie partagée est stockée afin que les autres joueurs puissent la découvrir.</p>
+      <p><strong>d) Données de jeu locales.</strong> Votre progression solo (bâtiments, recherche, flottes, ressources, paramètres, langue) est stockée localement sur votre appareil. Un résumé peut être synchronisé avec votre compte pour alimenter les fonctionnalités en ligne ci-dessus.</p>
+      <p><strong>e) Données techniques / de l'appareil.</strong> Des informations de base sur l'appareil et le système d'exploitation à des fins de compatibilité, et — uniquement si vous les activez — des notifications push locales.</p>
+
+      <h2>3. Comment nous utilisons les informations</h2>
+      <ul>
+        <li>Pour créer et sécuriser votre compte et vous connecter</li>
+        <li>Pour fournir les fonctionnalités en ligne (galaxie partagée, chat, amis, alliances, PvP, transports, classements)</li>
+        <li>Pour afficher votre profil public et vos classements aux autres joueurs</li>
+        <li>Pour sauvegarder et restaurer votre progression et vos préférences</li>
+        <li>Pour maintenir le Jeu fonctionnel, sûr et équitable (p. ex. traitement des signalements et blocages)</li>
+      </ul>
+      <p>Nous ne vendons pas vos données personnelles et ne les utilisons ni pour la publicité ni pour le suivi inter-applications.</p>
+
+      <h2>4. Stockage et sécurité des données</h2>
+      <p>Les données en ligne sont stockées dans notre backend hébergé par <strong>Supabase</strong> (sous-traitant agissant pour notre compte). L'accès est protégé par une sécurité au niveau des lignes (row-level security), de sorte que les joueurs ne peuvent lire que les données auxquelles ils sont autorisés à accéder. Les données sont transmises via des connexions chiffrées (HTTPS/TLS). Les données solo restent sur votre appareil.</p>
+
+      <h2>5. Services tiers</h2>
+      <ul>
+        <li><strong>Supabase</strong> — authentification, base de données et backend temps réel pour les fonctionnalités en ligne.</li>
+        <li><strong>Expo / React Native</strong> — le framework applicatif utilisé pour développer le Jeu.</li>
+        <li><strong>Google Play</strong> — distribution de l'application sur Android.</li>
+      </ul>
+      <p>Ces services peuvent traiter certaines données techniques comme décrit dans leurs politiques de confidentialité respectives.</p>
+
+      <h2>6. Contenus générés par les utilisateurs, blocage &amp; signalement</h2>
+      <p>Les fonctionnalités en ligne permettent aux joueurs de communiquer (chat, chat d'alliance) et de choisir leur nom d'affichage. Nous ne tolérons ni harcèlement ni contenus abusifs. Dans le Jeu, vous pouvez <strong>bloquer</strong> un autre joueur (vous ne verrez plus ses messages) et <strong>signaler</strong> un joueur pour examen. Les signalements sont examinés et peuvent entraîner des mesures contre le compte signalé.</p>
+
+      <h2>7. Vie privée des enfants</h2>
+      <p>Le Jeu ne s'adresse pas aux enfants de moins de 13 ans et nous ne collectons pas sciemment de données personnelles les concernant. Si vous pensez qu'un enfant nous a fourni des données personnelles, veuillez nous contacter ; nous les supprimerons.</p>
+
+      <h2>8. Achats intégrés</h2>
+      <p>Le Jeu pourra proposer à l'avenir des achats intégrés facultatifs. Tout traitement de paiement serait entièrement géré par la boutique d'applications (Google Play). Nous ne collectons ni ne stockons d'informations de paiement.</p>
+
+      <h2>9. Vos droits &amp; suppression du compte</h2>
+      <p>Vous pouvez :</p>
+      <ul>
+        <li><strong>Supprimer votre compte et toutes les données en ligne associées</strong> à tout moment dans le Jeu : <em>Paramètres → Compte → Supprimer le compte</em>. Cette action supprime définitivement votre compte, votre profil public, vos messages, vos amitiés, votre appartenance à une alliance et vos autres données personnelles en ligne ; elle est irréversible.</li>
+        <li>Demander la suppression du compte et des données par e-mail si vous n'avez plus accès au Jeu — voir <a href="/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a>.</li>
+        <li>Supprimer vos données solo locales en effaçant les données de l'application ou en désinstallant le Jeu.</li>
+        <li>Consulter ou corriger vos données et modifier vos préférences dans le Jeu.</li>
+      </ul>
+
+      <h2>10. Ce site web</h2>
+      <p>Ce site web (velarisgalacticstrategy.com) est un site statique hébergé sur <strong>GitHub Pages</strong> (GitHub, Inc.). Le site lui-même ne dépose aucun cookie, n'utilise aucun service d'analyse ou de suivi et ne charge ni polices ni scripts tiers. En tant qu'hébergeur, GitHub peut traiter des données techniques d'accès (comme les adresses IP) dans des journaux serveur afin de fournir le site ; consultez la déclaration de confidentialité de GitHub pour plus de détails.</p>
+
+      <h2>11. Modifications de cette politique</h2>
+      <p>Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. Nous publierons la version mise à jour sur cette page ; les modifications prennent effet dès leur publication.</p>
+
+      <h2>12. Nous contacter</h2>
+      <p>Pour toute question concernant cette politique de confidentialité ou vos données, contactez-nous :</p>
+      <div class="card">
+        <p><strong>Velorian Studios</strong></p>
+        <p><strong>E-mail :</strong> velaris@velarisgalacticstrategy.com</p>
+      </div>
+    </div>
+
+    <!-- SPANISH -->
+    <div id="es" class="section" lang="es">
+      <p><strong>Fecha de entrada en vigor:</strong> 4 de julio de 2026 · <strong>Última actualización:</strong> 18 de julio de 2026</p>
+
+      <h2>1. Introducción</h2>
+      <p>Bienvenido a Velaris: Galactic Strategy («el Juego»). El Juego es desarrollado y publicado por Velorian Studios («nosotros»). Respetamos tu privacidad y nos comprometemos a proteger tus datos personales. Esta política de privacidad explica qué información recopilamos, cómo la usamos y qué opciones tienes. El Juego tiene una parte individual que funciona sin conexión en tu dispositivo y funciones multijugador en línea (cuenta, galaxia compartida, chat, amigos, alianzas, jugador contra jugador) que requieren una cuenta y se comunican con nuestro backend.</p>
+
+      <h2>2. Información que recopilamos</h2>
+      <p><strong>a) Datos de la cuenta.</strong> Para usar las funciones en línea creas una cuenta con tu <strong>dirección de correo electrónico</strong> y una contraseña. Las contraseñas las gestiona nuestro proveedor de autenticación (Supabase) y se almacenan solo en forma de hash; nunca vemos tu contraseña en texto claro.</p>
+      <p><strong>b) Perfil público.</strong> Cuando juegas en línea almacenamos un perfil que otros jugadores pueden ver: tu <strong>nombre de comandante</strong> elegido, avatar, facción y estadísticas de juego (p. ej. poder total, poder de flota, resultados PvP, clasificaciones) usados para las tablas de clasificación y el emparejamiento.</p>
+      <p><strong>c) Contenido e interacciones multijugador.</strong> Si usas las funciones en línea, almacenamos los datos necesarios para proporcionarlas: los <strong>mensajes de chat</strong> que envías a otros jugadores y a las alianzas, solicitudes de amistad y amistades, pertenencia a alianzas y chat de alianza, transportes de recursos y ataques jugador contra jugador. Tu posición de origen en la galaxia compartida se almacena para que otros jugadores puedan descubrirla.</p>
+      <p><strong>d) Datos de juego locales.</strong> Tu progreso individual (edificios, investigación, flotas, recursos, ajustes, idioma) se almacena localmente en tu dispositivo. Un resumen puede sincronizarse con tu cuenta para alimentar las funciones en línea anteriores.</p>
+      <p><strong>e) Datos técnicos / del dispositivo.</strong> Información básica del dispositivo y del sistema operativo por motivos de compatibilidad y — solo si las activas — notificaciones push locales.</p>
+
+      <h2>3. Cómo usamos la información</h2>
+      <ul>
+        <li>Para crear y proteger tu cuenta e iniciar sesión</li>
+        <li>Para proporcionar las funciones en línea (galaxia compartida, chat, amigos, alianzas, PvP, transportes, clasificaciones)</li>
+        <li>Para mostrar tu perfil público y tus clasificaciones a otros jugadores</li>
+        <li>Para guardar y restaurar tu progreso y tus preferencias</li>
+        <li>Para mantener el Juego operativo, seguro y justo (p. ej. gestión de denuncias y bloqueos)</li>
+      </ul>
+      <p>No vendemos tus datos personales ni los usamos para publicidad o seguimiento entre aplicaciones.</p>
+
+      <h2>4. Almacenamiento y seguridad de los datos</h2>
+      <p>Los datos en línea se almacenan en nuestro backend alojado en <strong>Supabase</strong> (un encargado del tratamiento que actúa en nuestro nombre). El acceso está protegido mediante seguridad a nivel de fila, de modo que los jugadores solo pueden leer los datos que tienen permitido ver. Los datos se transmiten por conexiones cifradas (HTTPS/TLS). Los datos del modo individual permanecen en tu dispositivo.</p>
+
+      <h2>5. Servicios de terceros</h2>
+      <ul>
+        <li><strong>Supabase</strong> — autenticación, base de datos y backend en tiempo real para las funciones en línea.</li>
+        <li><strong>Expo / React Native</strong> — el framework de aplicaciones con el que se creó el Juego.</li>
+        <li><strong>Google Play</strong> — distribución de la aplicación en Android.</li>
+      </ul>
+      <p>Estos servicios pueden tratar ciertos datos técnicos según se describe en sus respectivas políticas de privacidad.</p>
+
+      <h2>6. Contenido generado por usuarios, bloqueo y denuncias</h2>
+      <p>Las funciones en línea permiten a los jugadores comunicarse (chat, chat de alianza) y elegir nombres visibles. No toleramos el acoso ni los contenidos abusivos. Dentro del Juego puedes <strong>bloquear</strong> a otro jugador (dejarás de ver sus mensajes) y <strong>denunciar</strong> a un jugador para su revisión. Las denuncias se revisan y pueden dar lugar a medidas contra la cuenta denunciada.</p>
+
+      <h2>7. Privacidad de los menores</h2>
+      <p>El Juego no está dirigido a menores de 13 años y no recopilamos conscientemente información personal de ellos. Si crees que un menor nos ha proporcionado información personal, contáctanos y la eliminaremos.</p>
+
+      <h2>8. Compras dentro de la aplicación</h2>
+      <p>El Juego podría ofrecer en el futuro compras opcionales dentro de la aplicación. Cualquier procesamiento de pagos lo gestionaría íntegramente la tienda de aplicaciones (Google Play). No recopilamos ni almacenamos información de pago.</p>
+
+      <h2>9. Tus derechos y eliminación de la cuenta</h2>
+      <p>Puedes:</p>
+      <ul>
+        <li><strong>Eliminar tu cuenta y todos los datos en línea asociados</strong> en cualquier momento dentro del Juego: <em>Ajustes → Cuenta → Eliminar cuenta</em>. Esto elimina de forma permanente tu cuenta, perfil público, mensajes, amistades, pertenencia a alianzas y demás datos personales en línea, y no se puede deshacer.</li>
+        <li>Solicitar la eliminación de la cuenta y los datos por correo electrónico si no puedes acceder al Juego — consulta <a href="/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a>.</li>
+        <li>Eliminar tus datos locales del modo individual borrando los datos de la aplicación o desinstalando el Juego.</li>
+        <li>Acceder a tus datos o corregirlos, y cambiar tus preferencias, dentro del Juego.</li>
+      </ul>
+
+      <h2>10. Este sitio web</h2>
+      <p>Este sitio web (velarisgalacticstrategy.com) es un sitio estático alojado en <strong>GitHub Pages</strong> (GitHub, Inc.). El sitio en sí no instala cookies, no usa servicios de análisis ni de seguimiento y no carga fuentes ni scripts de terceros. Como proveedor de alojamiento, GitHub puede tratar datos técnicos de acceso (como direcciones IP) en registros del servidor para entregar el sitio; consulta la declaración de privacidad de GitHub para más detalles.</p>
+
+      <h2>11. Cambios en esta política</h2>
+      <p>Podemos actualizar esta política de privacidad ocasionalmente. Publicaremos la versión actualizada en esta página; los cambios entran en vigor con su publicación.</p>
+
+      <h2>12. Contacto</h2>
+      <p>Si tienes preguntas sobre esta política de privacidad o sobre tus datos, contáctanos en:</p>
+      <div class="card">
+        <p><strong>Velorian Studios</strong></p>
+        <p><strong>Correo electrónico:</strong> velaris@velarisgalacticstrategy.com</p>
+      </div>
+    </div>
+
+    <!-- ITALIAN -->
+    <div id="it" class="section" lang="it">
+      <p><strong>Data di entrata in vigore:</strong> 4 luglio 2026 · <strong>Ultimo aggiornamento:</strong> 18 luglio 2026</p>
+
+      <h2>1. Introduzione</h2>
+      <p>Benvenuto in Velaris: Galactic Strategy («il Gioco»). Il Gioco è sviluppato e pubblicato da Velorian Studios («noi»). Rispettiamo la tua privacy e ci impegniamo a proteggere i tuoi dati personali. La presente informativa sulla privacy spiega quali informazioni raccogliamo, come le utilizziamo e quali scelte hai a disposizione. Il Gioco ha una parte per giocatore singolo che funziona offline sul tuo dispositivo e funzionalità multiplayer online (account, galassia condivisa, chat, amici, alleanze, giocatore contro giocatore) che richiedono un account e comunicano con il nostro backend.</p>
+
+      <h2>2. Informazioni che raccogliamo</h2>
+      <p><strong>a) Dati dell'account.</strong> Per usare le funzionalità online crei un account con il tuo <strong>indirizzo e-mail</strong> e una password. Le password sono gestite dal nostro fornitore di autenticazione (Supabase) e vengono memorizzate solo in forma di hash; non vediamo mai la tua password in chiaro.</p>
+      <p><strong>b) Profilo pubblico.</strong> Quando giochi online memorizziamo un profilo visibile agli altri giocatori: il tuo <strong>nome del comandante</strong>, l'avatar, la fazione e le statistiche di gioco (ad es. potenza totale, potenza della flotta, risultati PvP, classifiche) usate per classifiche e matchmaking.</p>
+      <p><strong>c) Contenuti e interazioni multiplayer.</strong> Se usi le funzionalità online memorizziamo i dati necessari a fornirle: i <strong>messaggi di chat</strong> inviati ad altri giocatori e alle alleanze, richieste di amicizia e amicizie, appartenenza alle alleanze e chat di alleanza, trasporti di risorse e attacchi giocatore contro giocatore. La tua posizione di origine nella galassia condivisa viene memorizzata affinché gli altri giocatori possano scoprirla.</p>
+      <p><strong>d) Dati di gioco locali.</strong> I tuoi progressi in modalità giocatore singolo (edifici, ricerca, flotte, risorse, impostazioni, lingua) sono memorizzati localmente sul tuo dispositivo. Un riepilogo può essere sincronizzato con il tuo account per alimentare le funzionalità online sopra descritte.</p>
+      <p><strong>e) Dati tecnici / del dispositivo.</strong> Informazioni di base su dispositivo e sistema operativo per la compatibilità e — solo se le attivi — notifiche push locali.</p>
+
+      <h2>3. Come utilizziamo le informazioni</h2>
+      <ul>
+        <li>Per creare e proteggere il tuo account e consentirti l'accesso</li>
+        <li>Per fornire le funzionalità online (galassia condivisa, chat, amici, alleanze, PvP, trasporti, classifiche)</li>
+        <li>Per mostrare il tuo profilo pubblico e le tue classifiche agli altri giocatori</li>
+        <li>Per salvare e ripristinare i tuoi progressi e le tue preferenze</li>
+        <li>Per mantenere il Gioco funzionante, sicuro ed equo (ad es. gestione di segnalazioni e blocchi)</li>
+      </ul>
+      <p>Non vendiamo i tuoi dati personali e non li usiamo per pubblicità o tracciamento tra app.</p>
+
+      <h2>4. Archiviazione e sicurezza dei dati</h2>
+      <p>I dati online sono archiviati nel nostro backend ospitato da <strong>Supabase</strong> (responsabile del trattamento che agisce per nostro conto). L'accesso è protetto da row-level security, così i giocatori possono leggere solo i dati che sono autorizzati a vedere. I dati sono trasmessi tramite connessioni cifrate (HTTPS/TLS). I dati della modalità giocatore singolo restano sul tuo dispositivo.</p>
+
+      <h2>5. Servizi di terze parti</h2>
+      <ul>
+        <li><strong>Supabase</strong> — autenticazione, database e backend in tempo reale per le funzionalità online.</li>
+        <li><strong>Expo / React Native</strong> — il framework applicativo con cui è stato realizzato il Gioco.</li>
+        <li><strong>Google Play</strong> — distribuzione dell'app su Android.</li>
+      </ul>
+      <p>Questi servizi possono trattare alcuni dati tecnici come descritto nelle rispettive informative sulla privacy.</p>
+
+      <h2>6. Contenuti generati dagli utenti, blocco e segnalazione</h2>
+      <p>Le funzionalità online consentono ai giocatori di comunicare (chat, chat di alleanza) e di scegliere nomi visibili. Non tolleriamo molestie o contenuti abusivi. Nel Gioco puoi <strong>bloccare</strong> un altro giocatore (non vedrai più i suoi messaggi) e <strong>segnalare</strong> un giocatore per una verifica. Le segnalazioni vengono esaminate e possono portare a provvedimenti contro l'account segnalato.</p>
+
+      <h2>7. Privacy dei minori</h2>
+      <p>Il Gioco non è rivolto a minori di 13 anni e non raccogliamo consapevolmente informazioni personali da loro. Se ritieni che un minore ci abbia fornito informazioni personali, contattaci e le elimineremo.</p>
+
+      <h2>8. Acquisti in-app</h2>
+      <p>In futuro il Gioco potrebbe offrire acquisti in-app facoltativi. L'eventuale elaborazione dei pagamenti sarebbe gestita interamente dallo store (Google Play). Non raccogliamo né memorizziamo informazioni di pagamento.</p>
+
+      <h2>9. I tuoi diritti ed eliminazione dell'account</h2>
+      <p>Puoi:</p>
+      <ul>
+        <li><strong>Eliminare il tuo account e tutti i dati online associati</strong> in qualsiasi momento nel Gioco: <em>Impostazioni → Account → Elimina account</em>. Questa operazione rimuove definitivamente account, profilo pubblico, messaggi, amicizie, appartenenza alle alleanze e altri dati personali online e non può essere annullata.</li>
+        <li>Richiedere l'eliminazione di account e dati via e-mail se non puoi accedere al Gioco — vedi <a href="/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a>.</li>
+        <li>Eliminare i dati locali della modalità giocatore singolo cancellando i dati dell'app o disinstallando il Gioco.</li>
+        <li>Accedere ai tuoi dati o correggerli e modificare le tue preferenze nel Gioco.</li>
+      </ul>
+
+      <h2>10. Questo sito web</h2>
+      <p>Questo sito web (velarisgalacticstrategy.com) è un sito statico ospitato su <strong>GitHub Pages</strong> (GitHub, Inc.). Il sito in sé non imposta cookie, non usa servizi di analisi o tracciamento e non carica font o script di terze parti. In qualità di provider di hosting, GitHub può trattare dati tecnici di accesso (come gli indirizzi IP) nei log del server per erogare il sito; per i dettagli consulta l'informativa sulla privacy di GitHub.</p>
+
+      <h2>11. Modifiche a questa informativa</h2>
+      <p>Potremmo aggiornare questa informativa sulla privacy di tanto in tanto. Pubblicheremo la versione aggiornata su questa pagina; le modifiche hanno effetto dalla pubblicazione.</p>
+
+      <h2>12. Contatti</h2>
+      <p>Per qualsiasi domanda su questa informativa o sui tuoi dati, contattaci:</p>
+      <div class="card">
+        <p><strong>Velorian Studios</strong></p>
+        <p><strong>E-mail:</strong> velaris@velarisgalacticstrategy.com</p>
+      </div>
+    </div>
+
+    <!-- PORTUGUESE (BR) -->
+    <div id="pt" class="section" lang="pt-BR">
+      <p><strong>Data de vigência:</strong> 4 de julho de 2026 · <strong>Última atualização:</strong> 18 de julho de 2026</p>
+
+      <h2>1. Introdução</h2>
+      <p>Bem-vindo a Velaris: Galactic Strategy ("o Jogo"). O Jogo é desenvolvido e publicado pela Velorian Studios ("nós"). Respeitamos sua privacidade e temos o compromisso de proteger seus dados pessoais. Esta Política de Privacidade explica quais informações coletamos, como as usamos e quais são suas opções. O Jogo tem uma parte para um jogador que funciona off-line no seu dispositivo e recursos multijogador on-line (conta, galáxia compartilhada, chat, amigos, alianças, jogador contra jogador) que exigem uma conta e se comunicam com nosso backend.</p>
+
+      <h2>2. Informações que coletamos</h2>
+      <p><strong>a) Dados da conta.</strong> Para usar os recursos on-line, você cria uma conta com seu <strong>endereço de e-mail</strong> e uma senha. As senhas são gerenciadas pelo nosso provedor de autenticação (Supabase) e armazenadas apenas em forma de hash; nunca vemos sua senha em texto simples.</p>
+      <p><strong>b) Perfil público.</strong> Quando você joga on-line, armazenamos um perfil que outros jogadores podem ver: seu <strong>nome de comandante</strong>, avatar, facção e estatísticas de jogo (por ex. poder total, poder da frota, resultados de PvP, classificações) usados para rankings e matchmaking.</p>
+      <p><strong>c) Conteúdo e interações multijogador.</strong> Se você usar os recursos on-line, armazenamos os dados necessários para fornecê-los: as <strong>mensagens de chat</strong> enviadas a outros jogadores e a alianças, pedidos de amizade e amizades, participação em alianças e chat de aliança, transportes de recursos e ataques jogador contra jogador. Sua posição inicial na galáxia compartilhada é armazenada para que outros jogadores possam descobri-la.</p>
+      <p><strong>d) Dados de jogo locais.</strong> Seu progresso no modo um jogador (construções, pesquisa, frotas, recursos, configurações, idioma) é armazenado localmente no seu dispositivo. Um resumo pode ser sincronizado com sua conta para viabilizar os recursos on-line acima.</p>
+      <p><strong>e) Dados técnicos / do dispositivo.</strong> Informações básicas do dispositivo e do sistema operacional para fins de compatibilidade e — apenas se você as ativar — notificações push locais.</p>
+
+      <h2>3. Como usamos as informações</h2>
+      <ul>
+        <li>Para criar e proteger sua conta e permitir o login</li>
+        <li>Para fornecer os recursos on-line (galáxia compartilhada, chat, amigos, alianças, PvP, transportes, rankings)</li>
+        <li>Para exibir seu perfil público e suas classificações a outros jogadores</li>
+        <li>Para salvar e restaurar seu progresso e suas preferências</li>
+        <li>Para manter o Jogo funcional, seguro e justo (por ex. tratamento de denúncias e bloqueios)</li>
+      </ul>
+      <p>Não vendemos seus dados pessoais e não os usamos para publicidade ou rastreamento entre aplicativos.</p>
+
+      <h2>4. Armazenamento e segurança dos dados</h2>
+      <p>Os dados on-line são armazenados em nosso backend hospedado pela <strong>Supabase</strong> (operadora de dados agindo em nosso nome). O acesso é protegido por segurança em nível de linha, de modo que os jogadores só podem ler os dados que têm permissão para ver. Os dados são transmitidos por conexões criptografadas (HTTPS/TLS). Os dados do modo um jogador permanecem no seu dispositivo.</p>
+
+      <h2>5. Serviços de terceiros</h2>
+      <ul>
+        <li><strong>Supabase</strong> — autenticação, banco de dados e backend em tempo real para os recursos on-line.</li>
+        <li><strong>Expo / React Native</strong> — o framework de aplicativos usado para criar o Jogo.</li>
+        <li><strong>Google Play</strong> — distribuição do aplicativo no Android.</li>
+      </ul>
+      <p>Esses serviços podem tratar determinados dados técnicos conforme descrito em suas respectivas políticas de privacidade.</p>
+
+      <h2>6. Conteúdo gerado por usuários, bloqueio e denúncia</h2>
+      <p>Os recursos on-line permitem que os jogadores se comuniquem (chat, chat de aliança) e escolham nomes de exibição. Não toleramos assédio nem conteúdo abusivo. Dentro do Jogo você pode <strong>bloquear</strong> outro jogador (você não verá mais as mensagens dele) e <strong>denunciar</strong> um jogador para análise. As denúncias são analisadas e podem levar a medidas contra a conta denunciada.</p>
+
+      <h2>7. Privacidade de crianças</h2>
+      <p>O Jogo não é direcionado a crianças menores de 13 anos e não coletamos intencionalmente informações pessoais delas. Se você acredita que uma criança nos forneceu informações pessoais, entre em contato conosco e nós as excluiremos.</p>
+
+      <h2>8. Compras no aplicativo</h2>
+      <p>O Jogo poderá oferecer compras opcionais no aplicativo no futuro. Qualquer processamento de pagamento seria tratado inteiramente pela loja de aplicativos (Google Play). Não coletamos nem armazenamos informações de pagamento.</p>
+
+      <h2>9. Seus direitos e exclusão da conta</h2>
+      <p>Você pode:</p>
+      <ul>
+        <li><strong>Excluir sua conta e todos os dados on-line associados</strong> a qualquer momento dentro do Jogo: <em>Configurações → Conta → Excluir conta</em>. Isso remove permanentemente sua conta, perfil público, mensagens, amizades, participação em alianças e outros dados pessoais on-line, e não pode ser desfeito.</li>
+        <li>Solicitar a exclusão de conta e dados por e-mail caso não consiga acessar o Jogo — veja <a href="/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a>.</li>
+        <li>Excluir seus dados locais do modo um jogador limpando os dados do aplicativo ou desinstalando o Jogo.</li>
+        <li>Acessar ou corrigir seus dados e alterar suas preferências dentro do Jogo.</li>
+      </ul>
+
+      <h2>10. Este site</h2>
+      <p>Este site (velarisgalacticstrategy.com) é um site estático hospedado no <strong>GitHub Pages</strong> (GitHub, Inc.). O site em si não define cookies, não usa serviços de análise ou rastreamento e não carrega fontes ou scripts de terceiros. Como provedor de hospedagem, o GitHub pode tratar dados técnicos de acesso (como endereços IP) em logs de servidor para entregar o site; consulte a declaração de privacidade do GitHub para mais detalhes.</p>
+
+      <h2>11. Alterações nesta política</h2>
+      <p>Podemos atualizar esta Política de Privacidade periodicamente. Publicaremos a versão atualizada nesta página; as alterações entram em vigor na publicação.</p>
+
+      <h2>12. Contato</h2>
+      <p>Se você tiver dúvidas sobre esta Política de Privacidade ou sobre seus dados, entre em contato:</p>
+      <div class="card">
+        <p><strong>Velorian Studios</strong></p>
+        <p><strong>E-mail:</strong> velaris@velarisgalacticstrategy.com</p>
+      </div>
+    </div>
+
+    <!-- POLISH -->
+    <div id="pl" class="section" lang="pl">
+      <p><strong>Data wejścia w życie:</strong> 4 lipca 2026 · <strong>Ostatnia aktualizacja:</strong> 18 lipca 2026</p>
+
+      <h2>1. Wprowadzenie</h2>
+      <p>Witamy w Velaris: Galactic Strategy („Gra"). Gra jest tworzona i wydawana przez Velorian Studios („my"). Szanujemy twoją prywatność i zobowiązujemy się chronić twoje dane osobowe. Niniejsza polityka prywatności wyjaśnia, jakie informacje zbieramy, jak je wykorzystujemy i jakie masz możliwości wyboru. Gra ma część jednoosobową, działającą offline na twoim urządzeniu, oraz funkcje sieciowe dla wielu graczy (konto, wspólna galaktyka, czat, znajomi, sojusze, gracz kontra gracz), które wymagają konta i komunikują się z naszym backendem.</p>
+
+      <h2>2. Jakie informacje zbieramy</h2>
+      <p><strong>a) Dane konta.</strong> Aby korzystać z funkcji online, tworzysz konto z użyciem <strong>adresu e-mail</strong> i hasła. Hasła są obsługiwane przez naszego dostawcę uwierzytelniania (Supabase) i przechowywane wyłącznie w formie skrótu (hash); nigdy nie widzimy twojego hasła w postaci jawnej.</p>
+      <p><strong>b) Profil publiczny.</strong> Gdy grasz online, przechowujemy profil widoczny dla innych graczy: wybraną <strong>nazwę dowódcy</strong>, awatar, frakcję oraz statystyki rozgrywki (np. łączna potęga, potęga floty, wyniki PvP, pozycje w rankingach) używane w rankingach i doborze przeciwników.</p>
+      <p><strong>c) Treści i interakcje w trybie wieloosobowym.</strong> Jeśli korzystasz z funkcji online, przechowujemy dane niezbędne do ich działania: <strong>wiadomości czatu</strong> wysyłane do innych graczy i do sojuszy, zaproszenia do znajomych i znajomości, członkostwo w sojuszu i czat sojuszu, transporty surowców oraz ataki gracz kontra gracz. Twoja pozycja startowa we wspólnej galaktyce jest zapisywana, aby inni gracze mogli ją odkryć.</p>
+      <p><strong>d) Lokalne dane gry.</strong> Twój postęp w trybie jednoosobowym (budynki, badania, floty, surowce, ustawienia, język) jest przechowywany lokalnie na twoim urządzeniu. Podsumowanie może być synchronizowane z twoim kontem, aby zasilać powyższe funkcje online.</p>
+      <p><strong>e) Dane techniczne / urządzenia.</strong> Podstawowe informacje o urządzeniu i systemie operacyjnym na potrzeby kompatybilności oraz — tylko jeśli je włączysz — lokalne powiadomienia push.</p>
+
+      <h2>3. Jak wykorzystujemy informacje</h2>
+      <ul>
+        <li>Aby utworzyć i zabezpieczyć twoje konto oraz umożliwić logowanie</li>
+        <li>Aby udostępniać funkcje online (wspólna galaktyka, czat, znajomi, sojusze, PvP, transporty, rankingi)</li>
+        <li>Aby pokazywać twój publiczny profil i pozycje w rankingach innym graczom</li>
+        <li>Aby zapisywać i przywracać twój postęp oraz preferencje</li>
+        <li>Aby utrzymywać Grę w działaniu, bezpieczną i uczciwą (np. obsługa zgłoszeń i blokad)</li>
+      </ul>
+      <p>Nie sprzedajemy twoich danych osobowych i nie wykorzystujemy ich do reklam ani śledzenia między aplikacjami.</p>
+
+      <h2>4. Przechowywanie danych i bezpieczeństwo</h2>
+      <p>Dane online są przechowywane w naszym backendzie hostowanym przez <strong>Supabase</strong> (podmiot przetwarzający działający w naszym imieniu). Dostęp jest chroniony przez zabezpieczenia na poziomie wierszy (row-level security), więc gracze mogą odczytywać tylko dane, do których mają uprawnienia. Dane są przesyłane szyfrowanymi połączeniami (HTTPS/TLS). Dane trybu jednoosobowego pozostają na twoim urządzeniu.</p>
+
+      <h2>5. Usługi podmiotów trzecich</h2>
+      <ul>
+        <li><strong>Supabase</strong> — uwierzytelnianie, baza danych i backend czasu rzeczywistego dla funkcji online.</li>
+        <li><strong>Expo / React Native</strong> — framework aplikacji, w którym zbudowano Grę.</li>
+        <li><strong>Google Play</strong> — dystrybucja aplikacji na Androida.</li>
+      </ul>
+      <p>Usługi te mogą przetwarzać określone dane techniczne zgodnie ze swoimi politykami prywatności.</p>
+
+      <h2>6. Treści użytkowników, blokowanie i zgłaszanie</h2>
+      <p>Funkcje online pozwalają graczom komunikować się (czat, czat sojuszu) i wybierać wyświetlane nazwy. Nie tolerujemy nękania ani obraźliwych treści. W Grze możesz <strong>zablokować</strong> innego gracza (nie będziesz już widzieć jego wiadomości) oraz <strong>zgłosić</strong> gracza do weryfikacji. Zgłoszenia są sprawdzane i mogą prowadzić do działań wobec zgłoszonego konta.</p>
+
+      <h2>7. Prywatność dzieci</h2>
+      <p>Gra nie jest skierowana do dzieci poniżej 13 lat i świadomie nie zbieramy od nich danych osobowych. Jeśli uważasz, że dziecko przekazało nam dane osobowe, skontaktuj się z nami, a je usuniemy.</p>
+
+      <h2>8. Zakupy w aplikacji</h2>
+      <p>Gra może w przyszłości oferować opcjonalne zakupy w aplikacji. Ewentualne przetwarzanie płatności byłoby w całości obsługiwane przez sklep z aplikacjami (Google Play). Nie zbieramy ani nie przechowujemy informacji o płatnościach.</p>
+
+      <h2>9. Twoje prawa i usunięcie konta</h2>
+      <p>Możesz:</p>
+      <ul>
+        <li><strong>Usunąć swoje konto i wszystkie powiązane dane online</strong> w dowolnym momencie w Grze: <em>Ustawienia → Konto → Usuń konto</em>. Trwale usuwa to konto, profil publiczny, wiadomości, znajomości, członkostwo w sojuszu i inne osobiste dane online — operacji nie można cofnąć.</li>
+        <li>Poprosić o usunięcie konta i danych przez e-mail, jeśli nie masz dostępu do Gry — zobacz <a href="/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a>.</li>
+        <li>Usunąć lokalne dane trybu jednoosobowego, czyszcząc dane aplikacji lub odinstalowując Grę.</li>
+        <li>Uzyskiwać dostęp do swoich danych, poprawiać je i zmieniać preferencje w Grze.</li>
+      </ul>
+
+      <h2>10. Ta strona internetowa</h2>
+      <p>Ta strona (velarisgalacticstrategy.com) jest statyczną witryną hostowaną na <strong>GitHub Pages</strong> (GitHub, Inc.). Sama strona nie zapisuje plików cookie, nie korzysta z usług analitycznych ani śledzących i nie ładuje czcionek ani skryptów podmiotów trzecich. Jako dostawca hostingu GitHub może przetwarzać techniczne dane dostępowe (np. adresy IP) w logach serwera w celu dostarczania strony; szczegóły znajdziesz w oświadczeniu o prywatności GitHub.</p>
+
+      <h2>11. Zmiany w tej polityce</h2>
+      <p>Możemy od czasu do czasu aktualizować niniejszą politykę prywatności. Zaktualizowaną wersję opublikujemy na tej stronie; zmiany obowiązują od chwili publikacji.</p>
+
+      <h2>12. Kontakt</h2>
+      <p>Jeśli masz pytania dotyczące tej polityki prywatności lub swoich danych, skontaktuj się z nami:</p>
+      <div class="card">
+        <p><strong>Velorian Studios</strong></p>
+        <p><strong>E-mail:</strong> velaris@velarisgalacticstrategy.com</p>
+      </div>
+    </div>
+
+    <!-- RUSSIAN -->
+    <div id="ru" class="section" lang="ru">
+      <p><strong>Дата вступления в силу:</strong> 4 июля 2026 г. · <strong>Последнее обновление:</strong> 18 июля 2026 г.</p>
+
+      <h2>1. Введение</h2>
+      <p>Добро пожаловать в Velaris: Galactic Strategy («Игра»). Игра разрабатывается и издаётся Velorian Studios («мы»). Мы уважаем вашу конфиденциальность и стремимся защищать ваши персональные данные. Настоящая политика конфиденциальности объясняет, какие сведения мы собираем, как их используем и какой выбор у вас есть. В Игре есть одиночная часть, работающая офлайн на вашем устройстве, и сетевые многопользовательские функции (аккаунт, общая галактика, чат, друзья, альянсы, «игрок против игрока»), которые требуют аккаунта и взаимодействуют с нашим бэкендом.</p>
+
+      <h2>2. Какие сведения мы собираем</h2>
+      <p><strong>а) Данные аккаунта.</strong> Для использования сетевых функций вы создаёте аккаунт с указанием <strong>адреса электронной почты</strong> и пароля. Пароли обрабатываются нашим провайдером аутентификации (Supabase) и хранятся только в хешированном виде; мы никогда не видим ваш пароль в открытом виде.</p>
+      <p><strong>б) Публичный профиль.</strong> Когда вы играете онлайн, мы храним профиль, который видят другие игроки: выбранное <strong>имя командующего</strong>, аватар, фракцию и игровую статистику (например, общую мощь, мощь флота, результаты PvP, места в рейтингах), используемые для таблиц лидеров и подбора соперников.</p>
+      <p><strong>в) Многопользовательский контент и взаимодействия.</strong> Если вы используете сетевые функции, мы храним данные, необходимые для их работы: <strong>сообщения чата</strong>, отправленные другим игрокам и альянсам, заявки в друзья и дружеские связи, членство в альянсе и чат альянса, транспортировки ресурсов и атаки «игрок против игрока». Ваша домашняя позиция в общей галактике сохраняется, чтобы другие игроки могли её обнаружить.</p>
+      <p><strong>г) Локальные игровые данные.</strong> Ваш одиночный прогресс (здания, исследования, флоты, ресурсы, настройки, язык) хранится локально на вашем устройстве. Сводка может синхронизироваться с вашим аккаунтом для работы перечисленных выше сетевых функций.</p>
+      <p><strong>д) Технические данные / данные устройства.</strong> Базовая информация об устройстве и ОС для совместимости, а также — только если вы их включите — локальные push-уведомления.</p>
+
+      <h2>3. Как мы используем сведения</h2>
+      <ul>
+        <li>Для создания и защиты вашего аккаунта и входа в него</li>
+        <li>Для предоставления сетевых функций (общая галактика, чат, друзья, альянсы, PvP, транспортировки, таблицы лидеров)</li>
+        <li>Для отображения вашего публичного профиля и позиций в рейтингах другим игрокам</li>
+        <li>Для сохранения и восстановления вашего прогресса и настроек</li>
+        <li>Для поддержания работоспособности, безопасности и честности Игры (например, обработка жалоб и блокировок)</li>
+      </ul>
+      <p>Мы не продаём ваши персональные данные и не используем их для рекламы или кросс-приложенческого отслеживания.</p>
+
+      <h2>4. Хранение данных и безопасность</h2>
+      <p>Сетевые данные хранятся в нашем бэкенде, размещённом у <strong>Supabase</strong> (обработчик данных, действующий по нашему поручению). Доступ защищён механизмом row-level security, поэтому игроки могут читать только те данные, к которым им разрешён доступ. Данные передаются по зашифрованным соединениям (HTTPS/TLS). Данные одиночной игры остаются на вашем устройстве.</p>
+
+      <h2>5. Сторонние сервисы</h2>
+      <ul>
+        <li><strong>Supabase</strong> — аутентификация, база данных и realtime-бэкенд для сетевых функций.</li>
+        <li><strong>Expo / React Native</strong> — фреймворк, на котором создана Игра.</li>
+        <li><strong>Google Play</strong> — распространение приложения на Android.</li>
+      </ul>
+      <p>Эти сервисы могут обрабатывать определённые технические данные, как описано в их собственных политиках конфиденциальности.</p>
+
+      <h2>6. Пользовательский контент, блокировка и жалобы</h2>
+      <p>Сетевые функции позволяют игрокам общаться (чат, чат альянса) и выбирать отображаемые имена. Мы не терпим травлю и оскорбительный контент. В Игре вы можете <strong>заблокировать</strong> другого игрока (вы больше не будете видеть его сообщения) и <strong>пожаловаться</strong> на игрока для проверки. Жалобы рассматриваются и могут привести к мерам в отношении указанного аккаунта.</p>
+
+      <h2>7. Конфиденциальность детей</h2>
+      <p>Игра не предназначена для детей младше 13 лет, и мы сознательно не собираем их персональные данные. Если вы считаете, что ребёнок передал нам персональные данные, свяжитесь с нами — мы их удалим.</p>
+
+      <h2>8. Покупки в приложении</h2>
+      <p>В будущем Игра может предлагать необязательные покупки в приложении. Любая обработка платежей будет полностью выполняться магазином приложений (Google Play). Мы не собираем и не храним платёжные данные.</p>
+
+      <h2>9. Ваши права и удаление аккаунта</h2>
+      <p>Вы можете:</p>
+      <ul>
+        <li><strong>Удалить свой аккаунт и все связанные сетевые данные</strong> в любой момент в Игре: <em>Настройки → Аккаунт → Удалить аккаунт</em>. Это навсегда удаляет аккаунт, публичный профиль, сообщения, дружеские связи, членство в альянсе и другие личные сетевые данные; отменить операцию нельзя.</li>
+        <li>Запросить удаление аккаунта и данных по электронной почте, если у вас нет доступа к Игре — см. <a href="/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a>.</li>
+        <li>Удалить локальные данные одиночной игры, очистив данные приложения или удалив Игру.</li>
+        <li>Получать доступ к своим данным, исправлять их и менять настройки в Игре.</li>
+      </ul>
+
+      <h2>10. Этот веб-сайт</h2>
+      <p>Этот веб-сайт (velarisgalacticstrategy.com) — статический сайт, размещённый на <strong>GitHub Pages</strong> (GitHub, Inc.). Сам сайт не устанавливает cookie, не использует сервисы аналитики или отслеживания и не загружает сторонние шрифты или скрипты. Как хостинг-провайдер, GitHub может обрабатывать технические данные доступа (например, IP-адреса) в журналах сервера для доставки сайта; подробности см. в заявлении о конфиденциальности GitHub.</p>
+
+      <h2>11. Изменения этой политики</h2>
+      <p>Мы можем время от времени обновлять эту политику конфиденциальности. Обновлённая версия публикуется на этой странице; изменения вступают в силу с момента публикации.</p>
+
+      <h2>12. Связаться с нами</h2>
+      <p>Если у вас есть вопросы об этой политике конфиденциальности или ваших данных, напишите нам:</p>
+      <div class="card">
+        <p><strong>Velorian Studios</strong></p>
+        <p><strong>E-mail:</strong> velaris@velarisgalacticstrategy.com</p>
+      </div>
+    </div>
+
+    <!-- TURKISH -->
+    <div id="tr" class="section" lang="tr">
+      <p><strong>Yürürlük tarihi:</strong> 4 Temmuz 2026 · <strong>Son güncelleme:</strong> 18 Temmuz 2026</p>
+
+      <h2>1. Giriş</h2>
+      <p>Velaris: Galactic Strategy'ye («Oyun») hoş geldiniz. Oyun, Velorian Studios («biz») tarafından geliştirilmekte ve yayımlanmaktadır. Gizliliğinize saygı duyuyor ve kişisel verilerinizi korumayı taahhüt ediyoruz. Bu Gizlilik Politikası hangi bilgileri topladığımızı, bunları nasıl kullandığımızı ve hangi seçeneklere sahip olduğunuzu açıklar. Oyunun cihazınızda çevrimdışı çalışan tek oyunculu bir bölümü ve hesap gerektiren, backend'imizle iletişim kuran çevrim içi çok oyunculu özellikleri (hesap, paylaşılan galaksi, sohbet, arkadaşlar, ittifaklar, oyuncuya karşı oyuncu) vardır.</p>
+
+      <h2>2. Topladığımız bilgiler</h2>
+      <p><strong>a) Hesap verileri.</strong> Çevrim içi özellikleri kullanmak için <strong>e-posta adresiniz</strong> ve bir şifre ile hesap oluşturursunuz. Şifreler kimlik doğrulama sağlayıcımız (Supabase) tarafından işlenir ve yalnızca karma (hash) hâlinde saklanır; şifrenizi asla düz metin olarak görmeyiz.</p>
+      <p><strong>b) Herkese açık profil.</strong> Çevrim içi oynadığınızda diğer oyuncuların görebileceği bir profil saklarız: seçtiğiniz <strong>komutan adı</strong>, avatar, fraksiyon ve skor tabloları ile eşleştirme için kullanılan oyun istatistikleri (ör. toplam güç, filo gücü, PvP sonuçları, sıralamalar).</p>
+      <p><strong>c) Çok oyunculu içerik ve etkileşimler.</strong> Çevrim içi özellikleri kullanırsanız bunları sunmak için gereken verileri saklarız: diğer oyunculara ve ittifaklara gönderdiğiniz <strong>sohbet mesajları</strong>, arkadaşlık istekleri ve arkadaşlıklar, ittifak üyeliği ve ittifak sohbeti, kaynak taşımaları ve oyuncuya karşı oyuncu saldırıları. Paylaşılan galaksideki ana konumunuz, diğer oyuncuların onu keşfedebilmesi için saklanır.</p>
+      <p><strong>d) Yerel oyun verileri.</strong> Tek oyunculu ilerlemeniz (binalar, araştırma, filolar, kaynaklar, ayarlar, dil) cihazınızda yerel olarak saklanır. Yukarıdaki çevrim içi özellikleri desteklemek için bir özet hesabınızla senkronize edilebilir.</p>
+      <p><strong>e) Cihaz / teknik veriler.</strong> Uyumluluk için temel cihaz ve işletim sistemi bilgileri ve — yalnızca etkinleştirirseniz — yerel anlık bildirimler.</p>
+
+      <h2>3. Bilgileri nasıl kullanıyoruz</h2>
+      <ul>
+        <li>Hesabınızı oluşturmak, güvence altına almak ve oturum açmanızı sağlamak için</li>
+        <li>Çevrim içi özellikleri sunmak için (paylaşılan galaksi, sohbet, arkadaşlar, ittifaklar, PvP, taşımalar, skor tabloları)</li>
+        <li>Herkese açık profilinizi ve sıralamalarınızı diğer oyunculara göstermek için</li>
+        <li>İlerlemenizi ve tercihlerinizi kaydetmek ve geri yüklemek için</li>
+        <li>Oyunu çalışır, güvenli ve adil tutmak için (ör. şikâyet ve engellemelerin işlenmesi)</li>
+      </ul>
+      <p>Kişisel verilerinizi satmıyor, reklam veya uygulamalar arası izleme için kullanmıyoruz.</p>
+
+      <h2>4. Veri saklama ve güvenlik</h2>
+      <p>Çevrim içi veriler, <strong>Supabase</strong> tarafından barındırılan backend'imizde saklanır (bizim adımıza hareket eden bir veri işleyici). Erişim, satır düzeyinde güvenlikle (row-level security) korunur; böylece oyuncular yalnızca görmelerine izin verilen verileri okuyabilir. Veriler şifreli bağlantılarla (HTTPS/TLS) iletilir. Tek oyunculu veriler cihazınızda kalır.</p>
+
+      <h2>5. Üçüncü taraf hizmetleri</h2>
+      <ul>
+        <li><strong>Supabase</strong> — çevrim içi özellikler için kimlik doğrulama, veritabanı ve gerçek zamanlı backend.</li>
+        <li><strong>Expo / React Native</strong> — Oyunun geliştirildiği uygulama çatısı.</li>
+        <li><strong>Google Play</strong> — Android'de uygulama dağıtımı.</li>
+      </ul>
+      <p>Bu hizmetler, kendi gizlilik politikalarında açıklandığı şekilde belirli teknik verileri işleyebilir.</p>
+
+      <h2>6. Kullanıcı içeriği, engelleme ve şikâyet</h2>
+      <p>Çevrim içi özellikler, oyuncuların iletişim kurmasına (sohbet, ittifak sohbeti) ve görünen ad seçmesine olanak tanır. Tacize veya kötüye kullanım içeriğine müsamaha göstermeyiz. Oyun içinde başka bir oyuncuyu <strong>engelleyebilir</strong> (mesajlarını artık görmezsiniz) ve incelenmesi için <strong>şikâyet edebilirsiniz</strong>. Şikâyetler incelenir ve şikâyet edilen hesaba karşı önlemlere yol açabilir.</p>
+
+      <h2>7. Çocukların gizliliği</h2>
+      <p>Oyun 13 yaşından küçük çocuklara yönelik değildir ve onlardan bilerek kişisel bilgi toplamayız. Bir çocuğun bize kişisel bilgi verdiğini düşünüyorsanız lütfen bizimle iletişime geçin; bilgileri sileriz.</p>
+
+      <h2>8. Uygulama içi satın almalar</h2>
+      <p>Oyun gelecekte isteğe bağlı uygulama içi satın almalar sunabilir. Her türlü ödeme işlemi tamamen uygulama mağazası (Google Play) tarafından gerçekleştirilir. Ödeme bilgilerini toplamıyor veya saklamıyoruz.</p>
+
+      <h2>9. Haklarınız ve hesap silme</h2>
+      <p>Şunları yapabilirsiniz:</p>
+      <ul>
+        <li><strong>Hesabınızı ve ilişkili tüm çevrim içi verileri</strong> istediğiniz zaman Oyun içinden silebilirsiniz: <em>Ayarlar → Hesap → Hesabı sil</em>. Bu işlem hesabınızı, herkese açık profilinizi, mesajlarınızı, arkadaşlıklarınızı, ittifak üyeliğinizi ve diğer kişisel çevrim içi verilerinizi kalıcı olarak kaldırır ve geri alınamaz.</li>
+        <li>Oyuna erişemiyorsanız hesap ve veri silme talebini e-posta ile iletebilirsiniz — bkz. <a href="/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a>.</li>
+        <li>Uygulama verilerini temizleyerek veya Oyunu kaldırarak yerel tek oyunculu verilerinizi silebilirsiniz.</li>
+        <li>Oyun içinde verilerinize erişebilir, düzeltebilir ve tercihlerinizi değiştirebilirsiniz.</li>
+      </ul>
+
+      <h2>10. Bu web sitesi</h2>
+      <p>Bu web sitesi (velarisgalacticstrategy.com), <strong>GitHub Pages</strong> (GitHub, Inc.) üzerinde barındırılan statik bir sitedir. Sitenin kendisi çerez kullanmaz, analiz veya izleme hizmetlerinden yararlanmaz ve üçüncü taraf yazı tipleri ya da betikleri yüklemez. Barındırma sağlayıcısı olarak GitHub, siteyi sunmak için sunucu günlüklerinde teknik erişim verilerini (ör. IP adresleri) işleyebilir; ayrıntılar için GitHub'ın gizlilik bildirimine bakın.</p>
+
+      <h2>11. Bu politikadaki değişiklikler</h2>
+      <p>Bu Gizlilik Politikasını zaman zaman güncelleyebiliriz. Güncellenmiş politikayı bu sayfada yayımlarız; değişiklikler yayımlandığı anda yürürlüğe girer.</p>
+
+      <h2>12. Bize ulaşın</h2>
+      <p>Bu Gizlilik Politikası veya verileriniz hakkında sorularınız varsa bizimle iletişime geçin:</p>
+      <div class="card">
+        <p><strong>Velorian Studios</strong></p>
+        <p><strong>E-posta:</strong> velaris@velarisgalacticstrategy.com</p>
+      </div>
+    </div>
+
+    <!-- JAPANESE -->
+    <div id="ja" class="section" lang="ja">
+      <p><strong>発効日:</strong> 2026年7月4日 · <strong>最終更新日:</strong> 2026年7月18日</p>
+
+      <h2>1. はじめに</h2>
+      <p>Velaris: Galactic Strategy（以下「本ゲーム」）へようこそ。本ゲームはVelorian Studios（以下「当社」）が開発・提供しています。当社はあなたのプライバシーを尊重し、個人データの保護に努めます。本プライバシーポリシーでは、当社が収集する情報、その利用方法、およびあなたが選択できる事項について説明します。本ゲームには、端末上でオフライン動作するシングルプレイ部分と、アカウントを必要とし当社のバックエンドと通信するオンラインマルチプレイ機能（アカウント、共有ギャラクシー、チャット、フレンド、同盟、プレイヤー対プレイヤー）があります。</p>
+
+      <h2>2. 収集する情報</h2>
+      <p><strong>a) アカウントデータ。</strong>オンライン機能を利用するには、<strong>メールアドレス</strong>とパスワードでアカウントを作成します。パスワードは当社の認証プロバイダー（Supabase）が処理し、ハッシュ化された形式でのみ保存されます。当社が平文のパスワードを見ることはありません。</p>
+      <p><strong>b) 公開プロフィール。</strong>オンラインでプレイすると、他のプレイヤーが閲覧できるプロフィールを保存します：選択した<strong>指揮官名</strong>、アバター、勢力、およびランキングやマッチングに使用されるゲーム統計（総戦力、艦隊戦力、PvP結果、順位など）。</p>
+      <p><strong>c) マルチプレイのコンテンツと交流。</strong>オンライン機能を利用する場合、その提供に必要なデータを保存します：他のプレイヤーや同盟に送信した<strong>チャットメッセージ</strong>、フレンド申請とフレンド関係、同盟への所属と同盟チャット、資源輸送、プレイヤー対プレイヤーの攻撃。共有ギャラクシーにおけるあなたの本拠地の位置は、他のプレイヤーが発見できるように保存されます。</p>
+      <p><strong>d) ローカルのゲームデータ。</strong>シングルプレイの進行状況（建物、研究、艦隊、資源、設定、言語）は端末にローカル保存されます。上記のオンライン機能のために、概要がアカウントと同期される場合があります。</p>
+      <p><strong>e) 端末／技術データ。</strong>互換性のための基本的な端末・OS情報、および — あなたが有効にした場合のみ — ローカルのプッシュ通知。</p>
+
+      <h2>3. 情報の利用方法</h2>
+      <ul>
+        <li>アカウントの作成・保護およびサインインのため</li>
+        <li>オンライン機能（共有ギャラクシー、チャット、フレンド、同盟、PvP、輸送、ランキング）の提供のため</li>
+        <li>公開プロフィールと順位を他のプレイヤーに表示するため</li>
+        <li>進行状況と設定の保存・復元のため</li>
+        <li>本ゲームを正常・安全・公正に保つため（通報やブロックの処理など）</li>
+      </ul>
+      <p>当社は個人データを販売せず、広告やアプリ横断トラッキングにも使用しません。</p>
+
+      <h2>4. データの保存とセキュリティ</h2>
+      <p>オンラインデータは、<strong>Supabase</strong>（当社の委託を受けたデータ処理者）がホストするバックエンドに保存されます。アクセスは行レベルセキュリティで保護されており、プレイヤーは閲覧を許可されたデータのみ読み取れます。データは暗号化された接続（HTTPS/TLS）で送信されます。シングルプレイのデータは端末内に留まります。</p>
+
+      <h2>5. 第三者サービス</h2>
+      <ul>
+        <li><strong>Supabase</strong> — オンライン機能のための認証、データベース、リアルタイムバックエンド。</li>
+        <li><strong>Expo / React Native</strong> — 本ゲームの開発に使用したアプリケーションフレームワーク。</li>
+        <li><strong>Google Play</strong> — Androidでのアプリ配信。</li>
+      </ul>
+      <p>これらのサービスは、それぞれのプライバシーポリシーに記載のとおり、特定の技術データを処理する場合があります。</p>
+
+      <h2>6. ユーザー生成コンテンツ、ブロックと通報</h2>
+      <p>オンライン機能では、プレイヤー同士の交流（チャット、同盟チャット）や表示名の選択が可能です。ハラスメントや不適切なコンテンツは容認しません。ゲーム内では他のプレイヤーを<strong>ブロック</strong>でき（そのプレイヤーのメッセージは表示されなくなります）、審査のために<strong>通報</strong>できます。通報は審査され、対象アカウントへの措置につながる場合があります。</p>
+
+      <h2>7. お子様のプライバシー</h2>
+      <p>本ゲームは13歳未満の子どもを対象としておらず、当社は故意に子どもの個人情報を収集しません。子どもが当社に個人情報を提供したと思われる場合はご連絡ください。削除いたします。</p>
+
+      <h2>8. アプリ内購入</h2>
+      <p>本ゲームは将来、任意のアプリ内購入を提供する場合があります。決済処理はすべてアプリストア（Google Play）が行います。当社は支払い情報を収集・保存しません。</p>
+
+      <h2>9. あなたの権利とアカウント削除</h2>
+      <p>あなたは次のことができます：</p>
+      <ul>
+        <li><strong>アカウントと関連するすべてのオンラインデータの削除</strong>をいつでもゲーム内で実行：<em>設定 → アカウント → アカウント削除</em>。アカウント、公開プロフィール、メッセージ、フレンド関係、同盟への所属、その他の個人的なオンラインデータが完全に削除され、取り消せません。</li>
+        <li>ゲームにアクセスできない場合は、メールでアカウントとデータの削除を依頼 — <a href="/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a> をご覧ください。</li>
+        <li>アプリのデータを消去するか本ゲームをアンインストールして、ローカルのシングルプレイデータを削除。</li>
+        <li>ゲーム内でデータの確認・訂正、設定の変更。</li>
+      </ul>
+
+      <h2>10. 本ウェブサイトについて</h2>
+      <p>本ウェブサイト（velarisgalacticstrategy.com）は、<strong>GitHub Pages</strong>（GitHub, Inc.）でホストされている静的サイトです。サイト自体はCookieを設定せず、アナリティクスやトラッキングサービスを使用せず、第三者のフォントやスクリプトも読み込みません。ホスティング事業者として、GitHubはサイト配信のためにサーバーログで技術的なアクセスデータ（IPアドレスなど）を処理する場合があります。詳細はGitHubのプライバシーステートメントをご覧ください。</p>
+
+      <h2>11. 本ポリシーの変更</h2>
+      <p>当社は本プライバシーポリシーを随時更新することがあります。更新版は本ページに掲載し、掲載をもって効力を生じます。</p>
+
+      <h2>12. お問い合わせ</h2>
+      <p>本プライバシーポリシーやあなたのデータについてご質問がある場合は、以下までご連絡ください：</p>
+      <div class="card">
+        <p><strong>Velorian Studios</strong></p>
+        <p><strong>メール:</strong> velaris@velarisgalacticstrategy.com</p>
+      </div>
+    </div>
+
+    <!-- KOREAN -->
+    <div id="ko" class="section" lang="ko">
+      <p><strong>시행일:</strong> 2026년 7월 4일 · <strong>최종 업데이트:</strong> 2026년 7월 18일</p>
+
+      <h2>1. 소개</h2>
+      <p>Velaris: Galactic Strategy(이하 "게임")에 오신 것을 환영합니다. 게임은 Velorian Studios(이하 "당사")가 개발·배급합니다. 당사는 이용자의 개인정보를 존중하며 이를 보호하기 위해 최선을 다합니다. 본 개인정보 처리방침은 당사가 수집하는 정보, 이용 방법, 이용자의 선택권을 설명합니다. 게임에는 기기에서 오프라인으로 작동하는 싱글 플레이 부분과, 계정이 필요하고 당사 백엔드와 통신하는 온라인 멀티플레이 기능(계정, 공유 은하, 채팅, 친구, 동맹, 플레이어 간 대전)이 있습니다.</p>
+
+      <h2>2. 수집하는 정보</h2>
+      <p><strong>a) 계정 데이터.</strong> 온라인 기능을 사용하려면 <strong>이메일 주소</strong>와 비밀번호로 계정을 만듭니다. 비밀번호는 당사의 인증 제공업체(Supabase)가 처리하며 해시 형태로만 저장됩니다. 당사는 평문 비밀번호를 볼 수 없습니다.</p>
+      <p><strong>b) 공개 프로필.</strong> 온라인으로 플레이하면 다른 플레이어가 볼 수 있는 프로필을 저장합니다: 선택한 <strong>지휘관 이름</strong>, 아바타, 진영, 그리고 리더보드와 매치메이킹에 사용되는 게임 통계(예: 총 전투력, 함대 전투력, PvP 결과, 순위).</p>
+      <p><strong>c) 멀티플레이 콘텐츠 및 상호작용.</strong> 온라인 기능을 사용하는 경우 이를 제공하는 데 필요한 데이터를 저장합니다: 다른 플레이어와 동맹에 보낸 <strong>채팅 메시지</strong>, 친구 요청과 친구 관계, 동맹 가입 및 동맹 채팅, 자원 수송, 플레이어 간 공격. 공유 은하에서의 본거지 위치는 다른 플레이어가 발견할 수 있도록 저장됩니다.</p>
+      <p><strong>d) 로컬 게임 데이터.</strong> 싱글 플레이 진행 상황(건물, 연구, 함대, 자원, 설정, 언어)은 기기에 로컬로 저장됩니다. 위의 온라인 기능을 위해 요약본이 계정과 동기화될 수 있습니다.</p>
+      <p><strong>e) 기기/기술 데이터.</strong> 호환성을 위한 기본 기기 및 OS 정보, 그리고 — 이용자가 활성화한 경우에만 — 로컬 푸시 알림.</p>
+
+      <h2>3. 정보 이용 방법</h2>
+      <ul>
+        <li>계정 생성·보호 및 로그인을 위해</li>
+        <li>온라인 기능(공유 은하, 채팅, 친구, 동맹, PvP, 수송, 리더보드) 제공을 위해</li>
+        <li>공개 프로필과 순위를 다른 플레이어에게 표시하기 위해</li>
+        <li>진행 상황과 환경설정의 저장·복원을 위해</li>
+        <li>게임을 정상적이고 안전하며 공정하게 유지하기 위해(예: 신고 및 차단 처리)</li>
+      </ul>
+      <p>당사는 개인정보를 판매하지 않으며 광고나 앱 간 추적에 사용하지 않습니다.</p>
+
+      <h2>4. 데이터 저장 및 보안</h2>
+      <p>온라인 데이터는 <strong>Supabase</strong>(당사를 대신해 활동하는 수탁 처리자)가 호스팅하는 백엔드에 저장됩니다. 접근은 행 수준 보안(row-level security)으로 보호되어 플레이어는 허용된 데이터만 읽을 수 있습니다. 데이터는 암호화된 연결(HTTPS/TLS)로 전송됩니다. 싱글 플레이 데이터는 기기에 남습니다.</p>
+
+      <h2>5. 제3자 서비스</h2>
+      <ul>
+        <li><strong>Supabase</strong> — 온라인 기능을 위한 인증, 데이터베이스, 실시간 백엔드.</li>
+        <li><strong>Expo / React Native</strong> — 게임 제작에 사용된 애플리케이션 프레임워크.</li>
+        <li><strong>Google Play</strong> — Android 앱 배포.</li>
+      </ul>
+      <p>이들 서비스는 각자의 개인정보 처리방침에 따라 특정 기술 데이터를 처리할 수 있습니다.</p>
+
+      <h2>6. 이용자 생성 콘텐츠, 차단 및 신고</h2>
+      <p>온라인 기능을 통해 플레이어는 소통(채팅, 동맹 채팅)하고 표시 이름을 선택할 수 있습니다. 당사는 괴롭힘이나 악의적 콘텐츠를 용납하지 않습니다. 게임 내에서 다른 플레이어를 <strong>차단</strong>하거나(해당 플레이어의 메시지가 더 이상 보이지 않음) 검토를 위해 <strong>신고</strong>할 수 있습니다. 신고는 검토되며 신고된 계정에 대한 조치로 이어질 수 있습니다.</p>
+
+      <h2>7. 아동의 개인정보</h2>
+      <p>게임은 13세 미만 아동을 대상으로 하지 않으며, 당사는 고의로 아동의 개인정보를 수집하지 않습니다. 아동이 당사에 개인정보를 제공했다고 판단되면 연락해 주십시오. 삭제하겠습니다.</p>
+
+      <h2>8. 인앱 구매</h2>
+      <p>게임은 향후 선택적 인앱 구매를 제공할 수 있습니다. 모든 결제 처리는 앱 스토어(Google Play)가 전적으로 담당합니다. 당사는 결제 정보를 수집하거나 저장하지 않습니다.</p>
+
+      <h2>9. 이용자의 권리 및 계정 삭제</h2>
+      <p>이용자는 다음을 할 수 있습니다:</p>
+      <ul>
+        <li>게임 내에서 언제든지 <strong>계정과 연결된 모든 온라인 데이터를 삭제</strong>: <em>설정 → 계정 → 계정 삭제</em>. 계정, 공개 프로필, 메시지, 친구 관계, 동맹 가입 정보 및 기타 개인 온라인 데이터가 영구적으로 제거되며 되돌릴 수 없습니다.</li>
+        <li>게임에 접속할 수 없는 경우 이메일로 계정 및 데이터 삭제 요청 — <a href="/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a> 참조.</li>
+        <li>앱 데이터를 삭제하거나 게임을 제거하여 로컬 싱글 플레이 데이터 삭제.</li>
+        <li>게임 내에서 데이터 열람·수정 및 환경설정 변경.</li>
+      </ul>
+
+      <h2>10. 이 웹사이트</h2>
+      <p>이 웹사이트(velarisgalacticstrategy.com)는 <strong>GitHub Pages</strong>(GitHub, Inc.)에서 호스팅되는 정적 사이트입니다. 사이트 자체는 쿠키를 설정하지 않고, 분석·추적 서비스를 사용하지 않으며, 제3자 폰트나 스크립트를 불러오지 않습니다. 호스팅 제공업체인 GitHub는 사이트 제공을 위해 서버 로그에서 기술적 접속 데이터(예: IP 주소)를 처리할 수 있습니다. 자세한 내용은 GitHub의 개인정보 보호정책을 참조하십시오.</p>
+
+      <h2>11. 방침의 변경</h2>
+      <p>당사는 본 개인정보 처리방침을 수시로 업데이트할 수 있습니다. 업데이트된 방침은 이 페이지에 게시되며, 게시 시점부터 효력이 발생합니다.</p>
+
+      <h2>12. 문의</h2>
+      <p>본 개인정보 처리방침이나 이용자의 데이터에 대해 궁금한 점이 있으면 다음으로 연락해 주십시오:</p>
+      <div class="card">
+        <p><strong>Velorian Studios</strong></p>
+        <p><strong>이메일:</strong> velaris@velarisgalacticstrategy.com</p>
+      </div>
+    </div>
+
+    <!-- CHINESE (SIMPLIFIED) -->
+    <div id="zh" class="section" lang="zh-Hans">
+      <p><strong>生效日期：</strong>2026年7月4日 · <strong>最后更新：</strong>2026年7月18日</p>
+
+      <h2>1. 引言</h2>
+      <p>欢迎来到 Velaris: Galactic Strategy（以下简称"本游戏"）。本游戏由 Velorian Studios（以下简称"我们"）开发并发行。我们尊重您的隐私，并致力于保护您的个人数据。本隐私政策说明我们收集哪些信息、如何使用这些信息以及您拥有哪些选择。本游戏包含可在您的设备上离线运行的单人部分，以及需要账号并与我们的后端通信的在线多人功能（账号、共享星系、聊天、好友、联盟、玩家对战）。</p>
+
+      <h2>2. 我们收集的信息</h2>
+      <p><strong>a) 账号数据。</strong>要使用在线功能，您需使用<strong>电子邮箱地址</strong>和密码创建账号。密码由我们的身份验证服务商（Supabase）处理，仅以哈希形式存储；我们绝不会看到您的明文密码。</p>
+      <p><strong>b) 公开资料。</strong>当您在线游玩时，我们会存储其他玩家可见的资料：您选择的<strong>指挥官名称</strong>、头像、派系，以及用于排行榜和匹配的游戏统计数据（如总战力、舰队战力、PvP 战绩、排名）。</p>
+      <p><strong>c) 多人游戏内容与互动。</strong>如果您使用在线功能，我们会存储提供这些功能所需的数据：您发送给其他玩家和联盟的<strong>聊天消息</strong>、好友请求与好友关系、联盟成员身份与联盟聊天、资源运输，以及玩家对战攻击。您在共享星系中的主基地位置会被存储，以便其他玩家发现。</p>
+      <p><strong>d) 本地游戏数据。</strong>您的单人游戏进度（建筑、研究、舰队、资源、设置、语言）存储在您的设备本地。摘要信息可能会同步到您的账号，以支持上述在线功能。</p>
+      <p><strong>e) 设备/技术数据。</strong>用于兼容性的基本设备和操作系统信息，以及——仅在您启用时——本地推送通知。</p>
+
+      <h2>3. 我们如何使用信息</h2>
+      <ul>
+        <li>创建并保护您的账号，以及登录</li>
+        <li>提供在线功能（共享星系、聊天、好友、联盟、PvP、运输、排行榜）</li>
+        <li>向其他玩家展示您的公开资料和排名</li>
+        <li>保存和恢复您的进度与偏好设置</li>
+        <li>维持本游戏的正常运行、安全与公平（如处理举报和屏蔽）</li>
+      </ul>
+      <p>我们不出售您的个人数据，也不将其用于广告或跨应用追踪。</p>
+
+      <h2>4. 数据存储与安全</h2>
+      <p>在线数据存储在由 <strong>Supabase</strong>（代表我们行事的数据处理方）托管的后端中。访问受行级安全（row-level security）保护，玩家只能读取其有权查看的数据。数据通过加密连接（HTTPS/TLS）传输。单人游戏数据保留在您的设备上。</p>
+
+      <h2>5. 第三方服务</h2>
+      <ul>
+        <li><strong>Supabase</strong> — 在线功能的身份验证、数据库和实时后端。</li>
+        <li><strong>Expo / React Native</strong> — 用于构建本游戏的应用框架。</li>
+        <li><strong>Google Play</strong> — Android 上的应用分发。</li>
+      </ul>
+      <p>这些服务可能会按其各自隐私政策所述处理某些技术数据。</p>
+
+      <h2>6. 用户生成内容、屏蔽与举报</h2>
+      <p>在线功能允许玩家交流（聊天、联盟聊天）并选择显示名称。我们不容忍骚扰或恶意内容。在游戏中，您可以<strong>屏蔽</strong>其他玩家（您将不再看到其消息），也可以<strong>举报</strong>玩家以供审核。举报会经过审核，并可能导致对被举报账号采取措施。</p>
+
+      <h2>7. 儿童隐私</h2>
+      <p>本游戏不面向 13 岁以下儿童，我们不会有意收集他们的个人信息。如果您认为有儿童向我们提供了个人信息，请联系我们，我们将予以删除。</p>
+
+      <h2>8. 应用内购买</h2>
+      <p>本游戏未来可能提供可选的应用内购买。任何支付处理都将完全由应用商店（Google Play）负责。我们不收集或存储支付信息。</p>
+
+      <h2>9. 您的权利与账号删除</h2>
+      <p>您可以：</p>
+      <ul>
+        <li>随时在游戏内<strong>删除您的账号及所有关联的在线数据</strong>：<em>设置 → 账号 → 删除账号</em>。这将永久移除您的账号、公开资料、消息、好友关系、联盟成员身份及其他个人在线数据，且无法撤销。</li>
+        <li>如果您无法访问游戏，可通过电子邮件申请删除账号和数据——参见 <a href="/delete-account.html">velarisgalacticstrategy.com/delete-account.html</a>。</li>
+        <li>通过清除应用数据或卸载本游戏来删除本地单人游戏数据。</li>
+        <li>在游戏内查看或更正您的数据，并更改偏好设置。</li>
+      </ul>
+
+      <h2>10. 本网站</h2>
+      <p>本网站（velarisgalacticstrategy.com）是托管在 <strong>GitHub Pages</strong>（GitHub, Inc.）上的静态网站。网站本身不设置 Cookie，不使用分析或追踪服务，也不加载第三方字体或脚本。作为托管服务商，GitHub 可能会在服务器日志中处理技术访问数据（如 IP 地址）以提供网站服务；详情请参阅 GitHub 的隐私声明。</p>
+
+      <h2>11. 本政策的变更</h2>
+      <p>我们可能会不时更新本隐私政策。更新后的政策将发布在本页面上，自发布之时起生效。</p>
+
+      <h2>12. 联系我们</h2>
+      <p>如果您对本隐私政策或您的数据有任何疑问，请联系我们：</p>
+      <div class="card">
+        <p><strong>Velorian Studios</strong></p>
+        <p><strong>电子邮箱：</strong> velaris@velarisgalacticstrategy.com</p>
+      </div>
+    </div>
+
     <footer>
-      &copy; 2026 Velaris: Galactic Strategy. All rights reserved. / Alle Rechte vorbehalten.
+      &copy; 2026 Velorian Studios — Velaris: Galactic Strategy. All rights reserved.
     </footer>
   </div>
 
   <script>
-    function switchLang(lang) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById(lang).classList.add('active');
-      event.target.classList.add('active');
+    function switchLang(lang, btn) {
+      document.querySelectorAll('.section').forEach(function (s) { s.classList.toggle('active', s.id === lang); });
+      document.querySelectorAll('.lang-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.documentElement.lang = btn.getAttribute('lang');
     }
   </script>
 </body>

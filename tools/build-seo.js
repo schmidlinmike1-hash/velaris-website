@@ -18,6 +18,7 @@ const zlib = require('zlib');
 const ROOT = path.join(__dirname, '..');
 const SITE = 'https://velarisgalacticstrategy.com';
 const PLAY = 'https://play.google.com/store/apps/details?id=space.manus.velaris.mobile.t20260219083207';
+const DISCORD = 'https://discord.gg/dTHDwuk63';
 const TODAY = new Date().toISOString().slice(0, 10);
 
 // ---------------------------------------------------------------- Extraktion
@@ -81,13 +82,13 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 const META = {
   de: {
     title: 'Velaris: Galactic Strategy — Erobere die Galaxie',
-    desc: 'Velaris: Galactic Strategy — Ein episches Weltraum-Strategiespiel für Android. Baue dein Imperium, erforsche Technologien, befehlige Flotten und erobere die Galaxie. Jetzt kostenlos herunterladen.',
-    ogDesc: 'Erobere die Galaxie in diesem epischen Weltraum-Strategiespiel für Android. Kostenlos im Play Store.',
+    desc: 'Velaris: Galactic Strategy — Ein episches Weltraum-Strategiespiel für Android. Baue dein Imperium, erforsche Technologien, befehlige Flotten und erobere die Galaxie. Derzeit in geschlossener Android-Beta über Google Play — nur für freigeschaltete Testkonten. Web- und iOS-Versionen sind geplant.',
+    ogDesc: 'Erobere die Galaxie in diesem epischen Weltraum-Strategiespiel. Derzeit in geschlossener Android-Beta über Google Play — Web- und iOS-Versionen sind geplant.',
   },
   en: {
     title: 'Velaris: Galactic Strategy — Space Strategy Game for Android',
-    desc: 'Velaris: Galactic Strategy — an epic space strategy game for Android. Build your empire, research technologies, command fleets, and conquer the galaxy. Download free now.',
-    ogDesc: 'Conquer the galaxy in this epic space strategy game for Android. Free on Google Play.',
+    desc: 'Velaris: Galactic Strategy — an epic space strategy game for Android. Build your empire, research technologies, command fleets, and conquer the galaxy. Currently in closed Android beta through Google Play — approved testing accounts only. Web and iOS versions are planned.',
+    ogDesc: 'Conquer the galaxy in this epic space strategy game. Currently in closed Android beta on Google Play — Web and iOS versions are planned.',
   },
 };
 
@@ -105,9 +106,8 @@ function jsonldGame(lang) {
     gamePlatform: 'Android',
     playMode: ['SinglePlayer', 'MultiPlayer'],
     inLanguage: ['de', 'en', 'fr', 'es', 'it', 'pt', 'pl', 'ru', 'tr', 'ja', 'ko', 'zh'],
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR', availability: 'https://schema.org/InStock' },
     installUrl: PLAY,
-    publisher: { '@type': 'Organization', name: 'Velaris: Galactic Strategy', url: SITE + '/' },
+    publisher: { '@type': 'Organization', name: 'Velorian Studios', url: SITE + '/' },
   };
 }
 
@@ -206,7 +206,9 @@ const seoBlock = `${SEO_BEGIN}
       </nav>
       <h1>Velaris: Galactic Strategy — ${esc(t.heroTitle)}</h1>
       <p>${esc(t.heroTagline)}</p>
-      <p><a href="${PLAY}" rel="noopener">${esc(t.btnCta)}</a> — kostenloses Weltraum-Strategiespiel (4X) für Android in 12 Sprachen.</p>
+      <p><strong>Velaris: Galactic Strategy befindet sich derzeit in einer geschlossenen Android-Beta über Google Play.</strong> Der Download ist nur für freigeschaltete Testkonten verfügbar. Web- und iOS-Versionen sind geplant.</p>
+      <p>Weltraum-Strategiespiel (4X) für Android in 12 Sprachen — Android: ${esc(t.statusClosedBeta)} · Web: ${esc(t.statusPlanned)} · iOS: ${esc(t.statusPlanned)}</p>
+      <p><a href="${PLAY}" rel="noopener">${esc(t.btnCta)}</a> — ${esc(t.betaHint)} · <a href="${DISCORD}" rel="noopener noreferrer">${esc(t.btnDiscord)}</a></p>
     </header>
     <section>
       <h2>${esc(t.factionsTitle)}</h2>
@@ -238,12 +240,15 @@ const seoBlock = `${SEO_BEGIN}
     <section>
       <h2>${esc(t.ctaTitle)}</h2>
       <p>${esc(t.ctaDesc)}</p>
-      <p><a href="${PLAY}" rel="noopener">${esc(t.btnCta)}</a></p>
+      <p><a href="${PLAY}" rel="noopener">${esc(t.btnCta)}</a> — ${esc(t.betaHint)}</p>
+      <p>${esc(t.securityNote)}</p>
+      <p><a href="${DISCORD}" rel="noopener noreferrer">${esc(t.btnDiscord)}</a></p>
     </section>
     <footer>
       <p>
         <a href="/privacy-policy.html">${esc(t.footerPrivacy)}</a> ·
         <a href="/delete-account.html">${esc(t.footerDelete)}</a> ·
+        <a href="${DISCORD}" rel="noopener noreferrer">Discord</a> ·
         <a href="/en/">English version</a>
       </p>
     </footer>
@@ -316,6 +321,7 @@ function pageShell({ lang, title, desc, ogDesc, canonical, altDe, altEn, active,
     <a class="brand" href="${lang === 'en' ? '/en/' : '/'}">VELARIS</a>
     <nav>
       ${nav}
+      <a href="${DISCORD}" target="_blank" rel="noopener noreferrer">Discord</a>
       <a href="${langSwitch.href}" lang="${langSwitch.lang}" hreflang="${langSwitch.lang}">${langSwitch.label}</a>
     </nav>
   </header>
@@ -326,9 +332,10 @@ ${body}
     <p>
       <a href="/privacy-policy.html">${lang === 'en' ? 'Privacy Policy' : 'Datenschutzerklärung'}</a> ·
       <a href="/delete-account.html">${lang === 'en' ? 'Delete Account' : 'Konto löschen'}</a> ·
-      <a href="${PLAY}" rel="noopener">Google Play</a>
+      <a href="${PLAY}" rel="noopener">Google Play</a> ·
+      <a href="${DISCORD}" target="_blank" rel="noopener noreferrer">Discord</a>
     </p>
-    <p>© 2026 Velaris: Galactic Strategy — ${lang === 'en' ? 'All rights reserved' : 'Alle Rechte vorbehalten'}.</p>
+    <p>© 2026 Velorian Studios — Velaris: Galactic Strategy. ${lang === 'en' ? 'All rights reserved' : 'Alle Rechte vorbehalten'}.</p>
   </footer>
 </body>
 </html>
@@ -350,7 +357,7 @@ function factionsBody(lang) {
     <h1>${esc(tr.factionsTitle)} — Velaris: Galactic Strategy</h1>
     <p class="lead">${esc(tr.factionsSubB)}</p>
     <div class="grid">${cards}</div>
-    <p><a class="cta" href="${PLAY}" rel="noopener">${esc(tr.btnCta)}</a></p>`;
+    <p><a class="cta" href="${PLAY}" rel="noopener">${esc(tr.btnCta)}</a><br><span class="muted" style="font-size:.85rem;">${esc(tr.betaHint)}</span></p>`;
 }
 
 function fleetBody(lang) {
@@ -374,7 +381,7 @@ function fleetBody(lang) {
     <div class="grid">${ships}</div>
     <h2>${esc(tr.flagshipsTitle)}</h2>
     <div class="grid">${flags}</div>
-    <p><a class="cta" href="${PLAY}" rel="noopener">${esc(tr.btnCta)}</a></p>`;
+    <p><a class="cta" href="${PLAY}" rel="noopener">${esc(tr.btnCta)}</a><br><span class="muted" style="font-size:.85rem;">${esc(tr.betaHint)}</span></p>`;
 }
 
 function admiralsBody(lang) {
@@ -397,17 +404,21 @@ function admiralsBody(lang) {
     <h1>${esc(tr.admiralsTitle)} — Velaris: Galactic Strategy</h1>
     <p class="lead">${esc(tr.admiralsSubB)}</p>
     <div class="grid">${cards}</div>
-    <p><a class="cta" href="${PLAY}" rel="noopener">${esc(tr.btnCta)}</a></p>`;
+    <p><a class="cta" href="${PLAY}" rel="noopener">${esc(tr.btnCta)}</a><br><span class="muted" style="font-size:.85rem;">${esc(tr.betaHint)}</span></p>`;
 }
 
 function enHomeBody() {
   const tr = TR.en;
+  // 70 (23 Gebäude + 47 Technologien) und 32 Admirale sind gegen den Spielcode
+  // (Velaris/lib/game/data.ts bzw. admirals.ts) verifiziert; Schiffe und spielbare
+  // Fraktionen kommen direkt aus dem Website-Datensatz (VELARIS_DATA).
+  const playableFactions = D.FACTIONS.filter(f => f.bonuses && f.bonuses.length).length;
   const stats = `
     <ul class="plain">
       <li><strong>70</strong> ${esc(tr.stat1)}</li>
-      <li><strong>19</strong> ${esc(tr.stat2)}</li>
-      <li><strong>12</strong> ${esc(tr.stat3)}</li>
-      <li><strong>4</strong> ${esc(tr.stat4)}</li>
+      <li><strong>${D.SHIPS.length}</strong> ${esc(tr.stat2)}</li>
+      <li><strong>32</strong> ${esc(tr.stat3)}</li>
+      <li><strong>${playableFactions}</strong> ${esc(tr.stat4)}</li>
     </ul>`;
   const feats = FEATURES.map(f => `
     <article class="card"><h3>${esc(f.en[0])}</h3><p>${esc(f.en[1])}</p></article>`).join('');
@@ -420,8 +431,9 @@ function enHomeBody() {
   return `
     <p class="muted">${esc(tr.heroBadge)}</p>
     <h1>Velaris: Galactic Strategy — ${esc(tr.heroTitle)}</h1>
-    <p class="lead">${esc(tr.heroTagline)} Free-to-play 4X space strategy for Android, available in 12 languages.</p>
-    <p><a class="cta" href="${PLAY}" rel="noopener">${esc(tr.btnCta)}</a></p>
+    <p class="lead">${esc(tr.heroTagline)} 4X space strategy for Android in 12 languages — currently in closed Android beta through Google Play.</p>
+    <p><a class="cta" href="${PLAY}" rel="noopener">${esc(tr.btnCta)}</a><br><span class="muted" style="font-size:.85rem;">${esc(tr.betaHint)}</span></p>
+    <p class="muted">Android: ${esc(tr.statusClosedBeta)} · Web: ${esc(tr.statusPlanned)} · iOS: ${esc(tr.statusPlanned)} · <a href="${DISCORD}" target="_blank" rel="noopener noreferrer">${esc(tr.btnDiscord)}</a></p>
     ${stats}
     <h2>${esc(tr.factionsTitle)}</h2>
     <p>${esc(tr.factionsSubB)}</p>
@@ -434,7 +446,9 @@ function enHomeBody() {
     <p>${esc(tr.admiralsSubB)} <a href="/en/admirals.html">Meet the admirals →</a></p>
     <h2>${esc(tr.ctaTitle)}</h2>
     <p>${esc(tr.ctaDesc)}</p>
-    <p><a class="cta" href="${PLAY}" rel="noopener">${esc(tr.btnCta)}</a></p>`;
+    <p><a class="cta" href="${PLAY}" rel="noopener">${esc(tr.btnCta)}</a><br><span class="muted" style="font-size:.85rem;">${esc(tr.betaHint)}</span></p>
+    <p class="muted">${esc(tr.securityNote)}</p>
+    <p><a href="${DISCORD}" target="_blank" rel="noopener noreferrer">${esc(tr.btnDiscord)}</a></p>`;
 }
 
 const pages = [
