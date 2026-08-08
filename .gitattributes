@@ -1,4 +1,0 @@
-# The game's web build under play/ is generated output — store it byte for byte.
-# Without this, core.autocrlf rewrites the line endings of the JS bundle and the
-# source maps on every checkout.
-play/** -text
