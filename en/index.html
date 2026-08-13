@@ -3,6 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+  // See the note in /index.html: mailed recovery tokens arrive in the fragment
+  // of whatever the Site URL points at, and only /reset-password.html can
+  // redeem them.
+  (function () {
+    var hash = window.location.hash || "";
+    if (hash.indexOf("type=recovery") < 0 && hash.indexOf("error_code=") < 0) return;
+    window.location.replace("/reset-password.html" + hash);
+  })();
+  </script>
   <title>Velaris: Galactic Strategy — Space Strategy Game for Android</title>
   <meta name="description" content="Velaris: Galactic Strategy — an epic space strategy game for Android. Build your empire, research technologies, command fleets, and conquer the galaxy. Currently in closed Android beta through Google Play — approved testing accounts only. Web and iOS versions are planned.">
   <link rel="canonical" href="https://velarisgalacticstrategy.com/en/">

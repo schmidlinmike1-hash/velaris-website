@@ -3,6 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+  // Supabase sends its mailed links to the project's Site URL — this page. A
+  // recovery mail generated in the dashboard carries no redirect_to at all, so
+  // the tokens land here in the URL fragment with nothing to redeem them. Hand
+  // them straight to the page that can. Runs before anything renders, so the
+  // homepage never flashes up in between.
+  (function () {
+    var hash = window.location.hash || "";
+    if (hash.indexOf("type=recovery") < 0 && hash.indexOf("error_code=") < 0) return;
+    window.location.replace("/reset-password.html" + hash);
+  })();
+  </script>
   <title>Velaris: Galactic Strategy — Erobere die Galaxie</title>
   <meta name="description" content="Velaris: Galactic Strategy — Ein episches Weltraum-Strategiespiel für Android. Baue dein Imperium, erforsche Technologien, befehlige Flotten und erobere die Galaxie. Derzeit in geschlossener Android-Beta über Google Play — nur für freigeschaltete Testkonten. Web- und iOS-Versionen sind geplant.">
   <link rel="canonical" href="https://velarisgalacticstrategy.com/">
